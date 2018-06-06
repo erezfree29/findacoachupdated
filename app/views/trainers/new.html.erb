@@ -1,24 +1,8 @@
 <h1>Trainers#new</h1>
 <h3>Add a new training_session</h3>
-<%= form_for(@trainer) do |f| %>
-  <div class="form-group">
-    <%= f.label :hourly_rate %>
-    <%= f.text_field :hourly_rate, class: 'form-control' %>
-  </div>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
-
-<%= simple_form_for [@trainer,@expertise] do |f| %>
-  <%= f.association :expertise_id, input_html: { class: "beautiful-dropdown" }, include_hidden: false %>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :description %>
   <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
-
-
-
-
-
-
-
-
 
 

@@ -7,7 +7,8 @@ class TrainersController < ApplicationController
 
   def show
     @trainer = Trainer.find(params[:id])
-    @expertise = Expertise.find(@trainer[:expertise_id])
+    @expertise = Expertise.find(@trainer.expertise_id)
+    # @expertise = Expertise.find(@trainer[:expertise_id])
   end
 
   def new
@@ -17,17 +18,17 @@ class TrainersController < ApplicationController
   end
 
   def create
-
     @user = current_user
     @trainer = Trainer.new(trainer_params)
     @trainer.user = @user
+    @hourly_rate = params[:trainer][:hourly_rate].to_i
+    @trainer.hourly_rate = @hourly_rate
     if @trainer.save
-    redirect_to trainer_path(@trainer)
-
-      end
-
-      @expertise = Expertise.all
-
+      redirect_to trainer_path(@trainer)
+    else
+      render :new
+    end
+    @expertise = Expertise.all
   end
 
   def edit
