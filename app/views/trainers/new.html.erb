@@ -1,2 +1,8 @@
 <h1>Trainers#new</h1>
-<p>Find me in app/views/trainers/new.html.erb</p>
+<h3>Add a new training_session</h3>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :description %>
+  <%= f.button :submit, class: "btn btn-primary" %>
+<% end %>
+
+
