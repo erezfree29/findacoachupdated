@@ -1,11 +1,19 @@
-<h1>Trainers#index</h1>
-<p>Find me in app/views/trainers/index.html.erb</p>
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
+
+
+
+
+
+<div class="banner banner-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
   <div class="banner-content">
     <h1>Find your trainer</h1>
     <p>Become a healthier and a stronger person</p>
   </div>
 </div>
+
+
+
+
+
 <div class="container">
   <div class="row">
    <% @trainers.each do|trainer|  %>
@@ -15,5 +23,22 @@
     </div>
   </div>
    <% end %>
+  </div>
+</div>
+
+
+
+
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fa fa-github"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fa fa-heart"></i> at Le Wagon
   </div>
 </div>
