@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   resources :trainers do
     resources :bookings do
-      resources :reviews, only: [:index, :new, :create, :show]
+      resources :reviews, only: [:new, :create]
     end
+    resources :reviews, only: [:index, :show]
   end
+
   # get 'expertises/index'
   # get 'expertises/show'
   # get 'expertises/new'
