@@ -1,8 +1,37 @@
 <h1>Trainers#new</h1>
 <h3>Add a new training_session</h3>
-<%= simple_form_for @user do |f| %>
-  <%= f.input :description %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+
+
+<%= simple_form_for (@trainer) do |f| %>
+<p>enter an hourly rate</p>
+  <%= f.number_field :hourly_rate %>
+  <p>enter an expertise please choose from the categories bellow</p>
+  <ol>
+   <li>Weight Loss</li>
+   <li>Cardio</li>
+   <li>Aerobics</li>
+   <li>Physical Recovery</li>
+   <li>Swimming</li>
+   <li>Posture</li>
+  </ol>
+  <%= f.number_field :expertise_id %>
+  <%= f.button :submit, class: "btn btn-primary"%>
 <% end %>
+
+
+
+<!--
+ <div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" id="sel1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+</div>
+
+ -->
+
 
 
