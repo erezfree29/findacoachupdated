@@ -8,12 +8,12 @@ class TrainersController < ApplicationController
   def show
     @trainer = Trainer.find(params[:id])
     @expertise = Expertise.find(@trainer.expertise_id)
-    # @expertise = Expertise.find(@trainer[:expertise_id])
+
   end
 
   def new
     @user = current_user
-    @trainer = Trainer.new
+    @trainer = Trainer.new()
     @trainer.user = @user
   end
 
@@ -21,14 +21,13 @@ class TrainersController < ApplicationController
     @user = current_user
     @trainer = Trainer.new(trainer_params)
     @trainer.user = @user
-    @hourly_rate = params[:trainer][:hourly_rate].to_i
-    @trainer.hourly_rate = @hourly_rate
+
     if @trainer.save
       redirect_to trainer_path(@trainer)
     else
       render :new
     end
-    @expertise = Expertise.all
+
   end
 
   def edit
@@ -37,22 +36,33 @@ class TrainersController < ApplicationController
   end
 
   def update
-    # @trainer = Trainer.find(params[:id])
-    # @trainer.update(params[:trainer_params])
+    @trainer = Trainer.find(params[:id])
+    @trainer.update(params[:trainer_params])
   end
 
   def destroy
-    # @trainer = Trainer.find(paramas[:id])
-    # @trainer.destroy
+    @trainer = Trainer.find(paramas[:id])
+    @trainer.destroy
   end
 
 
 
   private
   def trainer_params
-    params.require(:trainer).permit(:expertise_id,:hourly_rate)
+
+    params.require(:trainer).permit(:expertise_id, :hourly_rate)
+
   end
 end
 
 
 
+    # @hourly_rate = params[:trainer][:hourly_rate].to_i
+   # @trainer.hourly_rate = @hourly_rate
+
+
+
+
+
+    # @expertise_id = params[:trainer][:expertise_id].to_i
+    # @trainer.expertise_id = @expertise_id
