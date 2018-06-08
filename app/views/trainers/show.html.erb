@@ -5,57 +5,48 @@
  <div class="banner banner-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
   <h1>Details of Training session on offer</h1>
   <h2>Trainer's Details </h2>
-
-
-
-
-
-
-
-
-
-
   <div class="trainer_details">
-      <div class="row">
-        <div class="col-sm-12 col-lg-6">
-          <h3>Trainer's Name</h3>
-          <p><%=@trainer.user.first_name=%> <%=@trainer.user.last_name=%></p>
-        </div>
-        <div class="col-sm-12 col-lg-6">
-          <h3>Trainer's Age and Gender</h3>
-          <p><%=@trainer.user.age=%> - <%=@trainer.user.gender=%></p>
-        </div>
+    <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <h3>Trainer's Name</h3>
+        <p><%=@trainer.user.first_name=%> <%=@trainer.user.last_name=%></p>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <h3>Trainer's Age and Gender</h3>
+        <p><%=@trainer.user.age=%> - <%=@trainer.user.gender=%></p>
+      </div>
 
-        <div class="col-sm-12 col-lg-6">
-          <h3>Trainer's Email</h3>
-          <p><%=@trainer.user.email=%></p>
-        </div>
-        <div class="col-sm-12 col-lg-6">
-          <h3>Address</h3>
-          <p><%=@trainer.user.address=%></p>
-        </div>
+      <div class="col-sm-12 col-lg-6">
+        <h3>Trainer's Email</h3>
+        <p><%=@trainer.user.email=%></p>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <h3>Address</h3>
+        <p><%=@trainer.user.address=%></p>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="links">
-      <div class="col-xs-12 col-lg-4">
-        <h4><%= link_to "Back to all trainers", trainers_path%></h4>
-      </div>
-      <div class="col-xs-12 col-lg-4">
-        <h4><%= link_to "book this training session",new_trainer_booking_path(@trainer)%></h4>
-      </div>
-      <div class="col-xs-12 col-lg-4">
-        <h4><%= link_to "show all reviews for this session",trainer_review_path(@trainer)%></h4>
-      </div>
+</div>
+<div class="row" id="linksrow">
+  <div class="links">
+    <div class="col-xs-12 col-lg-4">
+      <h4><%= link_to "Back to all trainers", trainers_path%></h4>
+    </div>
+    <div class="col-xs-12 col-lg-4">
+      <h4><%= link_to "book this training session",new_trainer_booking_path(@trainer)%></h4>
+    </div>
+    <div class="col-xs-12 col-lg-4">
+      <h4><%= link_to "show all reviews for this session",trainer_review_path(@trainer)%></h4>
     </div>
   </div>
-  <h2>Sessions's Details</h2>
+</div>
+<h2>Sessions's Details</h2>
+<div class="bottom bottom-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
   <div class="row">
     <div class="sessions_details">
       <div class="col-sm-12 col-lg-6">
-        <h3>Hourly Rate</h3>
-        <p><%=@trainer.hourly_rate%></p>
+        <h3>Rate</h3>
+        <p><%=@trainer.hourly_rate%> ils</p>
       </div>
       <div class="col-sm-12 col-lg-6">
         <h3>Expertise</h3>
@@ -63,6 +54,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 
