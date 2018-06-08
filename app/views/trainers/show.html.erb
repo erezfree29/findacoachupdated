@@ -2,9 +2,9 @@
 
 
 
- <div class="banner banner-index">
+<div class="banner banner-index">
   <h1 id="h1_show">Details of Training session on offer</h1>
-  <h2>Trainer's Details </h2>
+  <h2 id="t_details">Trainer's Details </h2>
   <div class="trainer_details">
     <div class="row">
       <div class="col-sm-12 col-lg-6">
@@ -28,7 +28,7 @@
   </div>
 </div>
 <div class="row" id="linksrow">
-  <div class="links">
+  <center><div class="links">
     <div class="col-xs-12 col-lg-4">
       <h4><%= link_to "Back to all trainers", trainers_path%></h4>
     </div>
@@ -39,9 +39,10 @@
       <h4><%= link_to "show all reviews for this session",trainer_review_path(@trainer)%></h4>
     </div>
   </div>
+</center>
 </div>
 <center><h2>Sessions's Details</h2></center>
-<div class="bottom bottom-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
+<div class="bottom bottom-index">
   <div class="row">
     <div class="sessions_details">
       <div class="col-sm-12 col-lg-6">

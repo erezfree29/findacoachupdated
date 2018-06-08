@@ -1,13 +1,16 @@
 
-<%= current_user.email %>
 
+
+<div class="input">
+<p id="hours">enter number of hours needed</p>
 <%= simple_form_for [@trainer, @booking] do |f| %>
-<%= f.text_field :hours, label: 'Enter number of hours needed', error: 'You need to specify the length of the session'%>
-<%= f.input :time_of_booking, as: :date %>
-<%= f.input :time_of_booking, as: :time %>
+<%= f.number_field :hours,:label => "number of hours"%>
+<%= f.input :time_of_booking,:label => "book a date", as: :date %>
+<%= f.input :time_of_booking,:label => "book a time", as: :time %>
 <%= f.button :submit, class: "btn btn-primary" %>
 
 <% end %>
+</div>
 
 
 
