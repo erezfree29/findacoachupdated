@@ -38,15 +38,6 @@
 
 
 
-.form_fields
-{
-
-width:80vh;
-height:20vh;
-display:flex;
-justify-content:center;
-
-}
 
 .push_up
 {
@@ -58,7 +49,7 @@ justify-content:center;
 .booking_footer
 {
 
-  webkit-animation: bgcolor 20s infinite;
+  -webkit-animation: bgcolor 20s infinite;
     animation: bgcolor 10s infinite;
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
@@ -89,3 +80,16 @@ justify-content:center;
 
 }
 
+.input_form
+{
+ width:50vh;
+
+}
+
+.hours
+{
+
+  color:green;
+  text-decoration:underline;
+
+}

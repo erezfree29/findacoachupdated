@@ -1,7 +1,4 @@
 
-
-
-
 <div class="banner banner-index" id="booking_banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
 -webkit-animation: bgcolor 20s infinite;
 animation: bgcolor 10s infinite;
@@ -9,61 +6,55 @@ animation: bgcolor 10s infinite;
 animation-direction: alternate;">
 <div class="row">
   <div class="col-xs-12">
-    <%= simple_form_for [@trainer, @booking] do |f| %>
-    <div class="form_fields"><%= f.input :time_of_booking,:label => "book a date", as: :date %></div>
-    <div class="form_fields"><%= f.input :time_of_booking,:label => "book a time", as: :time %></div>
+    <div class="input_form">
+      <%= simple_form_for [@trainer, @booking] do |f| %>
+      <div><%= f.input :time_of_booking,:label => "book a date", as: :date %></div>
+      <div><%= f.input :time_of_booking,:label => "book a time", as: :time %></div>
+    </div>
   </div>
 </div>
 </div>
 
 
-<div class="row" id="icons_row">
-  <div class="col-xs-4 col-lg-2 icon">
-    <%= image_tag "sun.png", height: 35 %>
-  </div>
 
-  <div class="col-xs-4 col-lg-2 icon">
-    <%= image_tag "flower.png", height: 35  %>
-  </div>
+<div class="row" id="icons_row2">
+  <center>
+    <div class="col-xs-4 col-lg-2 icon">
+      <%= image_tag "sun.png", height: 35 %>
+    </div>
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "flower.png", height: 35  %>
+    </div>
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "bee.png", height: 35  %>
+    </div>
 
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "leaf.png", height: 35 %>
+    </div>
 
-  <div class="col-xs-4 col-lg-2 icon">
-    <%= image_tag "bee.png", height: 35  %>
-  </div>
-
-
-
-
-
-  <div class="col-xs-4 col-lg-2 icon">
-    <%= image_tag "leaf.png", height: 35 %>
-  </div>
-
-
-
-  <div class="col-xs-4 col-lg-2 icon">
-    <%= image_tag "watering-can.png", height: 35  %>
-  </div>
-
-
-
-  <div class="col-xs-4 col-lg-2 icon">
-    <%= image_tag "ladybird.png", height: 35  %>
-  </div>
-
-
-
-</div>
-<div class="booking_footer icon">
-  <div class="col-xs-12 col-lg-2 icon">
-    <%= image_tag "tree.png", height: 35  %>
-    <p>Prcatise makes perfect</p>
-  </div>
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "watering-can.png", height: 35  %>
+    </div>
+    <div class="col-xs-4 col-lg-2 icon">
+      <%= image_tag "ladybird.png", height: 35  %>
+    </div>
+  </center>
 </div>
 
 
 
 
+  </center>
+</div>
+<center>
+  <div class="booking_footer icon">
+    <div class="col-xs-12 col-lg-2 col-lg-offset-0 icon">
+      <%= image_tag "tree.png", height: 35  %>
+      <p>Prcatise makes perfect</p>
+    </div>
+  </div>
+</center>
 <p class="hours">enter number of hours needed</p>
 <%= f.number_field :hours%>
 <%= f.button :submit, class: "btn btn-primary" %>
@@ -72,5 +63,4 @@ animation-direction: alternate;">
 
 
 
-<!-- <p class="hours">enter number of hours needed</p> -->
-<%#= f.number_field :hours,input_html:{ min:'1'}%>
+

@@ -1,37 +1,65 @@
-<h1>Trainers#new</h1>
-<h3>Add a new training_session</h3>
+
+<div class="banner banner-index" id="training_banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+-webkit-animation: bgcolor 20s infinite;
+animation: bgcolor 10s infinite;
+-webkit-animation-direction: alternate;
+animation-direction: alternate;">
+<div class="row">
+  <div class="col-xs-12">
 
 
-<%= simple_form_for (@trainer) do |f| %>
-<p>enter an hourly rate</p>
-  <%= f.number_field :hourly_rate %>
-  <p>enter an expertise please choose from the categories bellow</p>
-  <ol>
-   <li>Weight Loss</li>
-   <li>Cardio</li>
-   <li>Aerobics</li>
-   <li>Physical Recovery</li>
-   <li>Swimming</li>
-   <li>Posture</li>
-  </ol>
-  <%= f.number_field :expertise_id %>
-  <%= f.button :submit, class: "btn btn-primary"%>
-<% end %>
+    <div class="create_training">
+      <%= simple_form_for (@trainer) do |f| %>
+      <p>enter an hourly rate</p>
+      <%= f.number_field :hourly_rate %>
 
-
-
-<!--
- <div class="form-group">
-  <label for="sel1">Select list:</label>
-  <select class="form-control" id="sel1">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-  </select>
+    </div>
+  </div>
+</div>
 </div>
 
- -->
+
+<div class="row" id="icons_row">
+  <center>
+    <div class="col-xs-4 col-lg-2 icon">
+      <%= image_tag "medal.svg", height: 35 %>
+    </div>
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "swimming-figure.svg", height: 35  %>
+    </div>
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "running-man.svg", height: 35  %>
+    </div>
+
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "basketball.svg", height: 35 %>
+    </div>
+
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "stretching-exercises.svg", height: 35  %>
+    </div>
+    <div class="col-xs-4 col-lg-2 icon">
+      <%= image_tag "bicycle.png", height: 35  %>
+    </div>
+  </center>
+</div>
 
 
+
+<center>
+  <div class="booking_footer icon">
+    <div class="col-xs-12 col-lg-2 col-lg-offset-0 icon">
+      <%= image_tag "soccer-ball-variant.png", height: 35  %>
+      <p>Practise makes perfect</p>
+    </div>
+  </div>
+</center>
+
+
+<div class="training_footer">
+<p>enter category</p>
+<%= f.collection_select(:expertise_id, Expertise.all, :id, :name ) %>
+<%= f.button :submit, class: "btn btn-primary"%>
+<% end %>
+</div>
 
