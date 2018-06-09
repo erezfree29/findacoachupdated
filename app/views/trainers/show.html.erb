@@ -1,57 +1,61 @@
-  <div class="content">
-    <h1>Details of Training session on offer</h1>
-    <h2>Trainer's Details </h2>
-    <div class="trainer_details">
 
-      <div class="row">
-        <div class="col-sm-12 col-lg-6">
-          <h3>Trainer's Name</h3>
-          <p><%=@trainer.user.first_name=%> <%=@trainer.user.last_name=%></p>
-        </div>
-        <div class="col-sm-12 col-lg-6">
-          <h3>Trainer's Age and Gender</h3>
-          <p><%=@trainer.user.age=%> - <%=@trainer.user.gender=%></p>
-        </div>
 
-        <div class="col-sm-12 col-lg-6">
-          <h3>Trainer's Email</h3>
-          <p><%=@trainer.user.email=%></p>
-        </div>
-        <div class="col-sm-12 col-lg-6">
-          <h3>Address</h3>
-          <p><%=@trainer.user.address=%></p>
-        </div>
-      </div>
-    </div>
+
+
+<div class="banner banner-index">
+  <h1 id="h1_show">Details of Training session on offer</h1>
+  <h2 id="t_details">Trainer's Details </h2>
+  <div class="trainer_details">
     <div class="row">
-      <div class="links">
-        <div class="col-xs-12 col-lg-4">
-          <h4><%= link_to "Back to all trainers", trainers_path%></h4>
-        </div>
-        <div class="col-xs-12 col-lg-4">
-        <h4><%= link_to "book this training session",new_trainer_booking_path(@trainer)%></h4>
+      <div class="col-sm-12 col-lg-6">
+        <h3 class="properties">Trainer's Name</h3>
+        <p id="booking_info"><%=@trainer.user.first_name=%> <%=@trainer.user.last_name=%></p>
       </div>
-      <div class="col-xs-12 col-lg-4">
-        <h4><%= link_to "show all reviews for this session",trainer_review_path(@trainer)%></h4>
+      <div class="col-sm-12 col-lg-6">
+        <h3 class="properties">Trainer's Age and Gender</h3>
+        <p><%=@trainer.user.age=%> - <%=@trainer.user.gender=%></p>
       </div>
+
+      <div class="col-sm-12 col-lg-6">
+        <h3 class="properties">Trainer's Email</h3>
+        <p><%=@trainer.user.email=%></p>
       </div>
-    </div>
-    <h2>Sessions's Details</h2>
-    <div class="row">
-      <div class="sessions_details">
-        <div class="col-sm-12 col-lg-6">
-          <h3>Hourly Rate</h3>
-          <p><%=@trainer.hourly_rate%></p>
-        </div>
-        <div class="col-sm-12 col-lg-6">
-          <h3>Expertise</h3>
-          <p><%= @expertise.name %></p>
-        </div>
+      <div class="col-sm-12 col-lg-6">
+        <h3 class="properties">Address</h3>
+        <p><%=@trainer.user.address=%></p>
       </div>
     </div>
   </div>
-
-
+</div>
+<div class="row" id="linksrow">
+  <center><div class="links">
+    <div class="col-xs-12 col-lg-4">
+      <h4><%= link_to "Back to all trainers", trainers_path%></h4>
+    </div>
+    <div class="col-xs-12 col-lg-4">
+      <h4><%= link_to "book this training session",new_trainer_booking_path(@trainer)%></h4>
+    </div>
+    <div class="col-xs-12 col-lg-4">
+      <h4><%= link_to "show all reviews for this session",trainer_review_path(@trainer)%></h4>
+    </div>
+  </div>
+</center>
+</div>
+<center><h2>Sessions's Details</h2></center>
+<div class="bottom bottom-index">
+  <div class="row">
+    <div class="sessions_details">
+      <div class="col-sm-12 col-lg-6">
+        <h3>Rate</h3>
+        <p><%=@trainer.hourly_rate%> ils</p>
+      </div>
+      <div class="col-sm-12 col-lg-6">
+        <h3>Expertise</h3>
+        <p><%= @expertise.name %></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
