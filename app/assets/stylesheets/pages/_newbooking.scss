@@ -1,11 +1,91 @@
-.input
+.input1
 {
-  margin-top:140px;
-  width:28%;
-  margin-left:10px;
-  font-style:bold;
-  color:black;
+
+ width:40px;
+ height:60px;
+
 
 }
 
+.input1
+{
+
+ width:40px;
+ height:45px;
+
+
+}
+
+
+
+
+#booking_banner
+{
+
+
+  margin-top:99px;
+  background-image:none;
+  height:50vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+
+}
+
+
+
+.form_fields
+{
+
+width:80vh;
+height:20vh;
+display:flex;
+justify-content:center;
+
+}
+
+.push_up
+{
+  margin-bottom:0px;
+  margin-top:0px;
+
+}
+
+.booking_footer
+{
+
+  webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    margin-top:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:green;
+    height:20vh;
+    font-size:35px;
+    text-decoration:bold;
+    text-decoration:underline;
+
+}
+
+
+#icons_row
+{
+  margin-top:30px;
+  padding-bottom:5px;
+  height:1vh;
+
+}
+
+.icon
+{
+  padding-bottom:5px;
+
+}
 
