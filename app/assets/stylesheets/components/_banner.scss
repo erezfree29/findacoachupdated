@@ -12,7 +12,7 @@
 
 .banner-index {
    margin-top:0px;
-   height: 90vh;
+   height: 65vh;
    margin-top:0px;
    padding-top:0px;
    background-image:url('trainers2.jpg');
@@ -41,5 +41,37 @@
     border:none;
 
   }
+
+}
+
+#index_banner
+
+{
+  margin-top:99px;
+  height:65vh;
+}
+
+#home-banner
+
+{
+
+margin-top:99px;
+}
+
+
+#training_banner
+{
+
+margin-top:99px;
+  background-image:none;
+  height:50vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+
 
 }

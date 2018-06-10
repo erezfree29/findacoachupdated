@@ -15,12 +15,14 @@ class TrainersController < ApplicationController
     @user = current_user
     @trainer = Trainer.new()
     @trainer.user = @user
+    @expertise = Expertise.all
   end
 
   def create
     @user = current_user
     @trainer = Trainer.new(trainer_params)
     @trainer.user = @user
+    @expertise = Expertise.all
 
     if @trainer.save
       redirect_to trainer_path(@trainer)
