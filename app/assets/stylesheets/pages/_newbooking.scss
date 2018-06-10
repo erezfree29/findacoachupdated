@@ -28,11 +28,6 @@
   height:50vh;
   display:flex;
   justify-content:center;
-  align-items:center;
-  -webkit-animation: bgcolor 20s infinite;
-    animation: bgcolor 10s infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
 
 }
 
@@ -58,8 +53,8 @@
     align-items:center;
     justify-content:center;
     color:green;
-    height:20vh;
-    font-size:35px;
+    height:10vh;
+    font-size:20px;
     text-decoration:bold;
     text-decoration:underline;
 
@@ -89,6 +84,8 @@
 .hours
 {
 
+  font-size:30px;
+  height:10vh;
   color:green;
   text-decoration:underline;
 
