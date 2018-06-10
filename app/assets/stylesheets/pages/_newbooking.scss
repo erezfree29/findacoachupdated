@@ -63,9 +63,13 @@
 
 #icons_row
 {
-  margin-top:30px;
-  padding-bottom:5px;
-  height:1vh;
+  background-color:rgb(179, 179, 255);
+  padding-top:3vh;
+  padding-bottom:2vh;
+  height: 10vh;
+  margin-top:17vh;
+
+
 
 }
 
@@ -76,11 +80,7 @@
 
 }
 
-.input_form
-{
- width:50vh;
 
-}
 
 .hours
 {
@@ -97,3 +97,33 @@
 
   border-radius: 50%;
 }
+
+.input_form
+
+{
+
+ width:13vw;
+ display:flex;
+}
+
+.num_hour
+{
+
+  width:3vw;
+}
+.book
+
+{
+
+
+  height:3.8vh;
+}
+
+.input
+
+{
+  margin-top:5vh;
+  padding-left:13vw;
+  color:black;
+}
+

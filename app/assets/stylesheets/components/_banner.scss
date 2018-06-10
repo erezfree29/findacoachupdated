@@ -3,6 +3,9 @@
   text-align: center;
   height: 100vh;
   background-size: cover !important;
+  display:flex;
+
+
 
 
 }
@@ -14,7 +17,7 @@
    margin-top:99px;
    padding-top:0px;
    background-image:url('training.jpeg');
-
+   display:flex;
 
 
 }
@@ -49,6 +52,7 @@
 {
   margin-top:99px;
   height:65vh;
+
 }
 
 #home-banner
