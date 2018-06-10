@@ -20,24 +20,24 @@ animation-direction: alternate;">
 <div class="row" id="icons_row2">
   <center>
     <div class="col-xs-4 col-lg-2 icon">
-      <%= image_tag "sun.png", height: 35 %>
+      <%= image_tag "new1.svg", height: 35 %>
     </div>
     <div class="col-xs-4 col-lg-2  icon">
-      <%= image_tag "flower.png", height: 35  %>
+      <%= image_tag "new2.png", height: 35  %>
     </div>
     <div class="col-xs-4 col-lg-2  icon">
-      <%= image_tag "bee.png", height: 35  %>
-    </div>
-
-    <div class="col-xs-4 col-lg-2  icon">
-      <%= image_tag "leaf.png", height: 35 %>
+      <%= image_tag "new3.png", height: 35  %>
     </div>
 
     <div class="col-xs-4 col-lg-2  icon">
-      <%= image_tag "watering-can.png", height: 35  %>
+      <%= image_tag "new4.png", height: 35 %>
+    </div>
+
+    <div class="col-xs-4 col-lg-2  icon">
+      <%= image_tag "new5.svg", height: 35  %>
     </div>
     <div class="col-xs-4 col-lg-2 icon">
-      <%= image_tag "ladybird.png", height: 35  %>
+      <%= image_tag "new6.png", height: 35  %>
     </div>
   </center>
 </div>
@@ -50,17 +50,31 @@ animation-direction: alternate;">
 <center>
   <div class="booking_footer icon">
     <div class="col-xs-12 col-lg-2 col-lg-offset-0 icon">
-      <%= image_tag "tree.png", height: 35  %>
+      <%= image_tag "new7.svg", height: 35  %>
       <p>Prcatise makes perfect</p>
     </div>
   </div>
 </center>
-<p class="hours">enter number of hours needed</p>
+
+
+<div class="hours">
+<p>enter number of hours needed</p>
 <%= f.number_field :hours%>
 <%= f.button :submit, class: "btn btn-primary" %>
 <% end %>
+</div>
 
 
 
 
 
+
+
+
+<!--
+<div class="create_training">
+      <%#= simple_form_for Trainer.new do |f| %>
+      <p>enter an hourly rate</p>
+      <%#= f.input :hourly_rate, input_html: { min: 0 } %>
+
+    </div> -->

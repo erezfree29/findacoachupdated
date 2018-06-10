@@ -8,12 +8,16 @@ animation-direction: alternate;">
   <div class="col-xs-12">
 
 
+
     <div class="create_training">
-      <%= simple_form_for (@trainer) do |f| %>
+      <%= simple_form_for Trainer.new do |f| %>
       <p>enter an hourly rate</p>
-      <%= f.number_field :hourly_rate %>
+      <%= f.input :hourly_rate, input_html: { min: 0 } %>
 
     </div>
+
+
+
   </div>
 </div>
 </div>
@@ -59,7 +63,7 @@ animation-direction: alternate;">
 <div class="training_footer">
 <p>enter category</p>
 <%= f.collection_select(:expertise_id, Expertise.all, :id, :name ) %>
-<%= f.button :submit, class: "btn btn-primary"%>
+<%= f.button :submit, class: "btn btn-primary blue"%>
 <% end %>
 </div>
 
