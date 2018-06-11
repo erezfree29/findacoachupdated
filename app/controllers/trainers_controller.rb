@@ -52,7 +52,7 @@ class TrainersController < ApplicationController
   private
   def trainer_params
 
-    params.require(:trainer).permit(:expertise_id, :hourly_rate, :photo)
+    params.require(:trainer).permit(:expertise_id, :hourly_rate, :photo, :address)
 
   end
 end
