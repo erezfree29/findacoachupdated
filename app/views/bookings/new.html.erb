@@ -6,11 +6,15 @@
 
   <div class="input_form">
     <%= simple_form_for [@trainer, @booking] do |f| %>
-    <div><%= f.input :time_of_booking,:label => "book a date", as: :date %></div>
-    <div><%= f.input :time_of_booking,:label => "book a time", as: :time %></div>
+    <p>enter booking date</p>
+    <div><%= f.input :time_of_booking,:label => false, as: :date %></div>
+    <p>enter booking time</p>
+    <div><%= f.input :time_of_booking,:label => false, as: :time %></div>
+
     <p>enter number of hours needed</p>
+
     <%= f.number_field :hours%>
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.button :submit, class: "btn btn-primary booking_btn" %>
     <% end %>
   </div>
   </div>
