@@ -12,7 +12,18 @@
     <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
-</div>
+
+    <div class="input">
+    <%= simple_form_for [@trainer, @booking] do |f| %>
+    <%= f.input :time_of_booking,:label => "book a date", as: :date %>
+    <%= f.input :time_of_booking,:label => "book a time", as: :time %>
+    <p>enter number of hours needed</p>
+    <%= f.number_field :hours%>
+    <%= f.button :submit, class: "btn btn-primary book" %>
+    <% end %>
+    </div>
+
+
 
 
 
@@ -43,6 +54,15 @@
 
 
 
+
+
+
+
+
+
+
+</center>
+</div>
 
 
 

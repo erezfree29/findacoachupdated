@@ -65,6 +65,8 @@ font-size: 30px;
 
   margin-top:60px;
   border:none;
+  height:80vh;
+  width:60vw;
 }
 
 #t_details
@@ -139,14 +141,40 @@ grid-template-rows: 34% 33% 33%;
 
 }
 
+
+
+
+.response
+{
+
+ h3 {
+
+    font-size:2vw;
+
+
+ }
+
+
+ p
+ {
+
+    font-size:2vw;
+
+ }
+
+}
+
+
 @media(max-width: 720px) {
   .grid {
     /* re-define your grid for mobile and tablet */
   }
-}
+
 
 .tr_bt
 {
  margin-top:2vh;
  width:10vw;
 }
+
+
