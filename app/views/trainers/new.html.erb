@@ -9,8 +9,9 @@
    <div class="enter_category"><%= f.collection_select(:expertise_id, Expertise.all, :id, :name ) %>
    </div>
    <p>enter address</p>
-   <%= f.input :address %>
-   <%= f.input :photo %>
+   <%= f.input :address,:label => false %>
+   <p>upload a photo</p>
+   <%= f.input :photo,:label => false %>
    <%= f.input :photo_cache, as: :hidden %>
    <%= f.button :submit, class: "btn btn-primary tr_bt"%>        <% end %>
  </div>
