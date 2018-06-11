@@ -3,6 +3,7 @@
 
 
 
+
   <div class="input_form">
     <%= simple_form_for [@trainer, @booking] do |f| %>
     <div><%= f.input :time_of_booking,:label => "book a date", as: :date %></div>
@@ -12,22 +13,13 @@
     <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
   </div>
+  </div>
 
-    <div class="input">
-    <%= simple_form_for [@trainer, @booking] do |f| %>
-    <%= f.input :time_of_booking,:label => "book a date", as: :date %>
-    <%= f.input :time_of_booking,:label => "book a time", as: :time %>
-    <p>enter number of hours needed</p>
-    <%= f.number_field :hours%>
-    <%= f.button :submit, class: "btn btn-primary book" %>
-    <% end %>
-    </div>
+  <div class="between">
+  </div>
 
 
-
-
-
-<div class="row" id="icons_row">
+<div class="row" id="tra_icons">
   <center>
     <div class="col-xs-4 col-lg-2 icon">
       <%= image_tag "new1.svg", height: 35 %>
@@ -52,17 +44,6 @@
   </center>
 </div>
 
-
-
-
-
-
-
-
-
-
-</center>
-</div>
 
 
 

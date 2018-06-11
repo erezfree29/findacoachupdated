@@ -16,9 +16,6 @@
 
 }
 
-
-
-
 #booking_banner
 {
 
@@ -31,9 +28,6 @@
 
 }
 
-
-
-
 .push_up
 {
   margin-bottom:0px;
@@ -41,50 +35,22 @@
 
 }
 
-.booking_footer
+
+#tra_icons
 {
 
-  -webkit-animation: bgcolor 20s infinite;
-    animation: bgcolor 10s infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
-    margin-top:70px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:green;
-    height:10vh;
-    font-size:20px;
-    text-decoration:bold;
-    text-decoration:underline;
+margin-top:2vh;
+height:13vh;
+background-color:#103148;
 
 }
-
-
-#icons_row
-{
-
-  margin-top:30px;
-  padding-bottom:5px;
-  height:10vh;
-  margin-top:10vh;
-  background-color:rgb(179, 179, 255);
-  padding-top:3vh;
-  padding-bottom:2vh;
-  background-color:rgb(179, 179, 255);
-  padding-top:3vh;
-  padding-bottom:2vh;
-  height: 10vh;
-  margin-top:17vh;
-
-
 .input_form
 {
  padding-left:10vw;
  width:35vw;
  padding-top:5vh;
 
-
+}
 
 #trainer_expertise_id
 
@@ -110,15 +76,15 @@
 .num_hour
 {
 
-  width:3vw;
-}
+   width:3vw;
+ }
 .book
 
 {
 
 
   height:3.8vh;
-}
+ }
 
 .input
 
@@ -126,15 +92,22 @@
   margin-top:5vh;
   padding-left:13vw;
   color:black;
-}
+ }
 
-<<<<<<< HEAD
+
 .newtrainer_banner
 
 {
 
-  margin-top:5vh;
-}
-=======
+   margin-top:5vh;
+ }
 
->>>>>>> 07ed3b396ad5029e42aa2e62618662f8ed93e7b7
+ .between
+ {
+
+  height:2vh;
+  background-color:#445d66;
+  margin-bottom:0vh;
+
+ }
+
