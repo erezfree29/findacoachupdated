@@ -63,37 +63,78 @@
 
 #icons_row
 {
+
   margin-top:30px;
   padding-bottom:5px;
-  height:1vh;
+  height:10vh;
+  margin-top:10vh;
+  background-color:rgb(179, 179, 255);
+  padding-top:3vh;
+  padding-bottom:2vh;
+  background-color:rgb(179, 179, 255);
+  padding-top:3vh;
+  padding-bottom:2vh;
+  height: 10vh;
+  margin-top:17vh;
 
-}
-
-.icon
-{
-  padding-bottom:5px;
-
-
-}
 
 .input_form
 {
- width:50vh;
+ padding-left:10vw;
+ width:35vw;
+ padding-top:5vh;
 
-}
 
-.hours
+
+#trainer_expertise_id
+
 {
 
-  font-size:30px;
-  height:10vh;
-  color:green;
-  text-decoration:underline;
-
+  width:28vh;
 }
 
-.pic
+#booking_hours
+{
+  width:30vh;
+}
+
+
+.input_form
+
 {
 
-  border-radius: 50%;
+ width:13vw;
+ display:flex;
 }
+
+.num_hour
+{
+
+  width:3vw;
+}
+.book
+
+{
+
+
+  height:3.8vh;
+}
+
+.input
+
+{
+  margin-top:5vh;
+  padding-left:13vw;
+  color:black;
+}
+
+<<<<<<< HEAD
+.newtrainer_banner
+
+{
+
+  margin-top:5vh;
+}
+=======
+
+>>>>>>> 07ed3b396ad5029e42aa2e62618662f8ed93e7b7

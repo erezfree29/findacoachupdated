@@ -3,19 +3,21 @@
   text-align: center;
   height: 100vh;
   background-size: cover !important;
+  display:flex;
+
+
 
 
 }
 
 .banner-index {
-   height: vh;
+
+   height: 55vh;
+
    margin-top:99px;
    padding-top:0px;
    background-image:url('training.jpeg');
    display:flex;
-   justify-content:center;
-   align-items:center;
-
 
 
 }
@@ -48,8 +50,15 @@
 #index_banner
 
 {
+<<<<<<< HEAD
+  height:70vh;
+  width:100vw;
+  margin-top:-23vh;
+=======
   margin-top:99px;
   height:65vh;
+>>>>>>> 07ed3b396ad5029e42aa2e62618662f8ed93e7b7
+
 }
 
 #home-banner
