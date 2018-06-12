@@ -39,13 +39,9 @@
         <p><%=@trainer.user.address=%></p>
       </div>
 
-      <div class="card response photo">
-        <h3 class="properties" id="more1">Photo</h3>
-        <p><%= cl_image_path "#{@trainer.photo}" %></p>
+      <div class="card response photo" style="background-image: url(<%=@trainer.photo%>)">
+        <h3 class="properties" id="more1"></h3>
       </div>
-
-
-
 
     </div>
   </div>
