@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(version: 2018_06_11_131702) do
     t.bigint "expertise_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.string "address"
     t.index ["expertise_id"], name: "index_trainers_on_expertise_id"
     t.index ["user_id"], name: "index_trainers_on_user_id"
