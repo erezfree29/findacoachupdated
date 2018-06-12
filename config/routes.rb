@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :show]
   end
   resources :about, only: [:index]
+  resources :users
 
   # get 'expertises/index'
   # get 'expertises/show'

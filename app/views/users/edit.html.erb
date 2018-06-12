@@ -1,2 +1,21 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+
+  <div class="edit_user">
+
+   <%= simple_form_for @user do |f| %>
+
+   <p>first name</p>
+   <%= f.input :first_name,label: false %>
+
+
+
+   <p>last name</p>
+   <%= f.input :last_name,:label => false %>
+
+
+
+
+   <%= f.button :submit, class: "btn btn-primary tr_bt"%>
+   <% end %>
+ </div>
+
+
