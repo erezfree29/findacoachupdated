@@ -7,11 +7,13 @@
   </div>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row all_trainers">
    <% @trainers.each do|trainer|  %>
    <div class="col-xs-12 col-sm-4">
-    <div class="card" style="background-image: url(<%= cl_image_path "#{trainer.photo}" %>)">
-      <h2><%= link_to trainer.user.first_name, trainer_path(trainer) %></h2>
+    <div class="card">
+
+    <%=link_to image_tag(cl_image_path "#{trainer.photo}"), trainer_path(trainer) %>
+
     </div>
   </div>
    <% end %>
@@ -31,3 +33,6 @@
 
 
 
+
+
+=
