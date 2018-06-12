@@ -11,30 +11,30 @@
 
   <div class="trainer_details">
     <div class="grid">
-        <div class="card response name">
+      <div class="card response name">
         <h3 class="properties">Trainer's Name</h3>
         <p id="booking_info"><%=@trainer.user.first_name=%> <%=@trainer.user.last_name=%></p>
-        </div>
+      </div>
 
 
 
-        <div class="card response age">
+      <div class="card response age">
         <h3 class="properties">Trainer's Age and Gender</h3>
         <p><%=@trainer.user.age=%> - <%=@trainer.user.gender=%></p>
-       </div>
+      </div>
 
 
 
 
 
-        <div class="card response email">
+      <div class="card response email">
         <h3 class="properties " id="more2">Trainer's Email</h3>
         <p><%=@trainer.user.email=%></p>
       </div>
 
 
 
-        <div class="card response address">
+      <div class="card response address">
         <h3 class="properties" id="more1">Address</h3>
         <p><%=@trainer.user.address=%></p>
       </div>
@@ -59,20 +59,24 @@
 </div>
 <center><h2>Sessions's Details</h2></center>
 
-<div class="bottom bottom-index">
-  <div class="row">
-    <div class="sessions_details">
-      <div class="col-sm-12 col-lg-6">
-        Rate
-        <p><%=@trainer.hourly_rate%> ils</p>
-      </div>
-      <div class="col-sm-12 col-lg-6">
-        <div class="experise">Expertise
-        <p><%= @expertise.name %></p></div>
+<center>
+  <div class="bottom_show">
+    <div class="row bottom_row">
+      <div class="sessions_details">
+
+          <div class="col-sm-12 col-lg-6">
+            <div class="rate">
+            Rate
+            <p><%=@trainer.hourly_rate%> ils</p>
+            </div>
+          </div>
+          <div class="col-sm-12 col-lg-6">
+            <div class="experise">Expertise
+              <p><%= @expertise.name %></p></div>
+            </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
+  </center>
 
 
