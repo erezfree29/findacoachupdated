@@ -39,13 +39,11 @@ class TrainersController < ApplicationController
 
   def update
 
-
+ end
   def destroy
     @trainer = Trainer.find(paramas[:id])
     @trainer.destroy
   end
-
-
 
   private
   def trainer_params
@@ -53,6 +51,7 @@ class TrainersController < ApplicationController
     params.require(:trainer).permit(:expertise_id, :hourly_rate, :photo, :address)
 
   end
+
 end
 
 

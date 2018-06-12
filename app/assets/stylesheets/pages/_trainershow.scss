@@ -12,7 +12,9 @@ font-size: 30px;
 #linksrow
 {
 
-  height:30px;
+  height:5vh;
+
+
 }
 
 #h1_show
@@ -155,6 +157,7 @@ grid-template-rows: 34% 33% 33%;
   margin-bottom:0px;
   height:6vh;
 
+
 }
 .experise
 {
@@ -200,19 +203,37 @@ grid-template-rows: 34% 33% 33%;
 .top_row
 {
   height:1vh;
+  margin-bottom:7vh;
 }
 
 .bottom_card
 {
   text-decoration:underline;
   padding-bottom:0vh;
-  height:8vh;
+  height:18vh;
   position:fixed;
   bottom:0;
   width:100vw;
+  background-color:#184b6d;
+  font-size:2.5vh;
+
+
+
 }
 
 #show_trainer_ban
 {
   height:70vh;
 }
+
+.show_trainers
+{
+
+ margin-top:10vh;
+}
+
+.links
+{
+  margin-bottom:0vh;
+}
+
