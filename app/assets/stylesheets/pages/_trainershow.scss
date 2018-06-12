@@ -95,7 +95,7 @@ grid-template-rows: 34% 33% 33%;
 .email
 {
  grid-row: 3 / span 1;
- grid-column:1 / span 2;
+ grid-column:1 / span 1;
 
 }
 
@@ -103,6 +103,17 @@ grid-template-rows: 34% 33% 33%;
 {
  grid-row: 1 / span 1;
  grid-column:3 / span 1;
+
+}
+
+
+.photo
+
+{
+
+   grid-row: 2 / span 2;
+ grid-column:3 / span 2;
+
 
 }
 

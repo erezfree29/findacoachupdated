@@ -39,6 +39,13 @@
         <p><%=@trainer.user.address=%></p>
       </div>
 
+      <div class="card response photo">
+        <h3 class="properties" id="more1">Photo</h3>
+        <p><%= cl_image_path "#{@trainer.photo}" %></p>
+      </div>
+
+
+
 
     </div>
   </div>
@@ -59,47 +66,47 @@
 </div>
 
 
-  <div class="card bottom_card">
+<div class="card bottom_card">
 
-    <div class="bottom_show">
+  <div class="bottom_show">
 
-      <center>
-        <div class="row top_row">
+    <center>
+      <div class="row top_row">
 
-          <div class="col-sm-12">
-
-
-            Sessions's Details
+        <div class="col-sm-12">
 
 
-          </div>
+          Sessions's Details
 
 
         </div>
-      </center>
 
-
-      <div class="row bottom_row">
-        <div class="col-sm-12 col-lg-6">
-
-         <div class="rate">
-
-          Rate
-          <%=@trainer.hourly_rate%> ils
-
-        </div>
 
       </div>
+    </center>
 
+
+    <div class="row bottom_row">
       <div class="col-sm-12 col-lg-6">
-       <div class="exp">
-        Expertise
-        <%= @expertise.name %>
+
+       <div class="rate">
+
+        Rate
+        <%=@trainer.hourly_rate%> ils
+
       </div>
 
     </div>
 
+    <div class="col-sm-12 col-lg-6">
+     <div class="exp">
+      Expertise
+      <%= @expertise.name %>
+    </div>
+
   </div>
+
+</div>
 
 </div>
 </div>
