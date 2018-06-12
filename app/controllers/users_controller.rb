@@ -18,21 +18,27 @@ class UsersController < ApplicationController
   end
 
   def update
-     @user = current_user
-     @user.update(params[:user_params])
+   @user = current_user
 
+
+   if @user.update!(user_params)
+    redirect_to new_trainer_path(@user)
+  else
+    render :edit
   end
 
-  def destroy
-  end
+end
 
-   private
+def destroy
+end
 
-  def user_params
+private
 
-    params.require(:user).permit(:first_name, :last_name, :age, :gender)
+def user_params
 
-  end
+  params.require(:user).permit(:first_name, :last_name, :age, :gender)
+
+end
 
 
 

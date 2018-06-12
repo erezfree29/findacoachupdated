@@ -33,14 +33,12 @@ class TrainersController < ApplicationController
   end
 
   def edit
-    @trainer = Trainer.find(params[:id])
+
 
   end
 
   def update
-    @trainer = Trainer.find(params[:id])
-    @trainer.update(params[:trainer_params])
-  end
+
 
   def destroy
     @trainer = Trainer.find(paramas[:id])
@@ -61,13 +59,3 @@ end
 
 
 
-
-    # @hourly_rate = params[:trainer][:hourly_rate].to_i
-   # @trainer.hourly_rate = @hourly_rate
-
-
-
-
-
-    # @expertise_id = params[:trainer][:expertise_id].to_i
-    # @trainer.expertise_id = @expertise_id

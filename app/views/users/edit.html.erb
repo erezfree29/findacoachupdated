@@ -11,11 +11,17 @@
    <p>last name</p>
    <%= f.input :last_name,:label => false %>
 
+   <p>age</p>
+   <%= f.input :age,label: false, input_html: { min: 18 } %>
 
+   <p>gender</p>
+   <%= f.select :gender, [['male'],['female']] %>
 
-
-   <%= f.button :submit, class: "btn btn-primary tr_bt"%>
+   <%= f.button :submit, 'update',class: "btn btn-primary" %>
    <% end %>
  </div>
+
+
+
 
 
