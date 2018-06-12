@@ -2,7 +2,7 @@
 
 
 
-<div class="banner banner-index new_tra_ba" id="new_train_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
+<div class="banner banner-index new_tra_ba" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
 
 
 
@@ -57,26 +57,49 @@
   </div>
 </center>
 </div>
-<center><h2>Sessions's Details</h2></center>
 
-<center>
-  <div class="bottom_show">
+<div class="card bottom_card">
+<div class="bottom_show">
+
+  <center>
+  <div class="row top_row">
+
+    <div class="col-sm-12">
+
+
+          Sessions's Details
+
+
+      </div>
+      </center>
+
+  </div>
+
+
+
     <div class="row bottom_row">
-      <div class="sessions_details">
+      <div class="col-sm-12 col-lg-6">
 
-          <div class="col-sm-12 col-lg-6">
-            <div class="rate">
-            Rate
-            <p><%=@trainer.hourly_rate%> ils</p>
-            </div>
-          </div>
-          <div class="col-sm-12 col-lg-6">
-            <div class="experise">Expertise
-              <p><%= @expertise.name %></p></div>
-            </div>
+     <div class="rate">
+
+          Rate
+          <%=@trainer.hourly_rate%> ils
+
+      </div>
+
+      </div>
+
+      <div class="col-sm-12 col-lg-6">
+         <div class="exp">
+          Expertise
+          <%= @expertise.name %>
+
         </div>
       </div>
+     </div>
     </div>
-  </center>
+
+
+</div>
 
 
