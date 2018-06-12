@@ -13,7 +13,29 @@
    <p>upload a photo</p>
    <%= f.input :photo,:label => false %>
    <%= f.input :photo_cache, as: :hidden %>
-   <%= f.button :submit, class: "btn btn-primary tr_bt"%>        <% end %>
+
+   <div class="form_secondpart">
+     <p>first name</p>
+     <%= f.input :first_name,label: false %>
+
+
+
+     <p>last name</p>
+     <%= f.input :last_name,:label => false %>
+
+     <p>age</p>
+     <%= f.input :age,label: false, input_html: { min: 18 } %>
+    <div class="gender_and_button">
+      <div>
+     <p>gender</p>
+     <%= f.select :gender, [['male'],['female']] %>
+   </div>
+
+
+
+   <%= f.button :submit,'submit', class: "btn-success training_btn"%>        <% end %>
+   </div>
+   </div>
  </div>
 </div>
 <div class="row bewtween">  </div>

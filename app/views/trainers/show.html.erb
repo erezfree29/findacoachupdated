@@ -13,14 +13,14 @@
     <div class="grid">
       <div class="card response name">
         <h3 class="properties">Trainer's Name</h3>
-        <p id="booking_info"><%=@trainer.user.first_name=%> <%=@trainer.user.last_name=%></p>
+        <p id="booking_info"><%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
       </div>
 
 
 
       <div class="card response age">
         <h3 class="properties">Trainer's Age and Gender</h3>
-        <p><%=@trainer.user.age=%> - <%=@trainer.user.gender=%></p>
+        <p><%=@trainer.age=%> - <%=@trainer.gender=%></p>
       </div>
 
 
@@ -36,7 +36,7 @@
 
       <div class="card response address">
         <h3 class="properties" id="more1">Address</h3>
-        <p><%=@trainer.user.address=%></p>
+        <p><%=@trainer.address=%></p>
       </div>
 
       <div class="card response photo" style="background-image: url(<%=@trainer.photo%>)">

@@ -48,14 +48,7 @@ color:black;
   width:15vh;
 }
 
-.create_training
 
-{
-
-padding-top:10vh;
-
-
-}
 
 
 #trainer_icon_row
@@ -78,6 +71,7 @@ height:1vh;
 {
 
   position:relative;
+  display:flex;
 
 }
 
@@ -85,9 +79,24 @@ height:1vh;
 {
 
 position:absolute;
-left:5vw;
-top:1vh;
+left:-4vw;
+top:-16vh;
 padding-top:1vh;
 
 
 }
+.gender_and_button
+{
+
+  display:flex;
+}
+
+.training_btn
+{
+
+  height: 5vh;
+margin-top: 4vh;
+margin-left: 1vw;
+width: 6vw;
+}
+
