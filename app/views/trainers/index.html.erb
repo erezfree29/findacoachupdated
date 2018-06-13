@@ -6,19 +6,26 @@
     <p>Become a healthier and a stronger person</p>
   </div>
 </div>
-<div class="container">
+
+<center>
+<div class="contain">
   <div class="row all_trainers">
    <% @trainers.each do|trainer|  %>
    <div class="col-xs-12 col-sm-4">
     <div class="card">
+
+
     <div class="image_link">
      <%=link_to image_tag(cl_image_path "#{trainer.photo}"),
     trainer_path(trainer, :size => "70x80", :crop => :fill) %>
      </div>
+     <%trainer.first_name%>
+
     </div>
   </div>
    <% end %>
   </div>
+</center>
 </div>
 <div class="footer">
   <div class="footer-links">
