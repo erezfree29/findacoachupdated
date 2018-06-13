@@ -11,22 +11,24 @@
 <div class="contain">
   <div class="row all_trainers">
    <% @trainers.each do|trainer|  %>
-   <div class="col-xs-12 col-sm-4">
-    <div class="card">
+   <div class="col-xs-6 col-sm-3">
+    <div class="card1">
 
 
     <div class="image_link">
      <%=link_to image_tag(cl_image_path "#{trainer.photo}"),
     trainer_path(trainer, :size => "70x80", :crop => :fill) %>
+
      </div>
-     <%trainer.first_name%>
+
 
     </div>
   </div>
    <% end %>
   </div>
-</center>
 </div>
+</center>
+
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
