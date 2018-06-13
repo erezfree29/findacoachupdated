@@ -1,8 +1,49 @@
 <h1>Congratulations you have successfuly booked a training session</h1>
 
 
-<div class="top">
-  <h2>booking information</h2>
-<%=@trainer.first_name%>
+
+<h2>booking information</h2>
+
+
+<div class="grid">
+  <div class="card">
+  <div class="name">trainer's name
+    <%=@trainer.first_name%>  <%=@trainer.last_name%>
+  </div>
+
 </div>
+
+
+  <div class="card address">
+  booking address
+    <%=@trainer.address%>
+</div>
+
+
+  <div class="card time_of_booking">
+  booking time
+    <%=@booking.time_of_booking%>
+</div>
+
+
+   <div class="card duration">
+     duration
+    <%=@booking.hours%> hours
+</div>
+
+
+  <div class="card price">
+      price
+    <%=@booking.total_price%>
+</div>
+
+
+<div class="card expertise">
+      expertise
+    <%=@expertise.name%>
+</div>
+
+
+</div>
+
 

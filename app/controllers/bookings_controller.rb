@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
 
     @booking = Booking.find(params[:id])
     @trainer = Trainer.where(id: @booking.trainer_id).first
-
+    @expertise = Expertise.where(id: @trainer.expertise_id).first
   end
 
   def new
