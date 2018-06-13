@@ -4,7 +4,10 @@ class BookingsController < ApplicationController
   end
 
   def show
+
     @booking = Booking.find(params[:id])
+    @trainer = Trainer.where(id: @booking.trainer_id).first
+
   end
 
   def new

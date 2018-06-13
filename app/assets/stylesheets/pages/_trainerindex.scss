@@ -6,13 +6,23 @@
 .image_link
 {
 
-  width:2vw;
-  height:2vh;
+  width:100%;
+  height:100%;
+
+  a{
+    img{
+         width:100%;
+         height:100%;
+
+
+    }
+  }
 }
 
-.image_link
+.land_sign
 
 {
 
+margin-top:3vh;
 
 }

@@ -24,7 +24,8 @@ class Users::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
-def edit
+
+  def edit
 
 
 
@@ -33,13 +34,6 @@ def edit
   def update
 
   end
-
-end
-
-private
-
-
-end
 
 
 end
