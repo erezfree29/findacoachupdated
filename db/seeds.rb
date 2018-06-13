@@ -7,21 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-p "Destroying data....."
-User.destroy_all
-p 'Creating users....'
-10.times do
-  user = User.new(
-    first_name:  Faker::Name.first_name,
-    last_name:  Faker::Name.last_name,
-    age:  rand(16...80),
-    gender:    ['female', 'male'].sample,
-    email:    Faker::Internet.email,
-    password: Faker::Internet.password(8),
-    address:  Faker::Address.full_address
-    )
-  user.save!
-end
+# p "Destroying data....."
+# User.destroy_all
+# p 'Creating users....'
+# 10.times do
+#   user = User.new(
+#     first_name:  Faker::Name.first_name,
+#     last_name:  Faker::Name.last_name,
+#     age:  rand(16...80),
+#     gender:    ['female', 'male'].sample,
+#     email:    Faker::Internet.email,
+#     password: Faker::Internet.password(8),
+#     address:  Faker::Address.full_address
+#     )
+#   user.save!
+# end
 
 
 p "Destroying data....."
@@ -42,20 +42,20 @@ expertise.save!
 expertise = Expertise.new(name: "posture")
 expertise.save!
 
-p "Destroying data....."
-Trainer.destroy_all
-p 'creating training_services'
+# p "Destroying data....."
+# Trainer.destroy_all
+# p 'creating training_services'
 
-current_user_id = 0
-current_expertise_id = 0
-5.times do
-  current_user_id = current_user_id + 1
-  current_expertise_id = current_expertise_id +1
-  trainer = Trainer.new(
-    user_id:   current_user_id,
-    expertise_id:    current_expertise_id,
-    hourly_rate:   rand(100...300)
-    )
-  trainer.save!
-end
+# current_user_id = 0
+# current_expertise_id = 0
+# 5.times do
+#   current_user_id = current_user_id + 1
+#   current_expertise_id = current_expertise_id +1
+#   trainer = Trainer.new(
+#     user_id:   current_user_id,
+#     expertise_id:    current_expertise_id,
+#     hourly_rate:   rand(100...300)
+#     )
+#   trainer.save!
+# end
 
