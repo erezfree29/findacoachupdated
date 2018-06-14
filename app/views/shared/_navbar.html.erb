@@ -4,15 +4,19 @@
     <%= image_tag "weights.svg", height: 50 %>
   <% end %>
 
+
+
+
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+   <%= link_to "About us",about_index_path, class: "navbar-wagon-item navbar-wagon-link"%>
 
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "About us",about_index_path, class: "navbar-wagon-item navbar-wagon-link"%>
+
       <%= link_to "Trainer?-click here to create a training service",  new_trainer_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

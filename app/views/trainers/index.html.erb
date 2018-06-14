@@ -9,7 +9,10 @@
 
 <center>
 <div class="contain">
-       <div class="train_hard">train hard</div>
+       <div class="train_hard">
+        train hard
+         <div><%= image_tag "karate.png", height: 35 %></div>
+       </div>
   <div class="row all_trainers">
    <% @trainers.each do|trainer|  %>
    <div class="col-xs-6 col-sm-3">
@@ -27,21 +30,14 @@
   </div>
    <% end %>
   </div>
-     <div class="feel_good">feel good</div>
+     <div class="feel_good">
+      feel good
+       <div><%= image_tag "gym.png", height: 35 %></div>
+     </div>
 </div>
 </center>
 
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook-square"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-  <div class="footer-copyright">
-    all you need is <i class="fa fa-heart"></i>
-  </div>
-</div>
+
 
 
 
