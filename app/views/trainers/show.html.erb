@@ -11,15 +11,15 @@
 
   <div class="trainer_details">
     <div class="grid">
-      <div class="card response name">
+      <div class="card response name-tra">
         <h3 class="properties">Trainer's Name</h3>
         <p id="booking_info"><%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
       </div>
 
 
 
-      <div class="card2 response age">
-        <h3 class="properties">Trainer's Age and Gender</h3>
+      <div class="card2 response age-tra">
+        <h3 class="properties">Age and Gender</h3>
         <p><%=@trainer.age=%> - <%=@trainer.gender=%></p>
       </div>
 
@@ -28,13 +28,13 @@
 
 
       <div class="card2 response email1">
-        <h3 class="properties " id="more2">Trainer's Email</h3>
+        <h3 class="properties " id="more2">Email</h3>
         <p><%=@trainer.user.email=%></p>
       </div>
 
 
 
-      <div class="card2 response address">
+      <div class="card2 response address-tra">
         <h3 class="properties" id="more1">Address</h3>
         <p><%=@trainer.address=%></p>
       </div>
@@ -42,6 +42,28 @@
       <div class="card2 response photo" style="background-image: url(<%=@trainer.photo%>)">
         <h3 class="properties" id="more1"></h3>
       </div>
+
+
+      <div class="card2 response expertise1">
+        <h3 class="properties" id="more1">Session</h3>
+        <p><%=@expertise.name%></p>
+      </div>
+
+
+      <div class="card2 response rate-tra">
+        <h3 class="properties" id="more1">Rate</h3>
+        <p><%=@trainer.hourly_rate%> ils</p>
+      </div>
+
+
+
+
+
+
+
+
+
+
 
     </div>
   </div>
@@ -55,56 +77,32 @@
       <div class="btn-default"><%= link_to "book this training session",new_trainer_booking_path(@trainer)%></div>
     </div>
     <div class="col-xs-12 col-lg-4">
-      <div class="btn-default"><%= link_to "show all reviews for this session",trainer_review_path(@trainer)%></div>
+      <div class="btn-default"><%= link_to "show reviews",trainer_review_path(@trainer)%></div>
     </div>
   </div>
 </center>
 </div>
 
 
-<div class="card bottom_card">
-
-  <div class="bottom_show">
-
-    <center>
-      <div class="row top_row">
-
-        <div class="col-sm-12">
 
 
-          Sessions's Details
 
 
-        </div>
 
 
-      </div>
-    </center>
 
 
-    <div class="row bottom_row">
-      <div class="col-sm-12 col-lg-6">
 
-       <div class="rate">
 
-        Rate
-        <%=@trainer.hourly_rate%> ils
 
-      </div>
 
-    </div>
 
-    <div class="col-sm-12 col-lg-6">
-     <div class="exp">
-      Expertise
-      <%= @expertise.name %>
-    </div>
 
-  </div>
 
-</div>
 
-</div>
-</div>
+
+
+
+
 
 
