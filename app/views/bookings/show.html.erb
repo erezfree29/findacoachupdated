@@ -1,38 +1,39 @@
-<h1>Congratulations you have successfuly booked a training session</h1>
+<div class="banner banner-index new_tra_ba" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "box.jpeg"%>);">
 
-<h2>booking information</h2>
+<!-- <h1>Congratulations on making a booking</h1> -->
+
 <div class="grid">
 
   <div class="card2">
-    <div class="name">trainer's name
+    <div class="name1">trainer's name
       <%=@trainer.first_name%>  <%=@trainer.last_name%>
     </div>
   </div>
 
-  <div class="card address">
+  <div class="card3 address1">
     booking address
     <%=@trainer.address%>
   </div>
 
-  <div class="card time_of_booking">
+  <div class="card3 time_of_booking">
     booking time
     <%=@booking.time_of_booking%>
   </div>
 
-  <div class="card duration">
+  <div class="card3 duration">
    duration
    <%=@booking.hours%> hours
  </div>
 
- <div class="card price">
+ <div class="card3 price">
   price
   <%=@booking.total_price%>
 </div>
-<div class="card expertise">
-  expertise
+<div class="card3 expertise1">
+  on the agenda
   <%=@expertise.name%>
 </div>
 
 </div>
 
-
+</div>

@@ -5,19 +5,22 @@
 
 display:grid;
 grid-template-columns: 25vw 25vw 25vw 25vw;
-grid-template-rows: 25vh 25vh 25vh 25vh;
+grid-template-rows: 20vh 20vh 20vh 20vh;
+grid-template-rows: 20vh 20vh 20vh 20vh;
+margin-top: 3vh;
+margin-left: 2vw;
 
 
 }
 
-.name
+.time_of_booking
 {
  grid-row: 1 / span 2;
  grid-column:1 / span 2;
 
 }
 
-.address
+.name1
 {
   grid-row: 3 / span 2;
  grid-column:1 / span 2;
@@ -25,7 +28,7 @@ grid-template-rows: 25vh 25vh 25vh 25vh;
 }
 
 
-.time_of_booking
+.address1
 {
  grid-row: 1 / span 1;
  grid-column:3 / span 2;
@@ -47,11 +50,13 @@ grid-template-rows: 25vh 25vh 25vh 25vh;
 
 }
 
-.expertise
+.expertise1
 
 {
   grid-row: 4 / span 1;
  grid-column: 3 / span 2;
+ margin-left: -24vw;
+margin-top: -39vh;
 
 }
 
