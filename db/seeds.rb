@@ -104,7 +104,7 @@ address: "Sunny England", photo:"image/upload/v1528891161/fgw3rfz9o5shsogtfowu.j
 
 trainer8=Trainer.create(user_id: 1,expertise_id: 4, hourly_rate: 20,
 
-first_name: "Jhon", last_name: "Lennon", age: 14, gender: "female",
+first_name: "John", last_name: "Lennon", age: 14, gender: "female",
 
 address: "Sunny England", photo:"image/upload/v1528922464/usm9xvfqpr2x10o8yovw.jpg")
 
