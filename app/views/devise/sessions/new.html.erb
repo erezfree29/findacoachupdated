@@ -1,21 +1,32 @@
 
+<div class="banner banner-index new_tra_ba" id="new_train_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "workout.jpeg"%>);">
 
+
+<div class="sign_form">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<div class="sign_in">
-  <p>email</p>
-  <div class="email_input">
-    <%= f.input :email, required: false, autofocus: true,:label => false %></div>
-    <p>password</p>
-   <div class="input_pas"><%= f.input :password, required: false,:label => false %></div>
-  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+  <div class="sides"><p>email</p></div>
+
+    <%= f.input :email, required: false, autofocus: true,:label =>
+
+
+    false, :input_html => {:maxlength => 15, :size => 40} %>
+
+    <div class="sides"><p>password</p></div>
+   <div class="pas">
+   <%= f.input :password, required: false,:label =>
+   false, :input_html => {:maxlength => 15, :size => 40} %>
+   </div>
+
+  <div class="rem"><%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
+
+</div>
 </div>
 
-<div class="form-actions">
 
     <%= f.button :submit, "Log in" %>
 
-</div>
 
 <% end %>
 
