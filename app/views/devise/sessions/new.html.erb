@@ -14,13 +14,13 @@
     false, :input_html => {:maxlength => 15, :size => 40} %>
 
     <div class="sides"><p>password</p></div>
-   <div class="pas">
+
    <%= f.input :password, required: false,:label =>
    false, :input_html => {:maxlength => 15, :size => 40} %>
-   </div>
 
-  <div class="rem"><%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %></div>
 
+  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <%= render "devise/shared/links" %>
 </div>
 </div>
 
@@ -30,7 +30,6 @@
 
 <% end %>
 
-<%= render "devise/shared/links" %>
 
 
 
