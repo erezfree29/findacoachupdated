@@ -44,23 +44,16 @@
 
 
 p 'creating training_services'
+Trainer.destroy_all
+p 'creating trainers'
 
 
+trainer1 = Trainer.new(expertise_id: 3, hourly_rate: 100, first_name: "Adi", last_name: "momy", age: 21, gender: "female", address: "best place in tel aviv")
 
-  trainer1 = Trainer.new(first_name: "david")
-
-    # expertise_id: 3
-    # hourly_rate: 100
-    # first_name: "Adi"
-    # last_name: "momy"
-    # age: 21
-    # gender: "female"
-    # address: "best place in tel aviv"
+ trainer1.image = File.open("adi.jpeg")
+ trainer1.save!
 
 
-
- # trainer1.image = File.open("adi.jpeg")
- # trainer1.save!
 
 
 
