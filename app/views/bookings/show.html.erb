@@ -4,7 +4,14 @@
 
 <div class="grid">
 
-  <div class="card2">
+  <div class="card3">
+    <div class="confirmation">
+     Congratulations your booking has been confirmed
+    </div>
+  </div>
+
+
+  <div class="card3">
     <div class="name1">trainer's name
       <%=@trainer.first_name%>  <%=@trainer.last_name%>
     </div>
@@ -16,21 +23,21 @@
   </div>
 
   <div class="card3 time_of_booking">
-    booking time
+    booking time:
     <%=@booking.time_of_booking%>
   </div>
 
   <div class="card3 duration">
-   duration
+   duration:
    <%=@booking.hours%> hours
  </div>
 
  <div class="card3 price">
-  price
+  price:
   <%=@booking.total_price%>
 </div>
-<div class="card3 expertise1">
-  on the agenda
+<div class="card3 expertise2">
+  on the agenda:
   <%=@expertise.name%>
 </div>
 
