@@ -1,14 +1,30 @@
 
+<div class="banner banner-index user_bookings" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "horizon.jpeg"%>);">
+
+
 <div class="my_bookings">
   <%counter = 0%>
-  <%@userbookings.each do |booking|%>
+  <%booking_number = 1%>
+  <%flag = 0 %>
+  <%@user_bookings.each do |booking|%>
   <div class="card4">
-  <%counter += 1%>
+   <%if (flag > 0) %>
+   <%break%>
+   <%end %>
+
+  <p>booking number <%=booking_number%></p>
   <p>time of booking<p>
     <%=booking.time_of_booking%>
+   <p>trainer's name</p>
+   <%=@bookings_trainers[counter].first_name%>
+   <%=@bookings_trainers[counter].last_name%>
     <p>booking price</p>
     <%=booking.total_price%>
+    <%counter += 1%>
+    <%booking_number += 1%>
+    <%flag =flag + 1%>
+    <%= flag%>
     <%end%>
     </div>
   </div>
-
+</div>
