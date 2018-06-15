@@ -2,28 +2,30 @@
 <div class="banner banner-index user_bookings" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "horizon.jpeg"%>);">
 
 
-<div class="my_bookings">
-  <%counter = 0%>
-  <%booking_number = 1%>
-  <%flag = 0 %>
-  <%@user_bookings.each do |booking|%>
-  <div class="card4">
-   <%if (flag > 0) %>
-   <%break%>
-   <%end %>
+  <div class="row my_bookings">
+    <div class="col-xs-12 col-lg-6">
+      <%counter = 0%>
+      <%booking_number = 1%>
+      <%flag = 0 %>
+      <%@user_bookings.each do |booking|%>
+      <div class="card4">
+       <%if (flag > 10) %>
+       <%break%>
+       <%end %>
 
-  <div>booking number <%=booking_number%></div>
-  <div>time of booking <%=booking.time_of_booking%></div>
-   <div>booking address <%=@bookings_trainers[counter].address%></div>
-   <div>trainer's name <%=@bookings_trainers[counter].first_name%>
-   <%=@bookings_trainers[counter].last_name%></div>
-   <div>on the agenda <%= @trainers_expertises[counter].name %></div>
-   <div>duration <%=booking.hours%> hours</div>
-    <div>booking price <%=booking.total_price%></div>
-    <%counter += 1%>
-    <%booking_number += 1%>
-    <%flag =flag + 1%>
-    <%end%>
-    </div>
-  </div>
-</div>
+       <div>booking number <%=booking_number%></div>
+       <div>time of booking:<%=booking.time_of_booking%></div>
+       <div>booking address: <%=@bookings_trainers[counter].address%></div>
+       <div>trainer's name: <%=@bookings_trainers[counter].first_name%>
+         <%=@bookings_trainers[counter].last_name%></div>
+         <div>on the agenda:<%= @trainers_expertises[counter].name %></div>
+         <div>duration:<%=booking.hours%> hours</div>
+         <div>booking price:<%=booking.total_price%></div>
+         <%counter += 1%>
+         <%booking_number += 1%>
+         <%flag =flag + 1%>
+         <%end%>
+       </div>
+     </div>
+   </div>
+ </div>
