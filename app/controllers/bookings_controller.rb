@@ -1,13 +1,15 @@
 class BookingsController < ApplicationController
   def index
    @booking = Booking.all
-   @bookings_trainers = []
    @user_bookings = []
+   @bookings_trainers = []
+   @trainers_expertises = []
    counter = 0
    @booking.each do |booking|
     if booking.user_id == current_user.id
     @user_bookings[counter] = booking
     @bookings_trainers[counter] = Trainer.where(id: booking.trainer_id).first
+    @trainers_expertises[counter] = Expertise.where(id: @bookings_trainers[counter].expertise_id).first
     counter += 1
     end
   end

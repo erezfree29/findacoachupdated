@@ -12,18 +12,17 @@
    <%break%>
    <%end %>
 
-  <p>booking number <%=booking_number%></p>
-  <p>time of booking<p>
-    <%=booking.time_of_booking%>
-   <p>trainer's name</p>
-   <%=@bookings_trainers[counter].first_name%>
-   <%=@bookings_trainers[counter].last_name%>
-    <p>booking price</p>
-    <%=booking.total_price%>
+  <div>booking number <%=booking_number%></div>
+  <div>time of booking <%=booking.time_of_booking%></div>
+   <div>booking address <%=@bookings_trainers[counter].address%></div>
+   <div>trainer's name <%=@bookings_trainers[counter].first_name%>
+   <%=@bookings_trainers[counter].last_name%></div>
+   <div>on the agenda <%= @trainers_expertises[counter].name %></div>
+   <div>duration <%=booking.hours%> hours</div>
+    <div>booking price <%=booking.total_price%></div>
     <%counter += 1%>
     <%booking_number += 1%>
     <%flag =flag + 1%>
-    <%= flag%>
     <%end%>
     </div>
   </div>
