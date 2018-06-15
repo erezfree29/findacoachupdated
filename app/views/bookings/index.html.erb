@@ -1,2 +1,14 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+
+<div class="my_bookings">
+  <%counter = 0%>
+  <%@userbookings.each do |booking|%>
+  <div class="card4">
+  <%counter += 1%>
+  <p>time of booking<p>
+    <%=booking.time_of_booking%>
+    <p>booking price</p>
+    <%=booking.total_price%>
+    <%end%>
+    </div>
+  </div>
+

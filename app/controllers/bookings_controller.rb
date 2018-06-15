@@ -1,8 +1,17 @@
 class BookingsController < ApplicationController
   def index
    @booking = Booking.all
- end
- def show
+
+   @userbookings = []
+   counter = 0
+   @booking.each do |booking|
+    if booking.user_id == current_user.id
+    @userbookings[counter] = booking
+    counter += 1
+    end
+  end
+end
+def show
 
   @booking = Booking.find(params[:id])
   @trainer = Trainer.where(id: @booking.trainer_id).first
