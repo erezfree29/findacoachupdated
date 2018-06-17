@@ -5,58 +5,44 @@
     <center><h1 id="h1_home">Find your trainer</h1>
       <p>Become a healthier and a stronger person</p></center>
 
-      <div class="feel good">
-
-        <center><div><%= image_tag "gym.png", height: 35 %></div></center>
-      </div>
-    </div>
-
-
-
-    <div class="row all_trainers">
-     <% @trainers.each do|trainer|  %>
-     <div class="col-xs-4 col-lg-2">
-      <div class="card1">
-        <div class="image_link">
-         <%=link_to image_tag(cl_image_path "#{trainer.photo}"),
-         trainer_path(trainer) %>
-         <%=trainer.first_name%>
+      <div class="row all_trainers">
+       <% @trainers.each do|trainer|  %>
+       <div class="col-xs-6 col-lg-2">
+        <div class="card1">
+          <div class="image_link">
+           <%=link_to image_tag(cl_image_path "#{trainer.photo}"),
+           trainer_path(trainer) %>
+           <%=trainer.first_name%>
+           <div class="agenda"><%=trainer.expertise.name%></div>
+         </div>
        </div>
      </div>
+     <% end %>
    </div>
-   <% end %>
  </div>
-
-
-
- <div class="train_hard">
-
-  <center><div><%= image_tag "karate.png", height: 35 %></div></center>
-</div>
-</div>
 </div>
 
 
-<div class="row train_index_links">
+<div class="row" id="train_index_links">
  <center>
    <div class="col-xs-4 col-lg-2 icon">
-     <%= image_tag "yoga.png", height: 22 %>
-   </div>
-   <div class="col-xs-4 col-lg-2  icon">
-     <%= image_tag "exercise(1).png", height: 22  %>
-   </div>
-   <div class="col-xs-4 col-lg-2  icon">
-     <%= image_tag "gymnast-girl.png", height: 22  %>
-   </div>
-   <div class="col-xs-4 col-lg-2  icon">
      <%= image_tag "newnew1.png", height: 22 %>
    </div>
    <div class="col-xs-4 col-lg-2  icon">
      <%= image_tag "newnew2.png", height: 22  %>
    </div>
+   <div class="col-xs-4 col-lg-2  icon">
+     <%= image_tag "newnew3.png", height: 22  %>
+   </div>
+   <div class="col-xs-4 col-lg-2  icon">
+     <%= image_tag "exercise(1).png", height: 22 %>
+   </div>
+   <div class="col-xs-4 col-lg-2  icon">
+     <%= image_tag "yoga.png", height: 22  %>
+   </div>
 
    <div class="col-xs-4 col-lg-2 icon">
-     <%= image_tag "newnew3.png", height: 22  %>
+     <%= image_tag "new6.png", height: 22  %>
    </div>
  </center>
 </div>
