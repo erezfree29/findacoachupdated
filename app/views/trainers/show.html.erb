@@ -10,15 +10,17 @@
 
 
   <div class="trainer_details">
+    <div class="row">
+    <div class="col-xs-6"></div>
     <div class="grid">
-      <div class="card response name-tra">
+      <div class="card2 response name-tra width">
         <h3 class="properties">Trainer's Name</h3>
         <p id="booking_info"><%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
       </div>
 
 
 
-      <div class="card2 response age-tra">
+      <div class="card2 response age-tra width">
         <h3 class="properties">Age and Gender</h3>
         <p><%=@trainer.age=%> - <%=@trainer.gender=%></p>
       </div>
@@ -27,14 +29,14 @@
 
 
 
-      <div class="card2 response email1">
+      <div class="card2 response email1 width">
         <h3 class="properties " id="more2">Email</h3>
         <p><%=@trainer.user.email=%></p>
       </div>
 
 
 
-      <div class="card2 response address-tra">
+      <div class="card2 response address-tra width">
         <h3 class="properties" id="more1">Address</h3>
         <p><%=@trainer.address=%></p>
       </div>
@@ -44,27 +46,19 @@
       </div>
 
 
-      <div class="card2 response expertise_tra">
+      <div class="card2 response expertise_tra width">
         <h3 class="properties" id="more1">Session</h3>
         <p><%=@expertise.name%></p>
       </div>
 
 
-      <div class="card2 response rate-tra-new">
+      <div class="card2 response rate-tra-new width">
         <h3 class="properties" id="more1">Rate</h3>
         <p><%=@trainer.hourly_rate%> ils</p>
       </div>
+      </div>
 
-
-
-
-
-
-
-
-
-
-
+     </div>
     </div>
   </div>
 </div>

@@ -110,7 +110,7 @@ padding-left: 17vw;
  grid-row: 2 / span 1;
  grid-column:3 / span 2;
  margin-left:3vw;
- width: 10vw;
+ width: 20vw;
 
 }
 
@@ -145,7 +145,16 @@ width: 18vw;
 
  }
 
+ photo
+
+ {
+   width:20vw;
+   height:20vh;
+
+ }
+
 }
+
 
 .tr_bt
 {
@@ -322,7 +331,7 @@ width: 18vw;
 grid-row: 2 / span 1;
 grid-column: 3 / span 2;
 margin-left: -43vw;
-width: 12vw;
+width: 17vw;
 margin-top: -8vh;
 
 }
@@ -333,4 +342,9 @@ margin-top: -8vh;
 
   margin-left: -71vw;
   margin-top: -28vh;
+}
+
+.width{
+
+  width:35vw;
 }

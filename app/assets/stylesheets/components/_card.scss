@@ -1,11 +1,12 @@
 .card {
-  height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
   margin-top: 1.5vh;
+  width:10vw;
+
 }
 
 .card4
@@ -51,7 +52,8 @@ border-radius: 5px;
 text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 background-size: cover !important;
 color: white;
-width: 7vw;
+width: 40vw;
+padding-left:2vw;
 
 
 }
@@ -64,6 +66,7 @@ background-size: cover !important;
 color: white;
 width: 10vw;
 margin-top: 2vh;
+padding-left: 2vw;
 
 
 }
