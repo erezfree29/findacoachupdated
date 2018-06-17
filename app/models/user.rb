@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :trainers
   has_many :bookings, through: :trainers
 
+
+
 end
