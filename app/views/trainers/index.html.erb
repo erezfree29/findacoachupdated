@@ -8,12 +8,21 @@
       <div class="row all_trainers">
        <% @trainers.each do|trainer|  %>
        <div class="col-xs-6 col-lg-2">
-        <div class="card1" style="background-image:
- url(<%=cl_image_path "#{trainer.photo}"%>);">
+        <div class="card1">
           <div class="image_link">
-         
+
+
+
+           <div make_card_link><%= link_to trainer_path(trainer) do %>
+         <div class="card1" style="background-image:
+         url(<%=cl_image_path "#{trainer.photo}"%>);">
+
            <%=trainer.first_name%>
-           <div class="agenda"><%=trainer.expertise.name%></div>
+          <div class="agenda"><%=trainer.expertise.name%></div>
+          </div>
+          <%end%>
+        </div>
+
          </div>
        </div>
      </div>
@@ -49,6 +58,8 @@
    </div>
  </center>
 </div>
+
+
 
 
 
