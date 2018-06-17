@@ -41,8 +41,9 @@ def update
 
 end
 def destroy
-  @trainer = Trainer.find(paramas[:id])
+  @trainer = Trainer.find(params[:id])
   @trainer.destroy
+  redirect_to trainers_path
 end
 
 private
