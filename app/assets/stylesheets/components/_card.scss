@@ -53,10 +53,35 @@ text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 background-size: cover !important;
 color: white;
 width: 40vw;
-padding-left:2vw;
+padding-left:6vw;
+
+
+h3
+{
+
+  font-decoration:bold;
+}
+
+
 
 
 }
+
+
+
+
+
+
+.cardbook
+{
+
+text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+background-size: cover !important;
+color: white;
+  
+
+}
+
 .card1
 
 {
@@ -64,7 +89,7 @@ padding-left:2vw;
 text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 background-size: cover !important;
 color: white;
-width: 10vw;
+width: 9vw;
 height: 22vh;
 margin-top: 2vh;
 padding-left: 2vw;
@@ -127,4 +152,11 @@ height: 20vh;
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.btnheight
+{
+
+  height:4.5vh;
+  width:2vw;
 }
