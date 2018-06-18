@@ -3,28 +3,18 @@
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "weights.svg", height: 50 %>
   <% end %>
-
-
-
-
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
    <%= link_to "About us",about_index_path, class: "navbar-wagon-item navbar-wagon-link"%>
-
     <% if user_signed_in? %>
-
       <!-- Links when logged in -->
-
-
       <%= link_to "Your bookings",trainer_bookings_path(1), class: "navbar-wagon-item navbar-wagon-link" %>
-    
       <!-- Avatar with dropdown menu -->
-     <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
       <!-- Login link (when logged out) -->
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%end %>
-
+    <%end %> 
   </div>
 
   <!-- Dropdown list appearing on mobile only -->
@@ -41,7 +31,7 @@
 </div>
 
 
-<%#= link_to "show all reviews for this session",new_trainer_path%></h4>
+<%#= link_to "show all reviews for this session",new_trainer_path%>
 
 
 
