@@ -37,6 +37,7 @@ font-size: 30px;
   border:none;
   height:80vh;
   width:60vw;
+  padding-left: 3vw;
 }
 
 #t_details
@@ -74,7 +75,7 @@ font-size: 30px;
 display:grid;
 grid-template-columns: 25vw 25vw 25vw 25vw;
 grid-template-rows: 34vh 34vh 33%;
-
+width:10vw;
 
 
 }
@@ -89,7 +90,7 @@ padding-top: 32vh;
 padding-left: 18vw;
 margin-top: 9vh;
 margin-left: 55vw;
-width: 20vw;
+width: 5vw;
 }
 
 
@@ -128,9 +129,13 @@ width: 18vw;
 .response
 {
 
+width:40vh;
+padding-left:20vw;
+
+
  h3 {
 
-    font-size:2vw;
+    font-size:1.5vw;
 
 
  }
@@ -139,7 +144,7 @@ width: 18vw;
  p
  {
 
-    font-size:2vw;
+    font-size:1vw;
 
  }
 
@@ -352,20 +357,20 @@ margin-top: -8vh;
 
 {
 margin-right: 13vw;
-width: 20vw;
-margin-left: -65vw;
-margin-top: -2vw;
+width: 35vw;
+margin-left: -72vw;
+margin-top: 6vw;
 height: 5vh;
-font-size: 2.5vw;
+font-size: 2vw;
 }
 
 
 .show_rev
 {
 
-  margin-left:-61vw;
-  font-size:2.5vw;
-  margin-top:3vh;
+  margin-left: -68vw;
+font-size: 2vw;
+margin-top: 11.5vh;
 }
 
 
