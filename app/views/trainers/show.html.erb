@@ -41,13 +41,13 @@
     <div class="row">
       <div class="col-xs-3 col-md-offset-2"> 
       <div class="new_card"> 
-        <%= link_to "book now",new_trainer_booking_path(@trainer)%>
+        <%= link_to "book now",new_trainer_booking_path(@trainer,:class=>"btn-link")%>
       </div>
       </div>
       <div class="col-xs-4 col-md-offset-3">
         <div class="new_card">
 
-        <div class="show_rev"><%= link_to "show reviews",trainer_review_path(@trainer)%></div>
+        <div class="show_rev btn-link"><%= link_to "show reviews",trainer_review_path(@trainer)%></div>
           </div>
          </div>
       </div>
@@ -61,8 +61,8 @@
 <%end%>
 <%end%>
 
-  <%= link_to "Back to all trainers",
-  trainers_path%>
+  <div class="btn-link"><%= link_to "Back to all trainers",
+  trainers_path%></div>
 </div>
 
 
