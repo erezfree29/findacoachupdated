@@ -1,80 +1,28 @@
-
-.grid
-
+.head
 {
 
-display:grid;
-grid-template-columns: 25vw 25vw 25vw 25vw;
-grid-template-rows: 20vh 20vh 20vh 20vh;
-grid-template-rows: 20vh 20vh 20vh 20vh;
-margin-top: 3vh;
-margin-left: 2vw;
+  font-weight:900;
+  font-size:3.6vh;
+  padding-left:2VW;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover !important;
+  color: white;
+  text-decoration:underline;
 
-
-}
-
-.time_of_booking
-{
- grid-row: 1 / span 2;
- grid-column:1 / span 2;
-
-}
-
-.name1
-{
-      grid-row: 3 / span 2;
-    grid-column: 1 / span 2;
-    margin-top: -25vh;
-    margin-left: -75vw;
 }
 
 
 
 
-.address1
-{
- grid-row: 1 / span 1;
-grid-column: 3 / span 2;
-margin-top: 7vh;
-margin-left: -50vw;
-
-}
 
 
-.duration
-{
-grid-row: 2 / span 1;
-grid-column: 3 / span 2;
-margin-left: -50vw;
-margin-top: 10vh;
 
-}
 
-.price
-{
- grid-row: 3 / span 1;
-grid-column: 2 / span 2;
-margin-left: -25vw;
-margin-top: -4vh;
 
-}
 
-.expertise2
 
-{
-  grid-row: 4 / span 1;
-grid-column: 3 / span 2;
-margin-left: -50vw;
-margin-top: -37vh;
 
-}
-.confirmation
-{
- margin-left: 42vw;
-margin-top: -32vh;
-width: 14vw;
 
-}
 
 
 
