@@ -1,73 +1,39 @@
-
-<div id="index_tra_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
-
-  <div class="banner-content">
-    <center><h1 id="h1_home">Find your trainer</h1>
-      <p>Become a healthier and a stronger person</p></center>
-
-      <div class="row all_trainers">
-       <% @trainers.each do|trainer|  %>
-       <div class="col-xs-6 col-lg-2">
-        <div class="card1">
-          <div class="image_link">
-
-
-
-           <div make_card_link><%= link_to trainer_path(trainer) do %>
-         <div class="card1" style="background-image:
-         url(<%=cl_image_path "#{trainer.photo}"%>);">
-
-           <%=trainer.first_name%>
-          <div class="agenda"><%=trainer.expertise.name%></div>
-          </div>
-          <%end%>
-        </div>
-
+<div id="index_tra_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">  <div class="banner-content">
+   <center><h1 id="h1_home">Find your trainer</h1>
+     <p>Become a healthier and a stronger person</p></center>      <div class="row all_trainers">
+      <% @trainers.each do|trainer|  %>
+      <div class="col-xs-6 col-lg-2">
+       <div class="card1">
+         <div class="image_link">           <div make_card_link><%= link_to trainer_path(trainer) do %>
+        <div class="card1" style="background-image:
+        url(<%=cl_image_path "#{trainer.photo}"%>);">           <%=trainer.first_name%>
+         <div class="agenda"><%=trainer.expertise.name%></div>
          </div>
-       </div>
-     </div>
-     <% end %>
-   </div>
-   <div class="become_trainer"><%= link_to "Become a trainer",  new_trainer_path, class: "navbar-wagon-item navbar-wagon-link" %></div>
- </div>
-
+         <%end%>
+       </div>         </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="become_trainer"><%= link_to "Become a trainer",  new_trainer_path, class: "navbar-wagon-item navbar-wagon-link" %></div>
+</div></div><div class="row" id="train_index_links">
+<center>
+  <div class="col-xs-4 col-lg-2 icon">
+    <%= image_tag "newnew1.png", height: 22 %>
+  </div>
+  <div class="col-xs-4 col-lg-2  icon">
+    <%= image_tag "newnew2.png", height: 22  %>
+  </div>
+  <div class="col-xs-4 col-lg-2  icon">
+    <%= image_tag "newnew3.png", height: 22  %>
+  </div>
+  <div class="col-xs-4 col-lg-2  icon">
+    <%= image_tag "exercise(1).png", height: 22 %>
+  </div>
+  <div class="col-xs-4 col-lg-2  icon">
+    <%= image_tag "yoga.png", height: 22  %>
+  </div>   <div class="col-xs-4 col-lg-2 icon">
+    <%= image_tag "new6.png", height: 22  %>
+  </div>
+</center>
 </div>
-
-
-
-<div class="row" id="train_index_links">
- <center>
-   <div class="col-xs-4 col-lg-2 icon">
-     <%= image_tag "newnew1.png", height: 22 %>
-   </div>
-   <div class="col-xs-4 col-lg-2  icon">
-     <%= image_tag "newnew2.png", height: 22  %>
-   </div>
-   <div class="col-xs-4 col-lg-2  icon">
-     <%= image_tag "newnew3.png", height: 22  %>
-   </div>
-   <div class="col-xs-4 col-lg-2  icon">
-     <%= image_tag "exercise(1).png", height: 22 %>
-   </div>
-   <div class="col-xs-4 col-lg-2  icon">
-     <%= image_tag "yoga.png", height: 22  %>
-   </div>
-
-   <div class="col-xs-4 col-lg-2 icon">
-     <%= image_tag "new6.png", height: 22  %>
-   </div>
- </center>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
