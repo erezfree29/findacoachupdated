@@ -1,12 +1,16 @@
 .trainer-img {
-  height: 300px;
-  border-radius: 50%;
-  position: cover;
+  height: 250px;
+width: 250px;
+border-radius: 50%;
+position: cover;
+margin-left: -45vw;
+margin-top: 1vw;
 }
 
 .show_rev
 {
-  margin-left:7vw;
+margin-left:-31vw;
+margin-top:-75vh;
 }
 
 .trainer_details
@@ -15,13 +19,40 @@
  margin-top:10vh;
  padding-left:8vw;
  height:90vh;
- width:80vw;
+ width:100vw;
+ font-size:3vh;
  
 
 }
 .cancel_back
 {
-margin-right:5vw;
+margin-right:7.5vw;
 
 
 }
+
+h3
+{
+
+font-size:55px;
+
+
+}
+.book
+{
+ margin-left:21.5vw;
+
+}
+
+.email_gender_age
+{
+
+  padding-left:-6vw;
+}
+
+.cancel
+{
+
+
+}
+

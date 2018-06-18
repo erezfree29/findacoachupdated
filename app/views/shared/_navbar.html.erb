@@ -10,6 +10,8 @@
       <!-- Links when logged in -->
       <%= link_to "Your bookings",trainer_bookings_path(1), class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
+   
+
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
     <% else %>
       <!-- Login link (when logged out) -->
