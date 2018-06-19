@@ -1,42 +1,56 @@
 <div class="navbar-wagon booking_nav">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  
+
+  <div class="hide_it">
     <%= image_tag "weights.svg", height: 50 %>
-  <% end %>
+  </div>
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="row">
+
+  <div class="col-xs-2">
+    <% if controller_name != "trainers" %>
    <%= link_to "About us",about_index_path, class: "navbar-wagon-item navbar-wagon-link"%>
+    <% end %>
+ </div>
+
+     <div class="col-xs-2">
+    <% if controller_name == "trainers" %>
+   <%= link_to "show reviews",trainer_review_path(@trainer), class: "navbar-wagon-item navbar-wagon-link"%>
+         <% end %>
+       </div>
+
+
+
+  
     <% if user_signed_in? %>
       <!-- Links when logged in -->
+       <div class="col-xs-2">
       <%= link_to "Your bookings",trainer_bookings_path(1), class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
       <!-- Avatar with dropdown menu -->
    
-
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+       <div class="col-xs-2">
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete,class: "navbar-wagon-item navbar-wagon-link"%>
     <% else %>
+  </div>
       <!-- Login link (when logged out) -->
+      <div class="col-xs-2 col-offset-xs-2">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <%end %> 
   </div>
+</div>
+  
 
-  <!-- Dropdown list appearing on mobile only -->
-  <div class="navbar-wagon-item hidden-md hidden-lg">
-    <div class="dropdown">
-      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
-      </ul>
-    </div>
-  </div>
 </div>
 
 
-<%#= link_to "show all reviews for this session",new_trainer_path%>
 
 
 
 
 
-   
+
+
+
+
