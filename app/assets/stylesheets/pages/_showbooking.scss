@@ -16,12 +16,29 @@
 {
   font-size: 79px;
 margin-left: 22vw;
-margin-top: -18vh;
+margin-top: -52vh;
 a{
 color:white !important;
 }
 
 }
+
+@media (max-width: 767px) {                  
+.btn-link{
+      
+      margin-top: -2vh;
+      
+
+   }
+
+
+}
+
+
+
+
+
+
 
 
 

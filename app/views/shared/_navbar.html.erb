@@ -12,7 +12,13 @@
      <div class="row sign_out">
       <div class="col-xs-6 col-xs-offset-6">
       <!-- Links when logged in -->
-       <center><%= link_to "Sign out", destroy_user_session_path, method: :delete%></center>
+      
+
+
+       <div class="navbar_links">
+       <div class="your_booking"><%= link_to "Your bookings",trainer_bookings_path(1)%></div>
+       <div><%= link_to "Sign out", destroy_user_session_path, method: :delete%></div></div>
+
      </div>
     
     <% else %>

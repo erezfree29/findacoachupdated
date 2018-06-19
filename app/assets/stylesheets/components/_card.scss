@@ -68,7 +68,7 @@ h3
 p
  {
 
-    font-size:0.2vw;
+    font-size:0.3vw;
 
  }
 
@@ -105,14 +105,7 @@ p
 
 
 
-
-
 }
-
-
-
-
-
 
 
 .cardbook
@@ -139,8 +132,7 @@ height: 22vh;
 margin-top: 2vh;
 padding-left: 2vw;
 font-size: 25px;
-
-
+opacity:2;
 }
 
 .card3
@@ -156,10 +148,6 @@ margin-bottom:0.5vh;
 
 
 }
-
-
-
-
 
 
 .card-user {
@@ -208,4 +196,37 @@ margin-bottom:0.5vh;
 
   height:4.5vh;
   width:2vw;
+}
+
+
+@media (max-width: 767px) {                  
+   .card1{
+      width:50vw;
+      
+      margin-left:12vw;
+
+   }
+
+
+}
+
+
+
+#h1_home
+
+{
+  font-size:35px;
+
+}
+
+
+@media (max-width: 767px) {                  
+#index_tra_ban{
+      
+      
+      height:300vh;
+
+   }
+
+
 }

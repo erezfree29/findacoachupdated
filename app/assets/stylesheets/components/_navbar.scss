@@ -81,8 +81,22 @@
 @media (max-width: 767px) {                  
    .sign_out{
       padding-right:50vw;
+      font-size:10px;
    }
 }
+
+.navbar_links
+{
+  display:flex;
+  align-items:space-between;
+  font-size:11.5px;
+
+}
+
+.your_booking{
+  margin-right:14px;
+}
+
 
 
 
