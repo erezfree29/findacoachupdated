@@ -44,15 +44,19 @@
       </div>
       <div class="col-xs-3 col-md-offset-2"> 
       <div class="new_card">
-       <div class="book">
-        <%= link_to "book now",new_trainer_booking_path(@trainer,:class=>"btn-link")%>
+       <div class="book btn-link">
+        <%= link_to "book now",new_trainer_booking_path(@trainer,:class=>"btn-primary")%>
       </div>
     </div>
       </div>
       <div class="col-xs-4 col-md-offset-3">
         <div class="new_card">
 
-        
+
+        <div class="show_rev btn-link"><%= link_to "see reviews",trainer_review_path(@trainer)%></div>
+          </div>
+         </div>
+
 
           
 
