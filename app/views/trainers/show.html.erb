@@ -1,75 +1,96 @@
-
-
-
-
 <div class="banner banner-index new_tra_ba" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
+  <div class="container trainer_details">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-2">
+        <div class="new_card">
+        <h3 class="properties">Trainer's Name</h3>
+        <p id="booking_info"><%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
+      
+
+        <h3>Session</h3>
+        <p><%=@expertise.name%></p>
+
+        <h3>Address</h3>
+        <p><%=@trainer.address=%></p>
+      </div>
+      </div>
+      <div class="col-xs-offset-3 col-xs-3">
+        <div class="new_card">
 
 
+        <div class="email_gender_age"><h3>Email</h3>
+        <p><%=@trainer.user.email=%></p></div>
 
+        <h3>Age and Gender</h3>
+        <p><%=@trainer.age=%> - <%=@trainer.gender=%></p>
 
-
-
-  <div class="trainer_details">
-    
-
-      <div class="row">
-      <div class="grid">
-
-        <div class="card2 response name-tra width">
-          <h3 class="properties">Trainer's Name</h3>
-          <p id="booking_info"><%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
+        <h3>Rate</h3>
+        <p><%=@trainer.hourly_rate%> ils</p>
         </div>
+      </div>
 
-        <div class="card2 response age-tra width">
-          <h3 class="properties">Age and Gender</h3>
-          <p><%=@trainer.age=%> - <%=@trainer.gender=%></p>
+      <div class="col-xs-12">
+       <center>
+        <div class="new_card">
+         <div class="trainer-img" style="background-image: url(<%=@trainer.photo%>)">
         </div>
+       </div>
+     </center>
 
-        <div class="card2 response email1 width">
-          <h3 class="properties " id="more2">Email</h3>
-          <p><%=@trainer.user.email=%></p>
-        </div>
+      </div>
 
-        <div class="card2 response address-tra width">
-          <h3 class="properties" id="more1">Address</h3>
-          <p><%=@trainer.address=%></p>
-        </div>
-
-        
-        <div class="card2 response photo" style="background-image: url(<%=@trainer.photo%>)">
-          <h3 class="properties" id="more1"></h3>
-        </div>
-
-        <div class="card2 response expertise_tra width">
-          <h3 class="properties" id="more1">Session</h3>
-          <p><%=@expertise.name%></p>
-        </div>
-        <div class="card2 response rate-tra-new width">
-          <h3 class="properties" id="more1">Rate</h3>
-          <p><%=@trainer.hourly_rate%> ils</p>
-        </div>
-        <div class="cardbook session_book primary">
-          <%= link_to "book now",new_trainer_booking_path(@trainer)%>
-        </div>
-
-        <div class=" cardbook show_rev "><%= link_to "show reviews",trainer_review_path(@trainer)%></div>
+    </div>
+    <div class="row">
+      </div>
+      <div class="col-xs-3 col-md-offset-2"> 
+      <div class="new_card">
+       <div class="book">
+        <%= link_to "book now",new_trainer_booking_path(@trainer,:class=>"btn-link")%>
       </div>
     </div>
-  </div>
-  <%if current_user %>
-  <%if @trainer.user_id == current_user.id %>
-  <%= link_to "cancel this offer", trainer_path(@trainer),method: 
-  :delete%>
-  <%end%>
-  <%end%>
-  <div>
-  <%= link_to "Back to all trainers",
-  trainers_path%>
-</div>
+      </div>
+      <div class="col-xs-4 col-md-offset-3">
+        <div class="new_card">
+
+        
+
+          
+
+      </div>
+    
+
+          <div class="cancel">
+       <%if current_user%>
+       <%if @trainer.user_id == current_user.id%>
+       <%= link_to "cancel", trainer_path, method: :delete %>
+       <%end%>
+       <%end%>
+      </div>
 
 
 
-</div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
 
 
 
