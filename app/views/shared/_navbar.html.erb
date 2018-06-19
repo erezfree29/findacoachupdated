@@ -1,55 +1,31 @@
-<div class="navbar-wagon booking_nav">
+
+
+<div class="navbar-wagon">
   <!-- Logo -->
-  
-
-  <div class="hide_it">
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "weights.svg", height: 50 %>
-  </div>
+  <% end %>
+
   <!-- Right Navigation -->
-  <div class="row">
-
-  <div class="col-xs-2">
-    <% if controller_name != "trainers" %>
-   <%= link_to "About us",about_index_path, class: "navbar-wagon-item navbar-wagon-link"%>
-    <% end %>
- </div>
-
-     <div class="col-xs-2">
-
-    <%# if current_page?(controller: 'trainer', action: 'show')%> 
-   <%# link_to "show reviews",trainer_review_path(@trainer), class: "navbar-wagon-item navbar-wagon-link"%>
-         <%# end %>
-       </div>
-
-
-
   
     <% if user_signed_in? %>
+     <div class="row sign_out">
+      <div class="col-xs-6 col-xs-offset-6">
       <!-- Links when logged in -->
-       <div class="col-xs-2">
-      <%= link_to "Your bookings",trainer_bookings_path(1), class: "navbar-wagon-item navbar-wagon-link" %>
-    </div>
-      <!-- Avatar with dropdown menu -->
-   
-       <div class="col-xs-2">
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete,class: "navbar-wagon-item navbar-wagon-link"%>
+       <center><%= link_to "Sign out", destroy_user_session_path, method: :delete%></center>
+     </div>
+    
     <% else %>
+   
+      <div class="col-xs-6 col-xs-offset-6">
+      <center><%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></center>
+    <% end %>
   </div>
-      <!-- Login link (when logged out) -->
-      <div class="col-xs-2 col-offset-xs-2">
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%end %> 
-  </div>
-</div>
   
 
+ </div>
+
 </div>
-
-
-
-
-
-
 
 
 
