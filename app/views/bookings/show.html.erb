@@ -1,4 +1,4 @@
-<div class="banner show_booking_ban" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "box.jpeg"%>);">
+<div class="banner show_booking_ban" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "box.jpeg"%>); height: 90vh;">
 
 
 
@@ -6,47 +6,48 @@
 
 
 
-  <CENTER>
-    <div class="row">
-      <div class="col-xs-12 head">
+  <CENTER style='display: flex;
+align-content: center;'>
+    <div class="row" style="display: flex; flex-direction: column;justify-content: center;">
+      <div class="col-xs-6 head" style="font-size: 60px;">
         Congratulations on making a booking
       </div>
-      <div class="col-xs-12">
+      <div class="col-xs-6">
         <div class="card3">
           <h3>trainer's name:</h3> 
           <div><%=@trainer.first_name%>  <%=@trainer.last_name%></div>
         </div>
       </div>
 
-      <div class="col-xs-12">
+      <div class="col-xs-6">
         <div class="card3">
           <h3>booking address:</h3> 
           <%=@trainer.address%>
         </div>
       </div>
 
-      <div class="col-xs-12">
+      <div class="col-xs-6">
         <div class="card3">
           <h3>booking time:</h3>
           <%=@booking.time_of_booking%>
         </div>
       </div>
 
-      <div class="col-xs-12">
+      <div class="col-xs-6">
         <div class="card3">
          <h3>duration:</h3>
          <%=@booking.hours%> hours
        </div>
      </div>
 
-     <div class="col-xs-12">
+     <div class="col-xs-6">
        <div class="card3">
         <h3>price:</h3>
         <%=@booking.total_price%>
       </div>
     </div>
 
-    <div class="col-xs-12">
+    <div class="col-xs-6">
       <div class="card3">
         <h3>on the agenda:</h3>
         <%=@expertise.name%>
