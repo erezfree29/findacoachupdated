@@ -15,9 +15,10 @@
  </div>
 
      <div class="col-xs-2">
-    <% if controller_name == "trainers" %>
-   <%= link_to "show reviews",trainer_review_path(@trainer), class: "navbar-wagon-item navbar-wagon-link"%>
-         <% end %>
+
+    <%# if current_page?(controller: 'trainer', action: 'show')%> 
+   <%# link_to "show reviews",trainer_review_path(@trainer), class: "navbar-wagon-item navbar-wagon-link"%>
+         <%# end %>
        </div>
 
 
