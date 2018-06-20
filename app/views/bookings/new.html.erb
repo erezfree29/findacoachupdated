@@ -32,6 +32,7 @@
   <div class="pricecalculation" id="fullpricebox" data-actualprice="<%= @trainer.hourly_rate  %>"></div>
   </div>
 <script>
+  document.getElementById("fullpricebox").innerText =  document.getElementById("fullpricebox").dataset.actualprice + " ILS"
   document.getElementById('booking_hours')[document.getElementById('booking_hours').selectedIndex]
 
 

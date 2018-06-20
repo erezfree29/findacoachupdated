@@ -1,3 +1,142 @@
+<<<<<<< HEAD
+=======
+<style>
+ * {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+   .trainershowwrapper{
+     width: 100vw;
+     height: 90vh;
+     background-size: cover;
+     /*background-position: center;*/
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /*background-color: red;*/
+   }    .trainershowcontainer{
+     width: 80%;
+     height: 80%;
+     background-color: rgba(224,224,224,.35);
+     padding: 30px;
+     border-radius: 10px;
+     overflow: hidden;
+   }
+   .trainershowfirstrow{
+     height: 70%;
+     width: 100%;
+     /*background-color: green;*/
+     display: flex;
+   }
+   .trainershowsecondrow{
+     height: 30%;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     /*background-color: black;*/
+   }
+   .trainershowprofilebox{
+     height: 100%;
+     width: 25%;
+     /*background-color: yellow;*/
+   }
+   .trainershowinformations{
+     height: 100%;
+     width: 75%;
+     /*background-color: yellow;*/
+     padding: 35px;
+   }
+   .trainershowcircle {
+     position: relative;
+     border-radius: 50%;
+     width: 100%;
+     height: auto;
+     padding-top: 70%;
+     /*background-image: url("profile.png");*/
+     background-size: cover;
+     padding-bottom: 30%;
+     border: solid 1px white;
+     box-shadow: 3px 3px 3px 3px;
+   }
+   .trainershowinforow{
+     height: calc(100%/6);
+     border-bottom: 3px solid grey;
+     display: flex;
+     align-items: center;
+     color: white;
+     font-size:25px;
+     border-radius: 5px;
+     padding-left: 5%;
+   }
+   .trainershowinforow:hover{
+     background-color: rgba(0,0,0,.35);
+   }
+   .tsbtnbox{
+     width: 25%;
+     height: 100%;
+     /*background-color: black;*/
+     display: flex;
+     align-items: flex-end;
+   }
+   .diogobtn{
+    width: 100%;
+      a{
+      width: 100%;
+      }
+    }
+    .gifbox{
+      opacity: 0;
+      transition: opacity ease 1s;
+      transition: transform linear 4s;
+    }
+ </style>
+<!-- <div class="banner banner-index new_tra_ba" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(</%=image_path "training.jpeg"%>);"> -->
+  <!-- <div class="container trainer_details">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-1">
+        <div class="new_card">
+          <h3 class="properties">Trainer's Name</h3>
+          <p id="booking_info"></%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
+
+
+          <h3>Session</h3>
+          <p></%=@expertise.name%></p>
+
+          <h3>Address</h3>
+          <p></%=@trainer.address=%></p>
+        </div>
+      </div>
+
+
+
+      <div class="col-xs-offset-4 col-xs-3">
+        <div class="new_card">
+          <div c/lass="email_gender_age"><h3>Email</h3>
+            <p><%=@trainer.user.email=%></p></div>
+
+            <h3>Age and Gender</h3>
+            <p></%=@trainer.age=%> - </%=@trainer.gender=%></p>
+
+            <h3>Rate</h3>
+            <p></%=@trainer.hourly_rate%> ils</p>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+         <center>
+          <div class="new_card">
+           <div class="trainer-img" style="background-image: url(<%=@trainer.photo%>)">
+           </div>
+         </div>
+       </center>
+     </div>
+   </div>
+   <center></%= link_to "book now",new_trainer_booking_path(@trainer),class: "book_now btn-primary"%>
+ </div>
+</div> -->
+
+>>>>>>> 2b1b0acae71c62c6ea39725f0bafea910912cfa9
 
 
  <div class="trainershowwrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
@@ -16,15 +155,25 @@
        </div>
      </div>
      <div class="trainershowsecondrow">
+      <div class="gifbox" id="animationcarc"><%= image_tag 'trainergif2.gif'%></div>
        <div class="tsbtnbox">
-       <%= link_to "book now",new_trainer_booking_path(@trainer),class: "btn btn-primary btn-lg btn-block"%>
+       <%= link_to "book now",new_trainer_booking_path(@trainer),class: "btn btn-primary btn-lg btn-block", id: 'animatiombtn'%>
         </div>
      </div>
    </div>
  </div>
 
 
-
+<script>
+  document.getElementById("animatiombtn").addEventListener("mouseover",function(){
+    document.getElementById("animationcarc").style.opacity = 1;
+    document.getElementById("animationcarc").style.transform = 'translate(573%)';
+  });
+  document.getElementById("animatiombtn").addEventListener("mouseout",function(){
+    document.getElementById("animationcarc").style.opacity = 0;
+    document.getElementById("animationcarc").style.transform = 'translate(0%)';
+  });
+</script>
 
 
 
