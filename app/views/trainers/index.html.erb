@@ -10,7 +10,7 @@
          <div class="image_link">
           <div make_card_link>
             <%= link_to trainer_path(trainer) do %>
-            <div class="card1 caaaard" style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{trainer.photo}"%>); border: solid white 1px;     box-shadow: 5px 5px 5px;">
+            <div class="card1 caaaard" style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{trainer.photo}"%>); border: solid white 1px;box-shadow: 5px 5px 5px;background-position: center; ">
               <div class="agenda">
                <%=trainer.first_name%>
               </div>
