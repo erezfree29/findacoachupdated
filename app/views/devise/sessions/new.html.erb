@@ -1,35 +1,32 @@
 
-<div class="banner banner-index new_tra_ba" id="new_train_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_tag 'sunset.jpeg' %>);">
+<div class="banner banner-index new_tra_ba" id="new_train_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_tag 'sunset.jpeg' %>
 
+  <div class="sign_form">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-<div class="sign_form">
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <p>Email</p>
 
+      <%= f.input :email, required: false, autofocus: true,:label =>
 
-    <p>email</p>
+      false, :input_html => {:maxlength => 15, :size => 40} %>
 
-    <%= f.input :email, required: false, autofocus: true,:label =>
+      <p>Password</p>
 
+      <%= f.input :password, required: false,:label =>
+     false, :input_html => {:maxlength => 15, :size => 40} %>
 
-    false, :input_html => {:maxlength => 15, :size => 40} %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <div style="display: flex; flex-direction: column;">
+      <%= f.button :submit, "Log in", class: "btn btn-primary" %>
+      <br>
+      <%= render "devise/shared/links" %>
+      </div>
+    <% end %>
+  </div>
 
-    <p>password</p>
-
-   <%= f.input :password, required: false,:label =>
-   false, :input_html => {:maxlength => 15, :size => 40} %>
-
-
-  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  <%= f.button :submit, "Log in", class: "btn btn-primary" %>
-  <%= render "devise/shared/links" %>
 </div>
-</div>
 
 
-
-
-
-<% end %>
 
 
 
