@@ -3,8 +3,9 @@
 width: 250px;
 border-radius: 50%;
 position: cover;
-margin-left: -45vw;
-margin-top: 3vw;
+margin-left: 2vw;
+margin-bottom: 40vh;
+margin-top: -33vh;
 }
 
 .show_rev
@@ -21,7 +22,21 @@ margin-top:13vh;
  height:90vh;
  width:100vw;
  font-size:3vh;
- 
+
+ h3{
+
+    font-size:60px;
+
+ }
+
+ p{
+
+   font-size:40px;
+
+ }
+
+
+
 
 }
 .cancel_back
@@ -50,9 +65,10 @@ font-size:55px;
   padding-left:-6vw;
 }
 
-.cancel
-{
-
+.book_now{
+  font-size: 35px;
+color: white;
+padding: 23px;
+border-radius: 5px;
 
 }
-

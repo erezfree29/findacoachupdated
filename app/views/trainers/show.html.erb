@@ -1,76 +1,57 @@
 <div class="banner banner-index new_tra_ba" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
   <div class="container trainer_details">
     <div class="row">
-      <div class="col-md-3 col-md-offset-2">
+      <div class="col-md-3 col-md-offset-1">
         <div class="new_card">
-        <h3 class="properties">Trainer's Name</h3>
-        <p id="booking_info"><%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
-      
-
-        <h3>Session</h3>
-        <p><%=@expertise.name%></p>
-
-        <h3>Address</h3>
-        <p><%=@trainer.address=%></p>
-      </div>
-      </div>
-      <div class="col-xs-offset-3 col-xs-3">
-        <div class="new_card">
+          <h3 class="properties">Trainer's Name</h3>
+          <p id="booking_info"><%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
 
 
-        <div class="email_gender_age"><h3>Email</h3>
-        <p><%=@trainer.user.email=%></p></div>
+          <h3>Session</h3>
+          <p><%=@expertise.name%></p>
 
-        <h3>Age and Gender</h3>
-        <p><%=@trainer.age=%> - <%=@trainer.gender=%></p>
-
-        <h3>Rate</h3>
-        <p><%=@trainer.hourly_rate%> ils</p>
+          <h3>Address</h3>
+          <p><%=@trainer.address=%></p>
         </div>
       </div>
 
-      <div class="col-xs-12">
-       <center>
+
+
+      <div class="col-xs-offset-4 col-xs-3">
         <div class="new_card">
-         <div class="trainer-img" style="background-image: url(<%=@trainer.photo%>)">
+          <div class="email_gender_age"><h3>Email</h3>
+            <p><%=@trainer.user.email=%></p></div>
+
+            <h3>Age and Gender</h3>
+            <p><%=@trainer.age=%> - <%=@trainer.gender=%></p>
+
+            <h3>Rate</h3>
+            <p><%=@trainer.hourly_rate%> ils</p>
+          </div>
         </div>
-       </div>
-     </center>
 
-      </div>
-
-    </div>
-    <div class="row one">
-      </div>
-      <div class="col-xs-3 col-md-offset-2"> 
-      <div class="new_card">
-       <div class="book btn-link">
-        <%= link_to "book now",new_trainer_booking_path(@trainer,:class=>"btn-primary")%>
-      </div>
-    </div>
-      </div>
-      <div class="col-xs-4 col-md-offset-3">
-       
-
-          
-
-      </div>
-    
-
-          <div class="cancel">
-       <%if current_user%>
-       <%if @trainer.user_id == current_user.id%>
-       <%= link_to "cancel", trainer_path, method: :delete %>
-       <%end%>
-       <%end%>
-      </div>
+        <div class="col-xs-12">
+         <center>
+          <div class="new_card">
+           <div class="trainer-img" style="background-image: url(<%=@trainer.photo%>)">
+           </div>
+         </div>
+       </center>
+     </div>
+   </div>
+   <center><%= link_to "book now",new_trainer_booking_path(@trainer),class: "book_now btn-primary"%>
+ </div>
+</div>
 
 
 
-
-
-
-    </div>
+  <!-- <div class="cancel">
+   <%if current_user%>
+   <%if @trainer.user_id == current_user.id%>
+   <%= link_to "cancel", trainer_path, method: :delete %>
+   <%end%>
+   <%end%>
+ </div> -->
 
 
 
@@ -82,7 +63,12 @@
 
 
 
-  
+
+
+
+
+
+
 
 
 
