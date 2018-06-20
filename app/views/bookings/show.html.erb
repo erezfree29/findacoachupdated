@@ -14,14 +14,14 @@ align-content: center;'>
       </div>
       <div class="col-xs-6">
         <div class="card3">
-          <h3>trainer's name:</h3> 
+          <h3>trainer's name:</h3>
           <div><%=@trainer.first_name%>  <%=@trainer.last_name%></div>
         </div>
       </div>
 
       <div class="col-xs-6">
         <div class="card3">
-          <h3>booking address:</h3> 
+          <h3>booking address:</h3>
           <%=@trainer.address%>
         </div>
       </div>
@@ -29,7 +29,7 @@ align-content: center;'>
       <div class="col-xs-6">
         <div class="card3">
           <h3>booking time:</h3>
-          <%=@booking.time_of_booking%>
+          <%=@booking.time_of_booking.time.strftime('%c')%>
         </div>
       </div>
 
