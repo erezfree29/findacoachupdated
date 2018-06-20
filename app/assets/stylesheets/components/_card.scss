@@ -132,19 +132,31 @@ background-size: cover !important;
 color: white;
 width: 9vw;
 height: 22vh;
-margin-top: 2vh;
-padding-left: 2vw;
 font-size: 34px;
 opacity:2;
+position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:15px;
 .first{
 
-font-size:40px;
+font-size: 25px;
+
+
+ left: 1.5px;
+ top: 10px;
 
 }
 
 .agenda
 {
   font-size:30px;
+
+ left: 5px;
+ top: 120px;
+
+
 
 }
 
@@ -266,4 +278,15 @@ p
    }
 
 
+}
+
+.caaaard{
+  .agenda{
+    display:none;
+  }
+}
+.caaaard:hover{
+  .agenda{
+    display:block;
+  }
 }
