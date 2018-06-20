@@ -139,6 +139,7 @@ position: relative;
     flex-direction: column;
     justify-content: space-between;
     padding:15px;
+
 .first{
 
 font-size: 25px;
@@ -172,10 +173,14 @@ font-size: 25px;
 text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 background-size: cover !important;
 color: white;
+width: 9vw;
+height: 22vh;
+font-size: 34px;
 padding-left:2vw;
 font-size:30PX;
 width:100VW;
 margin-bottom:0.5vh;
+
 
 
 h3
@@ -197,6 +202,14 @@ p
 
 
 }
+
+
+
+
+
+
+
+
 
 
 .card-user {
@@ -290,3 +303,5 @@ p
     display:block;
   }
 }
+
+
