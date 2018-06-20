@@ -14,16 +14,17 @@
 
 <div class="banner_booking" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "horizon.jpeg"%>);">
 
+  <div style="display: flex; justify-content: center"><h1 style="border:none; color: white; font-size: 70px; margin-top:50px;">MY BOOKINGS</h1></div>
 
   <div class="row my_bookings">
-    <div class="col-xs-12 col-lg-6">
+    <div style="display: flex; justify-content:center; align-items: center; ">
       <%counter = 0%>
       <%booking_number = 1%>
       <%flag = 1 %>
       <%@user_bookings.each do |booking|%>
       <div class="card4">
        <div>booking number <%=booking_number%></div>
-       <div>time of booking: <%=booking.time_of_booking%></div>
+       <div>time of booking: <%=booking.time_of_booking.strftime('%c')%></div>
 
 
        <div>booking address: <%=@bookings_trainers[counter].address%></div>
@@ -36,6 +37,9 @@
          <!-- <div class="write_review"><\%= link_to "give a review",new_trainer_booking_review_path(@bookings_trainers[counter],booking)%></div> -->
 
          <%#end  %>
+         <hr>
+         <div>Give <%=@bookings_trainers[counter].first_name%> your Review</div>
+         <hr>
          <div class="starbox">
           <div class="star" data-star="1"><i class="fa fa-star"></i></div>
           <div class="star" data-star="2"><i class="fa fa-star"></i></div>
@@ -47,11 +51,12 @@
          <%booking_number += 1%>
          <%flag =flag + 1%>
          <%if (flag > 3) %>
-          <div class="cardpre"><%= link_to "previous bookings",about_path(1)%></div>
+         <!-- <div class="cardpre">/%= link_to "previous bookings",about_path(1)%></div> -->
          <%break%>
          <%end %>
+         </div>
          <%end%>
-       </div>
+
      </div>
    </div>
  </div>
