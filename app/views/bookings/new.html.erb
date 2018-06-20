@@ -1,4 +1,16 @@
-
+<style>
+  .pricecalculation{
+    height: 6vh;
+  font-size: 40px;
+  border: solid 1px white;
+  width: 30vh;
+  display: flex;
+  justify-content: center;
+  margin-left: 205px;
+  margin-top: 50px;
+  align-content: center;
+  }
+</style>
 <div class="banner banner-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "blackfist.jpeg"%>); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
 
 
@@ -17,8 +29,21 @@
     <%= f.button :submit,'click and get going', class: "btn btn-primary booking_btn" %>
     <% end %>
   </div>
+  <div class="pricecalculation" id="fullpricebox" data-actualprice="<%= @trainer.hourly_rate  %>"></div>
   </div>
+<script>
+  document.getElementById('booking_hours')[document.getElementById('booking_hours').selectedIndex]
 
+
+  document.getElementById('booking_hours').addEventListener("change", function(e) {update(e);});
+
+function update(e){
+ let option = document.getElementById('booking_hours')[document.getElementById('booking_hours').selectedIndex].value
+ let fullprice = document.getElementById("fullpricebox")
+  let actualprice = fullprice.dataset.actualprice
+ fullprice.innerText = parseInt(option) * parseInt(actualprice) + "  ILS"
+}
+</script>
 
 
 
