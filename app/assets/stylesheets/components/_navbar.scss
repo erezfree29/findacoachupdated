@@ -34,12 +34,27 @@
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+
+  a
+
+  {
+    font-size: 22px;
+
+  }
+
 }
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: #469ae0;
+  font-size: 22px;
+  a
+   {
+
+   font-size: 22px;
+
+
+   }
 }
 .navbar-wagon-link:hover {
   color: #da552f;
@@ -97,18 +112,61 @@
   margin-right:14px;
 }
 
-
+.raw
+{
+display:flex;
 
 .sign_out
 {
   display:flex;
+  font-size:22px;
+}
+
+}
+.erez{
+  a{
+    font-size: 22px;
+  }
+}
+.home
+
+{
+
+a
+{
+
+
+
+}
+
+
+  font-size:22px
+
+
 }
 
 
 
 
 
+.sign_out
+{
 
+  display:flex;
+  font-size:5px;
+}
+
+.my_booking
+
+{
+  font-size:22px;
+  margin-right:19px;
+
+}
+
+.fix_nav{
+display: flex;
+justify-content: flex-end;}
 
 
 
