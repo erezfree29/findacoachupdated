@@ -1,17 +1,25 @@
 .my_bookings
 {
 
+  height:40vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
 
-  margin-top:2vh;
-  padding-left:2vw;
-  height:80vh;
+.my_bookings2
+{
+  height:40vh;
+  padding-left: 24vw;
   display:flex;
   justify-content:center;
   align-items:center;
 
-  // margin: 10px auto 0 auto;
-  // display: block;
 }
+
+
+
+
 
 .user_bookings
 

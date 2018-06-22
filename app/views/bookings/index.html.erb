@@ -15,13 +15,14 @@
 <div class="banner_booking" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "horizon.jpeg"%>);">
 
   <div style="display: flex; justify-content: center"><h1 style="border:none; color: white; font-size: 70px; margin-top:50px;">My Bookings</h1></div>
-
+  <div class="container">
   <div class="row my_bookings">
     <div style="display: flex; justify-content:center; align-items: center; ">
       <%counter = 0%>
       <%booking_number = 1%>
       <%flag = 1 %>
       <%@user_bookings.each do |booking|%>
+
       <div class="card4">
        <div>booking number <%=booking_number%></div>
        <div>time of booking: <%=booking.time_of_booking.strftime('%c')%></div>
@@ -59,6 +60,55 @@
 
      </div>
    </div>
+   </div>
+   <div class="container">
+<div class="row my_bookings2">
+    <div style="display: flex; justify-content:center; align-items: center; ">
+      <%counter = 3%>
+      <%booking_number = 4%>
+      <%flag = 4 %>
+      <%@user_bookings.each do |booking|%>
+
+      <div class="card4">
+       <div>booking number <%=booking_number%></div>
+       <div>time of booking: <%=booking.time_of_booking.strftime('%c')%></div>
+
+
+       <div>booking address: <%=@bookings_trainers[counter].address%></div>
+       <div>trainer's name: <%=@bookings_trainers[counter].first_name%>
+         <%=@bookings_trainers[counter].last_name%></div>
+         <div>on the agenda: <%= @trainers_expertises[counter].name %></div>
+         <div>duration: <%=booking.hours%> hours</div>
+         <div>booking price: <%=booking.total_price%></div>
+         <%#if DateTime.now>booking.time_of_booking %>
+         <!--<div class="write_review"><\%= link_to "give a review",new_trainer_booking_review_path(@bookings_trainers[counter],booking)%></div> -->
+
+         <%#end  %>
+         <hr>
+         <div>Give <%=@bookings_trainers[counter].first_name%> your Review</div>
+         <hr>
+         <div class="starbox">
+          <div class="star" data-star="1"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="2"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="3"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="4"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="5"><i class="fa fa-star"></i></div>
+        </div>
+         <%counter += 1%>
+         <%booking_number += 1%>
+         <%flag =flag + 1%>
+         <%if (flag > 6) %>
+         <!-- <div class="cardpre">/%= link_to "previous bookings",about_path(1)%></div> -->
+         <%break%>
+         <%end %>
+         </div>
+         <%end%>
+
+     </div>
+   </div>
+  </div>
+
+
  </div>
 
 <script>

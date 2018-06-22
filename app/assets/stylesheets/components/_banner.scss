@@ -51,13 +51,13 @@
 }
 @media (max-width: 767px) {
 
-  #index_tra_ban
+  body #index_tra_ban
 
 {
   color: white;
-  height: 520vh;
+   width:100vw;
+  height: 300vh;
   background-size: cover !important;
-  width:100vw;
   display:flex;
   justify-content:center;
 
@@ -70,9 +70,9 @@
 
 {
   color: white;
-  height: 100vh;
   background-size: cover !important;
   width:100vw;
+  height:100vh;
   display:flex;
   justify-content:center;
 
