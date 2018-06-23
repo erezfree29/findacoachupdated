@@ -45,9 +45,6 @@
   width:100vw;
   margin-top:10vh;
 
-
-
-
 }
 @media (max-width: 767px) {
 
@@ -55,7 +52,6 @@
 
 {
   color: white;
-   width:100vw;
   height: 300vh;
   background-size: cover !important;
   display:flex;
@@ -66,13 +62,32 @@
 }
 
 
+@media (max-width: 1200px) {
+
+  body #index_tra_ban
+
+{
+  color: white;
+  height: 350vh;
+  background-size: cover !important;
+  display:flex;
+  justify-content:center;
+
+}
+
+}
+
+
+
+
+
+
 #index_tra_ban
 
 {
   color: white;
   background-size: cover !important;
   width:100vw;
-  height:100vh;
   display:flex;
   justify-content:center;
 
