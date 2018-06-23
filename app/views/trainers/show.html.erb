@@ -1,5 +1,34 @@
 
 <style>
+  .trainershowfirstrow{
+     height: 70%;
+     width: 100%;
+     /*background-color: green;*/
+     display: flex;
+   }
+
+ .trainershowinforow{
+     height: calc(100%/6);
+     border-bottom: 3px solid grey;
+     display: flex;
+     align-items: center;
+     color: white;
+     font-size:25px;
+     border-radius: 5px;
+     padding-left: 5%;
+   }
+   @media (max-width: 767px) {
+
+
+   body .trainershowinforow{
+    margin-top:4vh;
+    font-size:5vw;
+    margin-left:-25vw;
+
+   }
+
+
+
  * {
    -moz-box-sizing: border-box;
    -webkit-box-sizing: border-box;
@@ -22,12 +51,7 @@
      border-radius: 10px;
      overflow: hidden;
    }
-   .trainershowfirstrow{
-     height: 70%;
-     width: 100%;
-     /*background-color: green;*/
-     display: flex;
-   }
+
    .trainershowsecondrow{
      height: 30%;
      width: 100%;
@@ -38,13 +62,12 @@
    .trainershowprofilebox{
      height: 100%;
      width: 25%;
-     /*background-color: yellow;*/
+
    }
-   .trainershowinformations{
-     height: 100%;
-     width: 75%;
-     /*background-color: yellow;*/
-     padding: 35px;
+
+  .trainershowinformations{
+
+
    }
    .trainershowcircle {
      position: relative;
@@ -58,16 +81,7 @@
      border: solid 1px white;
      box-shadow: 3px 3px 3px 3px;
    }
-   .trainershowinforow{
-     height: calc(100%/6);
-     border-bottom: 3px solid grey;
-     display: flex;
-     align-items: center;
-     color: white;
-     font-size:25px;
-     border-radius: 5px;
-     padding-left: 5%;
-   }
+
    .trainershowinforow:hover{
      background-color: rgba(0,0,0,.35);
    }
@@ -90,54 +104,6 @@
       transition: transform linear 4s;
     }
  </style>
-<!-- <div class="banner banner-index new_tra_ba" id="show_trainer_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(</%=image_path "training.jpeg"%>);"> -->
-  <!-- <div class="container trainer_details">
-    <div class="row">
-      <div class="col-md-3 col-md-offset-1">
-        <div class="new_card">
-          <h3 class="properties">Trainer's Name</h3>
-          <p id="booking_info"></%=@trainer.first_name=%> <%=@trainer.last_name=%></p>
-
-
-          <h3>Session</h3>
-          <p></%=@expertise.name%></p>
-
-          <h3>Address</h3>
-          <p></%=@trainer.address=%></p>
-        </div>
-      </div>
-
-
-
-      <div class="col-xs-offset-4 col-xs-3">
-        <div class="new_card">
-          <div c/lass="email_gender_age"><h3>Email</h3>
-            <p><%=@trainer.user.email=%></p></div>
-
-            <h3>Age and Gender</h3>
-            <p></%=@trainer.age=%> - </%=@trainer.gender=%></p>
-
-            <h3>Rate</h3>
-            <p></%=@trainer.hourly_rate%> ils</p>
-          </div>
-        </div>
-
-        <div class="col-xs-12">
-         <center>
-          <div class="new_card">
-           <div class="trainer-img" style="background-image: url(<%=@trainer.photo%>)">
-           </div>
-         </div>
-       </center>
-     </div>
-   </div>
-   <center></%= link_to "book now",new_trainer_booking_path(@trainer),class: "book_now btn-primary"%>
- </div>
-</div> -->
-
-
-
-<!-- app/views/offers/show.html.erb -->
 <% content_for :meta_title, "#{@trainer.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @trainer.expertise %>
 <% content_for :meta_image, cl_image_path(@trainer.photo) %>
@@ -149,6 +115,7 @@
          <div class="trainershowcircle" style="background-image: url(<%=@trainer.photo%>)"></div>
        </div>
        <div class="trainershowinformations">
+        <div class="small">
          <div class="trainershowinforow">Name: <%=@trainer.first_name=%> <%=@trainer.last_name=%></div>
          <div class="trainershowinforow">Email: <%=@trainer.user.email=%> </div>
          <div class="trainershowinforow">Session: <%=@expertise.name%> </div>
@@ -156,6 +123,7 @@
          <div class="trainershowinforow">Gender:  <%=@trainer.gender=%> </div>
          <div class="trainershowinforow">Address: <%=@trainer.address=%></div>
          <div class="trainershowinforow">Price per hour: <%=@trainer.hourly_rate=%></div>
+       </div>
        </div>
      </div>
      <div class="trainershowsecondrow">
