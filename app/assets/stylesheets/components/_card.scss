@@ -262,25 +262,21 @@ p
 }
 
 
-
+@media (max-width: 767px) {
    .card1{
       width:50vw;
       margin-left:12vw;
-
-      width:10vw;
-
+   }
 
 
-@media (max-width: 767px) {
+}
 
+@media (min-width:767px)  {
 .card1{
-
       width:25vw;
 
 
-      width:50vw;
-      margin-left:10vw;
-
+   }
 
 
 }
@@ -292,21 +288,7 @@ p
 
    }
 
-
 }
-@media (min-width: 767px) {
-
-.card1{
-      width:30vw;
-      margin-left:10vw;
-
-   }
-
-   }
-
-
-
-
 
 #h1_home
 
@@ -317,14 +299,18 @@ p
 
 
 .caaaard{
+
   .agenda{
     display:none;
   }
 }
+
+
 .caaaard:hover{
   .agenda{
     display:block;
   }
 }
+
 
 
