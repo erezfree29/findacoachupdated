@@ -7,6 +7,43 @@
    .star{
      cursor: pointer;
    }
+
+.head
+{
+
+  font-weight:900;
+  font-size:3.6vh;
+  padding-left:2VW;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover !important;
+  color: white;
+  text-decoration:underline;
+
+}
+
+.btn-link
+
+{
+  font-size: 79px;
+margin-left: 22vw;
+margin-top: -52vh;
+a{
+color:white !important;
+}
+
+}
+
+@media (max-width: 767px) {
+.btn-link{
+
+      margin-top: -2vh;
+
+
+   }
+
+
+}
+
  </style>
 
 
@@ -63,11 +100,19 @@
 
 
 
-          <%if (flag > 6) %>
+          <%if (flag > 6) & (flag < 9) %>
           <style type="text/css">
          .banner_booking
          {
-           height:180vh;
+           height:135vh;
+         }
+         </style>
+         <%end%>
+         <%if flag > 9%>
+         <style type="text/css">
+         .banner_booking
+         {
+           height:175vh;
          }
          </style>
          <%end%>
