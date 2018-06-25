@@ -30,10 +30,10 @@
       .btn-lg
       {
           padding: 16px 205px;
-          padding-left: 50px;
-          margin-left: -260px;
-          padding-left: 24px;
+          padding-right:20px;
           margin-bottom:-20px;
+          font-size:7px;
+
       }
 
    }
@@ -60,22 +60,16 @@
     margin-top:6vh;
     font-size:15vw;
 
-
 }
 .btn-lg
       {
-          width:13vw;
-          margin-right:-20vw;
-          margin-left:6vw;
-
+          margin-left:10vw;
+          /*margin-left:6vw;*/
+        font-size:20px;
       }
 
 
 }
-
-
-
-
 
 
  * {
@@ -143,6 +137,101 @@
       transition: transform linear 4s;
     }
 
+.trainer-img {
+  height: 454px;
+width: 463px;
+border-radius: 50%;
+position: cover;
+margin-left: -3vw;
+margin-bottom: 16vh;
+margin-top: -42vh;
+background-position:center;
+}
+
+
+ * {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+   .trainershowwrapper{
+     width: 100vw;
+     height: 90vh;
+     background-size: cover;
+     /*background-position: center;*/
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /*background-color: red;*/
+   }    .trainershowcontainer{
+     width: 80%;
+     height: 80%;
+     background-color: rgba(224,224,224,.35);
+     padding: 30px;
+     border-radius: 10px;
+   }
+   .trainershowfirstrow{
+     height: 70%;
+     width: 100%;
+     /*background-color: green;*/
+     display: flex;
+   }
+   .trainershowsecondrow{
+     height: 30%;
+     width: 100%;
+     display: flex;
+     justify-content: flex-end;
+     /*background-color: black;*/
+   }
+   .trainershowprofilebox{
+     height: 100%;
+     width: 25%;
+     /*background-color: yellow;*/
+   }
+   .trainershowinformations{
+     height: 100%;
+     width: 75%;
+     /*background-color: yellow;*/
+     padding: 35px;
+   }
+   .trainershowcircle {
+     position: relative;
+     border-radius: 50%;
+     width: 100%;
+     height: auto;
+     padding-top: 70%;
+     /*background-image: url("profile.png");*/
+     background-size: cover;
+     padding-bottom: 30%;
+     border: solid 1px white;
+     box-shadow: 3px 3px 3px 3px;
+   }
+   .trainershowinforow{
+     height: calc(100%/6);
+     border-bottom: 3px solid grey;
+     display: flex;
+     align-items: center;
+     color: white;
+     font-size:25px;
+     border-radius: 5px;
+     padding-left: 5%;
+   }
+   .trainershowinforow:hover{
+     background-color: rgba(0,0,0,.35);
+   }
+   .tsbtnbox{
+     width: 25%;
+     height: 100%;
+     /*background-color: black;*/
+     display: flex;
+     align-items: flex-end;
+   }
+   .diogobtn{
+    width: 100%;
+      a{
+      width: 100%;
+      }
+    }
  </style>
 <% content_for :meta_title, "#{@trainer.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @trainer.expertise %>
