@@ -17,10 +17,10 @@
      border-radius: 5px;
      padding-left: 5%;
    }
-   @media (max-width: 767px) {
+   @media (max-width: 480px) {
 
 
-   body .trainershowinforow{
+   .trainershowinforow{
     margin-top:4vh;
     font-size:5vw;
     margin-left:-25vw;
@@ -30,13 +30,51 @@
       .btn-lg
       {
           padding: 16px 205px;
-          padding-left: 173px;
+          padding-left: 50px;
           margin-left: -260px;
           padding-left: 24px;
           margin-bottom:-20px;
       }
 
    }
+
+@media (min-width: 481px) {
+  body.trainershowinforow{
+    margin-top:6vh;
+    font-size:8vw;
+    margin-left:-90vw;
+
+}
+.btn-lg
+      {
+          width:30vw;
+          margin-left:-30vw;
+      }
+
+
+}
+
+
+@media (min-width: 1200px) {
+  body.trainershowinforow{
+    margin-top:6vh;
+    font-size:15vw;
+
+
+}
+.btn-lg
+      {
+          width:13vw;
+          margin-right:-20vw;
+          margin-left:6vw;
+
+      }
+
+
+}
+
+
+
 
 
 
@@ -76,17 +114,13 @@
 
    }
 
-  .trainershowinformations{
 
-
-   }
    .trainershowcircle {
      position: relative;
      border-radius: 50%;
      width: 100%;
      height: auto;
      padding-top: 70%;
-     /*background-image: url("profile.png");*/
      background-size: cover;
      padding-bottom: 30%;
      border: solid 1px white;
@@ -96,13 +130,7 @@
    .trainershowinforow:hover{
      background-color: rgba(0,0,0,.35);
    }
-   .tsbtnbox{
-     width: 25%;
-     height: 100%;
-     /*background-color: black;*/
-     display: flex;
-     align-items: flex-end;
-   }
+
    .diogobtn{
     width: 100%;
       a{
@@ -114,6 +142,7 @@
       transition: opacity ease 1s;
       transition: transform linear 4s;
     }
+
  </style>
 <% content_for :meta_title, "#{@trainer.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @trainer.expertise %>

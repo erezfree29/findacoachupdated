@@ -10,11 +10,46 @@
   margin-top: 50px;
   align-content: center;
   }
+
+
+
+.input_form
+{
+ padding-left:10vw;
+ width:35vw;
+ padding-top:1vh;
+ width:13vw;
+ display:flex;
+
+}
+
+
+#booking_hours
+{
+  width:30vh;
+  color:black;
+}
+
+
+.input_form
+
+{
+  padding-right:150vh;
+
+}
+
+.booking_btn
+
+{
+  margin-top:2vh;
+
+}
+
 </style>
 <div class="banner banner-index" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "blackfist.jpeg"%>); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start;">
 
 
-  <h1 style="border: none; margin-left: 205px;">book your session</h1>
+  <h1 style="border: none; margin-left: 205px;">Book Your Session</h1>
 
   <div class="input_form">
     <%= simple_form_for [@trainer, @booking] do |f| %>
