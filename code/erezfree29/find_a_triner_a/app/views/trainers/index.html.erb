@@ -1,0 +1,164 @@
+
+<div id="index_tra_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
+  <div class="banner-content">
+   <center><h1 id="h1_home">Find Your Trainer</h1>
+     <p>Become a healthier and a stronger person</p></center>
+
+     <div class="row all_trainers">
+      <% @trainers.each do|trainer|  %>
+      <div class="col-xs-12 col-lg-2" style="margin-bottom: 20px;">
+       <div class="card1">
+         <div class="image_link">
+          <div make_card_link>
+            <%= link_to trainer_path(trainer) do %>
+            <div class="card1 caaaard" style="background:linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)),url(<%=cl_image_path "#{trainer.photo}"%>); border: solid white 1px;box-shadow: 5px 5px 5px;background-position: center; ">
+              <div class="agenda">
+               <%=trainer.first_name%>
+              </div>
+              <hr>
+              <div class ="first"><div>  <%= trainer.expertise.name %> </div></div>
+
+            </div>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% end %>
+  </div>
+  <div class="become_trainer"><%= link_to "Become a trainer",  new_trainer_path, class: "become-trainer-link btn-primary" %>
+  </div>
+
+  </div>
+
+</div>
+
+<style>
+@media (max-width: 767px) {
+
+  body #index_tra_ban
+
+{
+  color: white;
+  height: 360vh;
+  background-size: cover !important;
+  display:flex;
+  justify-content:center;
+
+}
+
+}
+
+
+@media (min-width: 1200px) {
+
+  body #index_tra_ban
+
+{
+  color: white;
+  height: 100vh;
+  background-size: cover !important;
+  display:flex;
+  justify-content:center;
+
+}
+
+}
+
+.all_trainers {
+  margin-top:30px;
+  width:59.8vw;
+  padding-left:-1vw;
+  padding-bottom:2vh;
+}
+
+.image_link
+{
+
+  width:100%;
+  height:100%;
+
+  a{
+    img{
+         width:10vw;
+         height:20vh;
+
+
+    }
+  }
+}
+
+.land_sign
+
+{
+
+margin-top:3vh;
+
+}
+.contain
+{
+
+  background-color:#36475a;
+  display:flex;
+  justify-content:space-between;
+  align-items:centre;
+  align-items: center;
+  margin-bottom:-6vh;
+}
+
+.train_hard {
+    padding-left: 4vw;
+    font-size: 3vh;
+    color: white;
+    text-decoration: underline;
+    margin-top: 3vh;
+             }
+.feel_good
+
+{
+
+padding-right:9vw;
+font-size:3vh;
+color:white;
+text-decoration:underline;
+
+}
+
+.train_index_links
+
+{
+
+  height:1vh;
+
+}
+
+.inspect
+{
+
+  margin-top:20vh;
+}
+.become-trainer-link
+{
+  font-size:28px;
+  color: white;
+  padding:15px;
+  border-radius:5px;
+  margin-top:50px;
+
+
+}
+.become_trainer
+{
+  display: flex;
+  align-items:center;
+  justify-content:center;
+}
+
+</style>
+
+
+
+
+
+

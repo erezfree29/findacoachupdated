@@ -1,0 +1,27 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "layouts/index";
+@import "components/index";
+@import "pages/index";
+
+.button-1 {
+    background-color: blue;
+    color: white;
+    border: 1px solid;
+    border-color: red;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 10px;
+}
