@@ -1,3 +1,30 @@
+
+<div class="trainershowwrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
+   <div class="trainershowcontainer">
+
+    <div class="col-xs-6 head">
+        Congratulations On Making a Booking
+      </div>
+
+
+
+     <div class="trainershowfirstrow">
+       <div class="trainershowinformations">
+         <div class="trainershowinforow">Trainer's Name: <%=@trainer.first_name=%> <%=@trainer.last_name=%></div>
+         <div class="trainershowinforow">Session: <%=@expertise.name%> </div>
+         <div class="trainershowinforow">Booking address: <%=@trainer.address=%> </div>
+         <div class="trainershowinforow">Booking time: <%=@booking.time_of_booking.time.strftime('%c')=%></div>
+         <div class="trainershowinforow">Duration:  <%=@booking.hours=%> hours</div>
+         <div class="trainershowinforow">Price: <%=@booking.total_price=%></div>
+       </div>
+     </div>
+     <div class="trainershowsecondrow">
+       <div class="tsbtnbox">
+       <%= link_to "back to all trainers",new_trainer_booking_path(@trainer),class: "btn btn-primary btn-lg btn-block go_up"%>
+        </div>
+     </div>
+   </div>
+ </div>
 <style>
 .trainershowcontainer
 {
@@ -64,34 +91,6 @@
 }
 
  </style>
-
-<div class="trainershowwrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
-   <div class="trainershowcontainer">
-
-    <div class="col-xs-6 head">
-        Congratulations On Making a Booking
-      </div>
-
-
-
-     <div class="trainershowfirstrow">
-       <div class="trainershowinformations">
-         <div class="trainershowinforow">Trainer's Name: <%=@trainer.first_name=%> <%=@trainer.last_name=%></div>
-         <div class="trainershowinforow">Session: <%=@expertise.name%> </div>
-         <div class="trainershowinforow">Booking address: <%=@trainer.address=%> </div>
-         <div class="trainershowinforow">Booking time: <%=@booking.time_of_booking.time.strftime('%c')=%></div>
-         <div class="trainershowinforow">Duration:  <%=@booking.hours=%> hours</div>
-         <div class="trainershowinforow">Price: <%=@booking.total_price=%></div>
-       </div>
-     </div>
-     <div class="trainershowsecondrow">
-       <div class="tsbtnbox">
-       <%= link_to "back to all trainers",new_trainer_booking_path(@trainer),class: "btn btn-primary btn-lg btn-block go_up"%>
-        </div>
-     </div>
-   </div>
- </div>
-
 
 
 

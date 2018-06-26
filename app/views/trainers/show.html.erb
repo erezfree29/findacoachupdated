@@ -1,4 +1,48 @@
 
+
+<% content_for :meta_title, "#{@trainer.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @trainer.expertise %>
+<% content_for :meta_image, cl_image_path(@trainer.photo) %>
+
+ <div class="trainershowwrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
+   <div class="trainershowcontainer">
+     <div class="trainershowfirstrow">
+       <div class="trainershowprofilebox">
+         <div class="trainershowcircle" style="background-image: url(<%=@trainer.photo%>)"></div>
+       </div>
+       <div class="trainershowinformations">
+        <div class="small">
+         <div class="trainershowinforow">Name: <%=@trainer.first_name=%> <%=@trainer.last_name=%></div>
+         <div class="trainershowinforow">Email: <%=@trainer.user.email=%> </div>
+         <div class="trainershowinforow">Session: <%=@expertise.name%> </div>
+         <div class="trainershowinforow">Age: <%=@trainer.age=%></div>
+         <div class="trainershowinforow">Gender:  <%=@trainer.gender=%> </div>
+         <div class="trainershowinforow">Address: <%=@trainer.address=%></div>
+         <div class="trainershowinforow">Price per hour: <%=@trainer.hourly_rate=%></div>
+       </div>
+       </div>
+     </div>
+     <div class="trainershowsecondrow">
+      <div class="gifbox" id="animationcarc"><%= image_tag 'trainergif2.gif'%></div>
+       <div class="tsbtnbox">
+       <%= link_to "book now",new_trainer_booking_path(@trainer),class: "btn btn-primary btn-lg btn-block", id: 'animatiombtn'%>
+        </div>
+     </div>
+   </div>
+ </div>
+
+
+<script>
+  document.getElementById("animatiombtn").addEventListener("mouseover",function(){
+    document.getElementById("animationcarc").style.opacity = 1;
+    document.getElementById("animationcarc").style.transform = 'translate(573%)';
+  });
+  document.getElementById("animatiombtn").addEventListener("mouseout",function(){
+    document.getElementById("animationcarc").style.opacity = 0;
+    document.getElementById("animationcarc").style.transform = 'translate(0%)';
+  });
+</script>
+
 <style>
   .trainershowfirstrow{
      height: 70%;
@@ -30,10 +74,10 @@
       .btn-lg
       {
           padding: 16px 205px;
-          padding-right:20px;
+          padding-left: 50px;
+          margin-left: -260px;
+          padding-left: 24px;
           margin-bottom:-20px;
-          font-size:7px;
-
       }
 
    }
@@ -60,16 +104,22 @@
     margin-top:6vh;
     font-size:15vw;
 
+
 }
 .btn-lg
       {
-          margin-left:10vw;
-          /*margin-left:6vw;*/
-        font-size:20px;
+          width:13vw;
+          margin-right:5vw;
+          margin-left:6vw;
+
       }
 
 
 }
+
+
+
+
 
 
  * {
@@ -148,77 +198,13 @@ margin-top: -42vh;
 background-position:center;
 }
 
-
- * {
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-   .trainershowwrapper{
-     width: 100vw;
-     height: 90vh;
-     background-size: cover;
-     /*background-position: center;*/
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     /*background-color: red;*/
-   }    .trainershowcontainer{
-     width: 80%;
-     height: 80%;
-     background-color: rgba(224,224,224,.35);
-     padding: 30px;
-     border-radius: 10px;
-   }
-   .trainershowfirstrow{
-     height: 70%;
-     width: 100%;
-     /*background-color: green;*/
-     display: flex;
-   }
-   .trainershowsecondrow{
-     height: 30%;
-     width: 100%;
-     display: flex;
-     justify-content: flex-end;
-     /*background-color: black;*/
-   }
-   .trainershowprofilebox{
-     height: 100%;
-     width: 25%;
-     /*background-color: yellow;*/
-   }
    .trainershowinformations{
      height: 100%;
      width: 75%;
      /*background-color: yellow;*/
      padding: 35px;
    }
-   .trainershowcircle {
-     position: relative;
-     border-radius: 50%;
-     width: 100%;
-     height: auto;
-     padding-top: 70%;
-     /*background-image: url("profile.png");*/
-     background-size: cover;
-     padding-bottom: 30%;
-     border: solid 1px white;
-     box-shadow: 3px 3px 3px 3px;
-   }
-   .trainershowinforow{
-     height: calc(100%/6);
-     border-bottom: 3px solid grey;
-     display: flex;
-     align-items: center;
-     color: white;
-     font-size:25px;
-     border-radius: 5px;
-     padding-left: 5%;
-   }
-   .trainershowinforow:hover{
-     background-color: rgba(0,0,0,.35);
-   }
+
    .tsbtnbox{
      width: 25%;
      height: 100%;
@@ -226,56 +212,8 @@ background-position:center;
      display: flex;
      align-items: flex-end;
    }
-   .diogobtn{
-    width: 100%;
-      a{
-      width: 100%;
-      }
-    }
+
  </style>
-<% content_for :meta_title, "#{@trainer.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @trainer.expertise %>
-<% content_for :meta_image, cl_image_path(@trainer.photo) %>
-
- <div class="trainershowwrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
-   <div class="trainershowcontainer">
-     <div class="trainershowfirstrow">
-       <div class="trainershowprofilebox">
-         <div class="trainershowcircle" style="background-image: url(<%=@trainer.photo%>)"></div>
-       </div>
-       <div class="trainershowinformations">
-        <div class="small">
-         <div class="trainershowinforow">Name: <%=@trainer.first_name=%> <%=@trainer.last_name=%></div>
-         <div class="trainershowinforow">Email: <%=@trainer.user.email=%> </div>
-         <div class="trainershowinforow">Session: <%=@expertise.name%> </div>
-         <div class="trainershowinforow">Age: <%=@trainer.age=%></div>
-         <div class="trainershowinforow">Gender:  <%=@trainer.gender=%> </div>
-         <div class="trainershowinforow">Address: <%=@trainer.address=%></div>
-         <div class="trainershowinforow">Price per hour: <%=@trainer.hourly_rate=%></div>
-       </div>
-       </div>
-     </div>
-     <div class="trainershowsecondrow">
-      <div class="gifbox" id="animationcarc"><%= image_tag 'trainergif2.gif'%></div>
-       <div class="tsbtnbox">
-       <%= link_to "book now",new_trainer_booking_path(@trainer),class: "btn btn-primary btn-lg btn-block", id: 'animatiombtn'%>
-        </div>
-     </div>
-   </div>
- </div>
-
-
-<script>
-  document.getElementById("animatiombtn").addEventListener("mouseover",function(){
-    document.getElementById("animationcarc").style.opacity = 1;
-    document.getElementById("animationcarc").style.transform = 'translate(573%)';
-  });
-  document.getElementById("animatiombtn").addEventListener("mouseout",function(){
-    document.getElementById("animationcarc").style.opacity = 0;
-    document.getElementById("animationcarc").style.transform = 'translate(0%)';
-  });
-</script>
-
 
 
 
