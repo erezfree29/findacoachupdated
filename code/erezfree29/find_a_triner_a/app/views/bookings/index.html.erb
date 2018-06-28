@@ -1,0 +1,195 @@
+
+<div class="banner_booking" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path "horizon.jpeg"%>);">
+
+  <div style="display: flex; justify-content: center"><h1 style="border:none; color: white; font-size: 70px; margin-top:50px;">My Bookings</h1></div>
+  <div class="container">
+  <div class="row my_bookings">
+    <div style="display: flex; justify-content:center; align-items: center; ">
+      <%counter = 0%>
+      <%booking_number = 1%>
+      <%flag = 0 %>
+      <%@user_bookings.each do |booking|%>
+         <%if (flag % 3) == 0%>
+         <%if flag != 0   %>
+         </div>
+         </div>
+         </div>
+         <div class="container">
+         <div class="row my_bookings">
+         <div style="display: flex; justify-content:center; align-items: center; ">
+         <%end%>
+         <%end%>
+      <div class="card4">
+       <div>booking number <%=booking_number%></div>
+       <div>time of booking: <%=booking.time_of_booking.strftime('%c')%></div>
+
+
+       <div>booking address: <%=@bookings_trainers[counter].address%></div>
+       <div>trainer's name: <%=@bookings_trainers[counter].first_name%>
+         <%=@bookings_trainers[counter].last_name%></div>
+         <div>on the agenda: <%= @trainers_expertises[counter].name %></div>
+         <div>duration: <%=booking.hours%> hours</div>
+         <div>booking price: <%=booking.total_price%></div>
+         <%#if DateTime.now>booking.time_of_booking %>
+         <!--<div class="write_review"><\%= link_to "give a review",new_trainer_booking_review_path(@bookings_trainers[counter],booking)%></div> -->
+
+         <%#end  %>
+         <hr>
+         <div>Give <%=@bookings_trainers[counter].first_name%> your Review</div>
+         <hr>
+         <div class="starbox">
+          <div class="star" data-star="1"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="2"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="3"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="4"><i class="fa fa-star"></i></div>
+          <div class="star" data-star="5"><i class="fa fa-star"></i></div>
+        </div>
+         <%counter += 1%>
+         <%booking_number += 1%>
+         <%flag = flag + 1%>
+
+
+
+          <%if (flag > 6) & (flag < 9) %>
+          <style type="text/css">
+         .banner_booking
+         {
+           height:135vh;
+         }
+         </style>
+         <%end%>
+         <%if flag > 9%>
+         <style type="text/css">
+         .banner_booking
+         {
+           height:175vh;
+         }
+         </style>
+         <%end%>
+
+
+         <%if (flag > 11) %>
+         <%break%>
+         <%end %>
+         </div>
+         <%end%>
+
+     </div>
+   </div>
+   </div>
+ </div>
+
+<script>
+ document.querySelectorAll('.starbox').forEach(function(starbox){
+   Array.from(starbox.children).forEach(function(star){
+     star.addEventListener('click', function(){
+       if(star.dataset.star == "1"){
+         Array.from(star.parentNode.children).forEach(function(starrr){
+           starrr.style.color = "black"
+         })
+         star.style.color = "#ffd530";
+       }
+       else if(star.dataset.star == "2"){
+          Array.from(star.parentNode.children).forEach(function(starrr){
+           starrr.style.color = "black"
+         })
+          star.style.color = "#ffd530";
+          star.parentNode.children[0].style.color = "#ffd530";
+       }
+       else if(star.dataset.star == "3"){
+          Array.from(star.parentNode.children).forEach(function(starrr){
+           starrr.style.color = "black"
+         })
+          star.style.color = "#ffd530";
+          star.parentNode.children[0].style.color = "#ffd530";
+          star.parentNode.children[1].style.color = "#ffd530";
+       }
+       else if(star.dataset.star == "4"){
+          Array.from(star.parentNode.children).forEach(function(starrr){
+           starrr.style.color = "black"
+         })
+          star.style.color = "#ffd530";
+          star.parentNode.children[0].style.color = "#ffd530";
+          star.parentNode.children[1].style.color = "#ffd530";
+          star.parentNode.children[2].style.color = "#ffd530";
+       }
+       else if(star.dataset.star == "5"){
+          Array.from(star.parentNode.children).forEach(function(starrr){
+           starrr.style.color = "black"
+         })
+          star.style.color = "#ffd530";
+          star.parentNode.children[0].style.color = "#ffd530";
+          star.parentNode.children[1].style.color = "#ffd530";
+          star.parentNode.children[2].style.color = "#ffd530";
+          star.parentNode.children[3].style.color = "#ffd530";
+       }
+     });
+   });
+
+ });
+</script>
+<style>
+   .starbox{
+     width: 15vw;
+     display: flex;
+   }
+
+   .star{
+     cursor: pointer;
+   }
+
+.head
+{
+
+  font-weight:900;
+  font-size:3.6vh;
+  padding-left:2VW;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover !important;
+  color: white;
+  text-decoration:underline;
+
+}
+
+.btn-link
+
+{
+  font-size: 79px;
+margin-left: 22vw;
+margin-top: -52vh;
+a{
+color:white !important;
+}
+
+}
+
+@media (max-width: 767px) {
+.btn-link{
+
+      margin-top: -2vh;
+
+
+   }
+
+
+}
+
+ </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
