@@ -1,0 +1,3 @@
+entrypoint: y
+env: flex
+runtime: ruby
