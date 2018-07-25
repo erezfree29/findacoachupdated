@@ -23,10 +23,6 @@ User.destroy_all
 #p 'Creating users....'
 10.times do
   user = User.new(
-    first_name:  Faker::Name.first_name,
-    last_name:  Faker::Name.last_name,
-    age:  rand(16...80),
-    gender:    ['female', 'male'].sample,
     email:    Faker::Internet.email,
     password: Faker::Internet.password(8),
     address:  Faker::Address.full_address

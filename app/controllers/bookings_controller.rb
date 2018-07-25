@@ -54,7 +54,7 @@ end
 private
 def booking_params
 
-  params.require(:booking).permit(:hours,:time_of_booking)
+  params.require(:booking).permit(:hours,:date,:time)
 
 end
 

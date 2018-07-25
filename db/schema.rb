@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_12_215706) do
+ActiveRecord::Schema.define(version: 2018_07_25_222437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,8 @@ ActiveRecord::Schema.define(version: 2018_06_12_215706) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "time_of_booking"
+    t.date "date"
+    t.time "time"
     t.index ["trainer_id"], name: "index_bookings_on_trainer_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -71,10 +72,6 @@ ActiveRecord::Schema.define(version: 2018_06_12_215706) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "age"
-    t.string "gender"
     t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
