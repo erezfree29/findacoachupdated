@@ -24,6 +24,7 @@ end
 def new
   @trainer = Trainer.find(params[:trainer_id])
   @booking = Booking.new
+
 end
 
 def create
@@ -32,11 +33,35 @@ def create
   @booking = Booking.new(booking_params)
 
   @booking.total_price = params[:booking][:hours].to_i * @trainer.hourly_rate
-  @booking.user_id = @user.id
-  @booking.trainer_id = @trainer.id
+   @booking.user_id = @user.id
+   @booking.trainer_id = @trainer.id
+   flag = 0
+
+Booking.all.each do |booking|
+
+if (booking.trainer_id == @booking.trainer_id) && (booking.date == @booking.date)
+
+pre_booking_beg = booking.time.hour * 60 + booking.time.min
+pre_booking_end = pre_booking_beg + booking.hours * 60
+cur_booking_beg = @booking.time.hour * 60 + @booking.time.min
+cur_booking_end = cur_booking_beg + @booking.hours * 60
+
+# current booking can not be between previous booking begining and end
+#    #current booking can not end between previous booking begining and end
+
+if (cur_booking_beg >= pre_booking_beg && cur_booking_beg <= pre_booking_end) || (cur_booking_end >= pre_booking_beg && cur_booking_end <= pre_booking_end)
+
+ @booking.user_id =nil
+  flash.now[:alert] = 'sorry the coach is not avilable on that time pleae try again'
+
+end
+
+end
+
+end
 
   if @booking.save
-    redirect_to trainer_booking_path(@trainer, @booking)
+   redirect_to trainer_booking_path(@trainer, @booking)
   else
     render :new
   end
@@ -62,3 +87,33 @@ end
 end
 
 
+
+
+
+
+
+
+
+
+# Booking.all.each do |booking|
+
+#   if (booking.trainer_id == @booking.trainer_id) && (booking.date == @booking.date)
+
+#    pre_booking_beg = booking.time.hour * 60 + booking.time.min
+#    pre_booking_end = pre_booking_beg + booking.hours * 60
+#    cur_booking_beg = @booking.time.hour * 60 + @booking.time.min
+#    cur_booking_end = cur_booking_beg + @booking.hours * 60
+
+#    #current booking can not be between previous booking begining and end
+#    #current booking can not end between previous booking begining and end
+
+#    if (cur_booking_beg >= pre_booking_beg && cur_booking_beg <= pre_booking_end) || (cur_booking_end >= pre_booking_beg && cur_booking_end <= pre_booking_end)
+
+
+#    flash.now[:alert] = 20
+
+#   end
+
+#   end
+
+#   end
