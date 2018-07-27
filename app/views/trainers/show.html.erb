@@ -1,13 +1,23 @@
 
 
+
 <% content_for :meta_title, "#{@trainer.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @trainer.expertise %>
-
 
  <div class="trainershowwrapper" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%=image_path "training.jpeg"%>);">
    <div class="trainershowcontainer">
      <div class="trainershowfirstrow">
        <div class="trainershowprofilebox">
+        <div class="destroy">
+
+<%if user_signed_in?%>
+  <%if @trainer.user_id == current_user.id%>
+        <%= link_to "Delete this service", trainer_path(@trainer),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+   <%end%>
+   <%end%>
+    </div>
          <div class="trainershowcircle" style="background-image: url(<%=@trainer.photo%>)"></div>
        </div>
        <div class="trainershowinformations">
@@ -30,8 +40,6 @@
      </div>
    </div>
  </div>
-
-
 <script>
   document.getElementById("animatiombtn").addEventListener("mouseover",function(){
     document.getElementById("animationcarc").style.opacity = 1;
@@ -118,7 +126,11 @@
 }
 
 
+.destroy
+{
 
+  font-size:20px;
+}
 
 
 

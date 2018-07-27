@@ -40,10 +40,15 @@ end
 def update
 
 end
+
 def destroy
+
   @trainer = Trainer.find(params[:id])
   @trainer.destroy
   redirect_to trainers_path
+
+
+
 end
 
 private
@@ -52,6 +57,5 @@ def trainer_params
   params.require(:trainer).permit(:expertise_id, :hourly_rate, :photo, :address, :first_name,
     :last_name, :age, :gender)
 
-end
-
+ end
 end
