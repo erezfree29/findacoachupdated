@@ -1,5 +1,4 @@
 class TrainersController < ApplicationController
-  skip_before_action :authenticate_user!
 
   def index
     @trainers = Trainer.all
@@ -44,11 +43,12 @@ end
 def destroy
 
   @trainer = Trainer.find(params[:id])
-  @trainer.destroy
-  redirect_to trainers_path
-
-
-
+  if (user_signed_in?)
+  if @trainer.user_id == current_user.id
+   @trainer.destroy
+   redirect_to trainers_path
+  end
+ end
 end
 
 private
@@ -59,3 +59,6 @@ def trainer_params
 
  end
 end
+
+
+
