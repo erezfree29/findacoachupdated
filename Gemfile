@@ -24,6 +24,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
+gem "google-cloud-storage", "~> 1.8", require: false
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
