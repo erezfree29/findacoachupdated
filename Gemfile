@@ -15,6 +15,7 @@ gem 'carrierwave', '~> 1.2'
 gem "aws-sdk-s3", require: false
 gem "pundit"
 gem "geocoder"
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
@@ -22,7 +23,7 @@ gem 'font-awesome-sass', '~> 5.0.9'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'webpacker'
+gem 'webpacker', '>= 4.x'
 gem 'faker'
 gem "google-cloud-storage", "~> 1.8", require: false
 

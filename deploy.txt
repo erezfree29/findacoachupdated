@@ -1,0 +1,188 @@
+Counting objects: 4, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 31.71 KiB | 1.76 MiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> ActiveStorage Preview app detected
+remote: -----> Installing binary dependencies for ActiveStorage Preview
+remote:        Downloading packages..
+remote:        Installing packages...
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-2.4.4
+remote: -----> Installing dependencies using bundler 1.15.2
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.16.3). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+remote:        Fetching gem metadata from https://rubygems.org/........
+remote:        Fetching version metadata from https://rubygems.org/..
+remote:        Fetching dependency metadata from https://rubygems.org/.
+remote:        Using rake 12.3.1
+remote:        Using concurrent-ruby 1.0.5
+remote:        Using minitest 5.11.3
+remote:        Using thread_safe 0.3.6
+remote:        Using builder 3.2.3
+remote:        Using erubi 1.7.1
+remote:        Using mini_portile2 2.3.0
+remote:        Using crass 1.0.4
+remote:        Using rack 2.0.5
+remote:        Using nio4r 2.3.1
+remote:        Using websocket-extensions 0.1.3
+remote:        Using mini_mime 1.0.0
+remote:        Using arel 9.0.0
+remote:        Using mimemagic 0.3.2
+remote:        Using public_suffix 3.0.2
+remote:        Using execjs 2.7.0
+remote:        Using aws-eventstream 1.0.1
+remote:        Using aws-partitions 1.96.0
+remote:        Using aws-sigv4 1.0.3
+remote:        Using jmespath 1.4.0
+remote:        Using aws_cf_signer 0.1.3
+remote:        Using bcrypt 3.1.12
+remote:        Using msgpack 1.2.4
+remote:        Using rb-fsevent 0.10.3
+remote:        Using ffi 1.9.25
+remote:        Using bundler 1.15.2
+remote:        Using mime-types-data 3.2016.0521
+remote:        Using unf_ext 0.0.7.5
+remote:        Using netrc 0.11.0
+remote:        Using declarative 0.0.10
+remote:        Using declarative-option 0.1.0
+remote:        Using orm_adapter 0.5.0
+remote:        Using method_source 0.9.0
+remote:        Using thor 0.20.0
+remote:        Using digest-crc 0.4.1
+remote:        Using multipart-post 2.0.0
+remote:        Using geocoder 1.4.9
+remote:        Using jwt 2.1.0
+remote:        Using little-plugger 1.1.4
+remote:        Using multi_json 1.13.1
+remote:        Using memoist 0.16.0
+remote:        Using os 0.9.6
+remote:        Using httpclient 2.8.3
+remote:        Using uber 0.1.0
+remote:        Using retriable 3.1.2
+remote:        Using pg 0.21.0
+remote:        Using puma 3.12.0
+remote:        Using redis 4.0.1
+remote:        Using tilt 2.0.8
+remote:        Using i18n 1.0.1
+remote:        Using tzinfo 1.2.5
+remote:        Using nokogiri 1.8.4
+remote:        Using rack-test 1.1.0
+remote:        Using warden 1.2.7
+remote:        Using rack-proxy 0.6.4
+remote:        Using sprockets 3.7.2
+remote:        Using mail 2.7.0
+remote:        Using marcel 0.3.2
+remote:        Using websocket-driver 0.7.0
+remote:        Using autoprefixer-rails 9.0.0
+remote:        Using uglifier 4.1.16
+remote:        Using addressable 2.5.2
+remote:        Using aws-sdk-core 3.22.1
+remote:        Using bootsnap 1.3.1
+remote:        Using rb-inotify 0.9.10
+remote:        Using mime-types 3.1
+remote:        Using unf 0.1.4
+remote:        Using faraday 0.15.2
+remote:        Using figaro 1.1.1
+remote:        Using logging 2.2.2
+remote:        Using representable 3.0.4
+remote:        Using faker 1.9.1
+remote:        Using activesupport 5.2.0
+remote:        Using loofah 2.2.2
+remote:        Using sass-listen 4.0.0
+remote:        Using domain_name 0.5.20180417
+remote:        Using signet 0.8.1
+remote:        Using google-cloud-env 1.0.2
+remote:        Using aws-sdk-kms 1.6.0
+remote:        Using rails-dom-testing 2.0.3
+remote:        Using globalid 0.4.1
+remote:        Using activemodel 5.2.0
+remote:        Using jbuilder 2.7.0
+remote:        Using pundit 2.0.0
+remote:        Using sass 3.5.7
+remote:        Using http-cookie 1.0.3
+remote:        Using googleauth 0.6.2
+remote:        Using rails-html-sanitizer 1.0.4
+remote:        Using google-cloud-core 1.2.2
+remote:        Using activejob 5.2.0
+remote:        Using activerecord 5.2.0
+remote:        Using carrierwave 1.2.3
+remote:        Using aws-sdk-s3 1.17.0
+remote:        Using rest-client 2.0.2
+remote:        Using google-api-client 0.23.4
+remote:        Using actionview 5.2.0
+remote:        Using bootstrap-sass 3.3.7
+remote:        Using sassc 1.12.1
+remote:        Using google-cloud-storage 1.13.0
+remote:        Using font-awesome-sass 5.0.13
+remote:        Using actionpack 5.2.0
+remote:        Using cloudinary 1.9.1
+remote:        Using actioncable 5.2.0
+remote:        Using actionmailer 5.2.0
+remote:        Using activestorage 5.2.0
+remote:        Using railties 5.2.0
+remote:        Using sprockets-rails 3.2.1
+remote:        Using simple_form 4.0.1
+remote:        Using responders 2.4.0
+remote:        Using rails 5.2.0
+remote:        Using sass-rails 5.0.7
+remote:        Using webpacker 3.5.5
+remote:        Using devise 4.4.3
+remote:        Bundle complete! 28 Gemfile dependencies, 113 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into ./vendor/bundle.
+remote:        Bundle completed (3.85s)
+remote:        Cleaning up the bundler cache.
+remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.16.3). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+remote:        The latest bundler is 1.16.3, but you are currently running 1.15.2.
+remote:        To update, run `gem install bundler`
+remote: -----> Installing node-v8.10.0-linux-x64
+remote: -----> Installing yarn-v1.5.1
+remote: -----> Detecting rake tasks
+remote: -----> Preparing app for Rails asset pipeline
+remote:        Running: rake assets:precompile
+remote:        yarn install v1.5.1
+remote:        [1/4] Resolving packages...
+remote:        [2/4] Fetching packages...
+remote:        info fsevents@1.2.4: The platform "linux" is incompatible with this module.
+remote:        info "fsevents@1.2.4" is an optional dependency and failed compatibility check. Excluding it from installation.
+remote:        [3/4] Linking dependencies...
+remote:        warning "@rails/webpacker > postcss-cssnext@3.1.0" has unmet peer dependency "caniuse-lite@^1.0.30000697".
+remote:        warning " > vue-loader@14.2.2" has unmet peer dependency "css-loader@*".
+remote:        warning " > webpack-dev-server@2.11.2" has incorrect peer dependency "webpack@^2.2.0 || ^3.0.0".
+remote:        warning "webpack-dev-server > webpack-dev-middleware@1.12.2" has incorrect peer dependency "webpack@^1.0.0 || ^2.0.0 || ^3.0.0".
+remote:        [4/4] Building fresh packages...
+remote:        success Saved lockfile.
+remote:        Done in 23.98s.
+remote:        Webpacker is installed 🎉 🍰
+remote:        Using /tmp/build_6c55f55ae3d327d84df265931da3e75b/config/webpacker.yml file for setting up webpack paths
+remote:        Compiling…
+remote:        Compiled all packs in /tmp/build_6c55f55ae3d327d84df265931da3e75b/public/packs
+remote:        Asset precompilation completed (28.36s)
+remote:        Cleaning assets
+remote:        Running: rake assets:clean
+remote: -----> Detecting rails configuration
+remote:
+remote: ###### WARNING:
+remote:
+remote:        Detecting rails configuration failed
+remote:        set HEROKU_DEBUG_RAILS_RUNNER=1 to debug
+remote:
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> web
+remote:        Default types for buildpack -> console, rake, worker
+remote:
+remote: -----> Compressing...
+remote:        Done: 176.9M
+remote: -----> Launching...
+remote:        Released v13
+remote:        https://findatrainernew.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/findatrainernew.git
+   c9eea60..cd3e8e9  master -> master
