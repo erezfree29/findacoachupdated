@@ -4,6 +4,7 @@
    <center><h1 id="h1_home">Find Your Trainer</h1>
      <p>Become a healthier and a stronger person</p></center>
 
+
      <div class="row all_trainers">
       <% @trainers.each do|trainer|  %>
       <div class="col-xs-12 col-lg-2" style="margin-bottom: 20px;">
@@ -30,6 +31,14 @@
   <div class="become_trainer"><%= link_to "Become a trainer",  new_trainer_path, class: "become-trainer-link btn-primary" %>
   </div>
 
+<div id="map" style="width: 50%; height: 300px;" data-markers="<%= @markers.to_json %>" ></div>
+
+
+
+
+
+
+
   </div>
 
 </div>
@@ -48,6 +57,14 @@
 
 }
 
+}
+
+#map
+
+{
+
+  margin-left:275px;
+  margin-top:70px;
 }
 
 

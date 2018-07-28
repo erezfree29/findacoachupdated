@@ -2,7 +2,21 @@ class TrainersController < ApplicationController
 
   def index
     @trainers = Trainer.all
- end
+
+
+
+@trainers = Trainer.where.not(latitude: nil,longitude: nil)
+
+@markers = @trainers.map do |trainer|
+ {
+lat: trainer.latitude,
+lng: trainer.longitude#,
+# # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+}
+end
+
+
+end
 
  def show
   @trainer = Trainer.find(params[:id])
@@ -58,7 +72,10 @@ def trainer_params
     :last_name, :age, :gender)
 
  end
+
+
 end
+
 
 
 
