@@ -14,6 +14,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem "aws-sdk-s3", require: false
 gem "pundit"
+gem "geocoder"
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'

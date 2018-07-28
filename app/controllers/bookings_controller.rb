@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+
+
   def index
    @booking = Booking.all
    @user_bookings = []
