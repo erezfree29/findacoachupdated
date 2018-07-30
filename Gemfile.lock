@@ -72,6 +72,8 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (10.0.2)
+    calendar_helper (0.2.6)
+      open4
     carrierwave (1.2.3)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -175,6 +177,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
+    open4 (1.3.4)
     orm_adapter (0.5.0)
     os (0.9.6)
     pg (0.21.0)
@@ -304,6 +307,7 @@ DEPENDENCIES
   aws-sdk-s3
   bootsnap
   bootstrap-sass (~> 3.3)
+  calendar_helper
   carrierwave (~> 1.2)
   cloudinary
   devise
