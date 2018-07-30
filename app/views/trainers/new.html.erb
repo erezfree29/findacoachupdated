@@ -6,10 +6,14 @@
    <%= simple_form_for Trainer.new do |f| %>
    <div class="tra_inp_field">hourly rate</div>
    <%= f.input :hourly_rate,label: false, input_html: { min: 0 } %>
-   <div class="tra_inp_field">enter category</div>
+   <div class="tra_inp_field">category</div>
    <%= f.collection_select(:expertise_id, Expertise.all, :id, :name ) %>
-   <div class="tra_inp_field">enter address</div>
+   <div class="tra_inp_field id="trainer_address">address</div>
    <%= f.input :address,:label => false %>
+   <!-- <div class="tra_inp_field">*post code</div>
+   <%= f.input :address,:label => false %>
+   <div class="tra_inp_field">*city</div>
+   <%= f.input :address,:label => false %> -->
    <div class="tra_inp_field">upload a photo</div>
    <%= f.input :photo,:label => false %>
    <%= f.input :photo_cache, as: :hidden %>
@@ -23,6 +27,8 @@
    <%= f.select :gender, [['male'],['female']],class: "gender_field"%>
 
    <div><%= f.button :submit,'submit', class: "btn-success training_btn"%>        <% end %>
+
+ <!--    <div id="map" style="width: 70%; height: 450px;" data-markers="<%= @markers.to_json %>" ></div> -->
 
 
    </div>

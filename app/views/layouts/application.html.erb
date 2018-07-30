@@ -34,10 +34,10 @@
     <% end %>
     <%= render 'shared/flashes' %>
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
-     <%= javascript_pack_tag "map" %> <!-- add this line -->
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['AIzaSyAQYK20-H7vgOGycUUFYq0gMey-NKpMvBQ']}" %>
+    <%= javascript_pack_tag "map" %>
   </body>
 </html>
 

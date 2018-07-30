@@ -1,8 +1,23 @@
 
 <div id="index_tra_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg?cs=srgb&dl=adult-athlete-body-414029.jpg&fm=jpg');">
   <div class="banner-content">
+
    <center><h1 id="h1_home">Find Your Trainer</h1>
      <p>Become a healthier and a stronger person</p></center>
+
+
+<div class="become_trainer"><%= link_to "register as a trainer",  new_trainer_path, class: "become-trainer-link btn-primary" %>
+  </div>
+
+   <div class="find">
+     <%= form_tag trainers_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "enter address"
+  %>
+<% end %>
+</div>
 
 
      <div class="row all_trainers">
@@ -28,10 +43,12 @@
 
     <% end %>
   </div>
-  <div class="become_trainer"><%= link_to "Become a trainer",  new_trainer_path, class: "become-trainer-link btn-primary" %>
-  </div>
 
-<div id="map" style="width: 50%; height: 300px;" data-markers="<%= @markers.to_json %>" ></div>
+  <div id="map" style="width: 50%;height: 300px;"data-markers="<%= @markers.to_json %>"
+
+
+
+</div>
 
 
 
@@ -44,13 +61,21 @@
 </div>
 
 <style>
+
+
+.find
+{
+
+  width:500px;
+  margin-left:289px;
+}
 @media (max-width: 767px) {
 
   body #index_tra_ban
 
 {
   color: white;
-   height: 360vh;
+  height: 360vh;
   background-size: cover !important;
   display:flex;
   justify-content:center;
@@ -62,7 +87,7 @@
 #map
 
 {
-
+  margin-top:-20px;
   margin-left:275px;
   margin-top:70px;
 }
@@ -157,11 +182,13 @@ text-decoration:underline;
 }
 .become-trainer-link
 {
-  font-size:28px;
+  font-size:20px;
   color: white;
   padding:15px;
   border-radius:5px;
-  margin-top:50px;
+ margin-top:-185px;
+ margin-right:-1550px;
+
 
 
 }

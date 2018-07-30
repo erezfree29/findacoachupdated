@@ -1,8 +1,14 @@
 class TrainersController < ApplicationController
 
   def index
-    @trainers = Trainer.all
 
+   if params[:query].present?
+      @trainers = Trainer.all.near(params[:query],25)
+
+
+
+  else
+    @trainers = Trainer.all
 
 
 @trainers = Trainer.where.not(latitude: nil,longitude: nil)
@@ -13,6 +19,7 @@ lat: trainer.latitude,
 lng: trainer.longitude#,
 # # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
 }
+end
 end
 
 
