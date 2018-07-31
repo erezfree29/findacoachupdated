@@ -3,3 +3,5 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 =======
 # findatrainerjune26
 >>>>>>> b68b337476c9f5b3f30f0ab2d29e8aaae44e0728
+
+[![Deploy to Azure](https://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
