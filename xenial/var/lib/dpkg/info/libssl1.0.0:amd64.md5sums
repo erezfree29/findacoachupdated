@@ -1,0 +1,16 @@
+4e6e6d4dfdb4959ac49a3fe61b034664  lib/x86_64-linux-gnu/libcrypto.so.1.0.0
+b351bcb63282ef92ae1c5345fc7783e5  lib/x86_64-linux-gnu/libssl.so.1.0.0
+8bd33dca60d84900af467d37fbb8cab0  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/lib4758cca.so
+5bf29029c9ec9ba9d46134f1756fa471  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libaep.so
+1c14cd361fe2a9768efb7fee306efbef  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libatalla.so
+0d71662d06542b36e83eca5d2a6b3cda  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libcapi.so
+e77ea9b1e267c721abaf64d3b1453d62  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libchil.so
+e08207239d3e49cf04ae7b56e6c9b3c2  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libcswift.so
+e4bfd1c8d73e4ac590c9327bb3d11525  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libgmp.so
+e395f36d87209af71ffb383b2a560923  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libgost.so
+557638b694b4a3c73fe166a33cdd169d  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libnuron.so
+fbec6eb668e0db9f18a1eac9bc18ab36  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libpadlock.so
+f7f4b94239022825d2a4acd9763d10e4  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libsureware.so
+f7692ce623187a333ff07907574545fa  usr/lib/x86_64-linux-gnu/openssl-1.0.0/engines/libubsec.so
+b8a686ca205e6c1178baba313546b10d  usr/share/doc/libssl1.0.0/changelog.Debian.gz
+0ba5769c4ae43d0052d43b88b65ca9c9  usr/share/doc/libssl1.0.0/copyright
