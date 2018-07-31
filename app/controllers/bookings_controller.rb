@@ -66,6 +66,7 @@ end
    redirect_to trainer_booking_path(@trainer, @booking)
   else
     render :new
+
   end
 end
 
@@ -88,34 +89,3 @@ end
 
 end
 
-
-
-
-
-
-
-
-
-
-# Booking.all.each do |booking|
-
-#   if (booking.trainer_id == @booking.trainer_id) && (booking.date == @booking.date)
-
-#    pre_booking_beg = booking.time.hour * 60 + booking.time.min
-#    pre_booking_end = pre_booking_beg + booking.hours * 60
-#    cur_booking_beg = @booking.time.hour * 60 + @booking.time.min
-#    cur_booking_end = cur_booking_beg + @booking.hours * 60
-
-#    #current booking can not be between previous booking begining and end
-#    #current booking can not end between previous booking begining and end
-
-#    if (cur_booking_beg >= pre_booking_beg && cur_booking_beg <= pre_booking_end) || (cur_booking_end >= pre_booking_beg && cur_booking_end <= pre_booking_end)
-
-
-#    flash.now[:alert] = 20
-
-#   end
-
-#   end
-
-#   end

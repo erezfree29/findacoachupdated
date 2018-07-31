@@ -8,12 +8,12 @@
    <%= f.input :hourly_rate,label: false, input_html: { min: 0 } %>
    <div class="tra_inp_field">category</div>
    <%= f.collection_select(:expertise_id, Expertise.all, :id, :name ) %>
-   <div class="tra_inp_field id="trainer_address">address</div>
+   <div class="tra_inp_field id="trainer_address">street</div>
    <%= f.input :address,:label => false %>
-   <!-- <div class="tra_inp_field">*post code</div>
-   <%= f.input :address,:label => false %>
-   <div class="tra_inp_field">*city</div>
-   <%= f.input :address,:label => false %> -->
+   <div class="tra_inp_field">*post code</div>
+   <%= f.input :address2,:label => false %>
+   <div class="tra_inp_field">*city or town</div>
+   <%= f.input :address3,:label => false %>
    <div class="tra_inp_field">upload a photo</div>
    <%= f.input :photo,:label => false %>
    <%= f.input :photo_cache, as: :hidden %>
@@ -28,7 +28,7 @@
 
    <div><%= f.button :submit,'submit', class: "btn-success training_btn"%>        <% end %>
 
- <!--    <div id="map" style="width: 70%; height: 450px;" data-markers="<%= @markers.to_json %>" ></div> -->
+
 
 
    </div>
@@ -44,7 +44,7 @@
  {
    width:15vw;
    margin-left:-155vh;
-   margin-top:2vh;
+   margin-top:0.5vh;
    color:black;
 
  }
@@ -52,7 +52,7 @@
  .training_btn
  {
 
- margin-top: 6.5vh;
+ margin-top: 3.5vh;
  width: 10vw;
 
  }
@@ -64,7 +64,7 @@
  color: white;
  font-style: bold;
  height: 2vh;
- margin-bottom: 2.1vh;
+ margin-bottom: 1.7vh;
  }
 
  .button, select {

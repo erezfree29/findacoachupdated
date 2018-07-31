@@ -39,8 +39,12 @@ def new
 end
 
 def create
+
   @user = current_user
   @trainer = Trainer.new(trainer_params)
+  if (@trainer.address != "")
+  @trainer.address = @trainer.address + " " + @trainer.address2 + " " + @trainer.address3
+  end
   @trainer.user = @user
   @expertise = Expertise.all
 
@@ -75,7 +79,8 @@ end
 private
 def trainer_params
 
-  params.require(:trainer).permit(:expertise_id, :hourly_rate, :photo, :address, :first_name,
+
+  params.require(:trainer).permit(:expertise_id, :hourly_rate, :photo, :address,:address2,:address3,:first_name,
     :last_name, :age, :gender)
 
  end
