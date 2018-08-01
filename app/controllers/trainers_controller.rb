@@ -42,14 +42,50 @@ def create
 
   @user = current_user
   @trainer = Trainer.new(trainer_params)
+
+ if @trainer.hourly_rate == nil
+    flash.now[:alert] = 'please enter a hourly_rate-'
+  end
+
+
+  if @trainer.address == ""
+    flash.now[:alert]  <<  'please enter an address-'
+  end
+
+ if @trainer.address2 == ""
+    flash.now[:alert]  << 'please enter  a post code-'
+  end
+
+if @trainer.address2 == ""
+    flash.now[:alert]  << 'please enter  a city-'
+  end
+
+if @trainer.first_name== ""
+    flash.now[:alert]  << 'please enter your first name-'
+  end
+
+if @trainer.last_name== ""
+    flash.now[:alert]  << 'please enter your last nam-'
+  end
+
+if @trainer.age= nil
+    flash.now[:alert]  << 'please enter your age-'
+  end
+
+  if @trainer.photo= ""
+    flash.now[:alert]  << 'please upload a photo'
+  end
+
   if (@trainer.address != "")
   @trainer.address = @trainer.address + " " + @trainer.address2 + " " + @trainer.address3
   end
+
   @trainer.user = @user
   @expertise = Expertise.all
 
   if @trainer.save
     redirect_to trainer_path(@trainer)
+
   else
     render :new
   end

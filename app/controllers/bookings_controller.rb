@@ -34,6 +34,12 @@ def create
   @trainer = Trainer.find(params[:trainer_id])
   @booking = Booking.new(booking_params)
 
+  if @booking.date == nil
+     flash.now[:alert]  ='please enter the booking date'
+   end
+
+
+
   @booking.total_price = params[:booking][:hours].to_i * @trainer.hourly_rate
    @booking.user_id = @user.id
    @booking.trainer_id = @trainer.id
