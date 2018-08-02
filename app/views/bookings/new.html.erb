@@ -66,8 +66,66 @@ window.onload = function(){
     var calendar = get_calendar(day_no, days);
     document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
     document.getElementById("calendar-dates").appendChild(calendar);
-    // document.write(calendar.tr.lastchild);
+    let i = 0;
+
+
+
+
+
+
+
+
+
+
+
+   //  for (i = 0; i < 7 ; i++) {
+
+   //      if (childt.getElementById('td')[i] = d.getDate())
+
+   //      {
+
+   //         childtr2.getElementById('td')[i].style.cssText = 'color:blue';
+
+
+   //      }
+
+   //  }
+
+    row2 = calendar.getElementsByTagName('tr')[1]
+     let current_td;
+     let number;
+     let flag = 0;
+
+    for (i = 0; i < 7 ; i++) {
+
+      current_td =  row2.getElementsByTagName('td')[i]
+      number = Number(current_td.innerHTML);
+      if (number = d.getDate()) {
+
+        flag = number;
+
+    }
+
+     if (flag != 0) {
+
+        let today_td;
+        today_td = row2.getElementsByTagName('td')[flag];
+        today_td.style.cssText = "color:blue";
+
+     }
+
+
+
+     }
+
+
+
 }
+
+
+
+
+
 
 function get_calendar(day_no, days){
     var table = document.createElement('table');
@@ -112,18 +170,21 @@ function get_calendar(day_no, days){
             }
             var td = document.createElement('td');
             td.innerHTML = count;
+
             count++;
             tr.appendChild(td);
+
         }
-
-
-
-
+        var d = new Date();
         table.appendChild(tr);
     }
 
     return table;
 }
+
+
+
+
 
 
 
