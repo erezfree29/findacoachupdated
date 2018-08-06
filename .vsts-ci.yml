@@ -13,3 +13,8 @@ steps:
     docker push $(erezfree).azurecr.io/dotnetcore-sample:$BUILD_BUILDID
   env:
     pswd: $(Newblue29)
+    queue: 'Hosted Linux Preview' # other options - 'Hosted VS2017'
+   - script: docker build -t <erezfree>/<hello-world> .  # add options to this command to meet your needs
+   - script: |
+       docker login -u <erezfree>.azurecr.io -p <Newblue29> <erezfree>.azurecr.io
+       docker push <erezfree>.azurecr.io/<hello-world>
