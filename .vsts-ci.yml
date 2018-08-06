@@ -1,0 +1,15 @@
+queue: Hosted Linux Preview
+variables:
+  buildConfiguration: 'Release'
+  dockerId: adventworks  erezfree
+
+steps:
+- script: |
+    dotnet build --configuration $(buildConfiguration)
+    dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
+    dotnet publish --configuration $(buildConfiguration) --output out
+    docker build -t $(erezfree).azurecr.io/dotnetcore-sample:$BUILD_BUILDID .
+    docker login -u $(erezfree) -p $pswd $(dockerid).azurecr.io
+    docker push $(erezfree).azurecr.io/dotnetcore-sample:$BUILD_BUILDID
+  env:
+    pswd: $(Newblue29)

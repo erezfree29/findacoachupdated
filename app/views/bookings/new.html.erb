@@ -68,15 +68,17 @@ window.onload = function(){
     document.getElementById("calendar-dates").appendChild(calendar);
     let i = 0;
 
-
-     let row2 = calendar.getElementsByTagName('tr')[1]
      let current_td;
      let num;
      let today;
+     let row
+     for (i = 1; i < 6 ; i++) {
+
+     row = calendar.getElementsByTagName('tr')[i]
 
     for (i = 0; i < 7 ; i++) {
 
-      current_td =  row2.getElementsByTagName('td')[i];
+      current_td =  row.getElementsByTagName('td')[i];
       num = parseInt(current_td.innerHTML);
       today = d.getDate();
      if (num === today) {
@@ -87,64 +89,10 @@ window.onload = function(){
 
      }
 
-      let row3 = calendar.getElementsByTagName('tr')[2]
-
-      for (i = 0; i < 7 ; i++) {
-
-      current_td =  row3.getElementsByTagName('td')[i];
-      num = parseInt(current_td.innerHTML);
-      today = d.getDate();
-     if (num === today) {
-    current_td.style.cssText = "color:blue";
-
     }
-
-
-     }
-
-     let row4 = calendar.getElementsByTagName('tr')[3]
-     for (i = 0; i < 7 ; i++) {
-
-      current_td =  row4.getElementsByTagName('td')[i];
-      num = parseInt(current_td.innerHTML);
-      today = d.getDate();
-     if (num === today) {
-    current_td.style.cssText = "color:blue";
-
-    }
-
-
-     }
-
-    let row5 = calendar.getElementsByTagName('tr')[4]
-
-    for (i = 0; i < 7 ; i++) {
-
-      current_td =  row5.getElementsByTagName('td')[i];
-      num = parseInt(current_td.innerHTML);
-      today = d.getDate();
-     if (num === today) {
-    current_td.style.cssText = "color:blue";
-
-    }
-
-
-     }
-
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

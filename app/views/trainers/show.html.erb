@@ -17,6 +17,16 @@
       data: { confirm: "Are you sure?" } %>
    <%end%>
    <%end%>
+
+   <%if user_signed_in?%>
+     <%if @trainer.user_id == current_user.id%>
+           <%= link_to "Show Diary", calendar_path(@trainer),class:"calendar"%>
+      <%end%>
+      <%end%>
+
+
+
+
     </div>
          <div class="trainershowcircle" style="background-image: url(<%=@trainer.photo%>)"></div>
        </div>
@@ -25,7 +35,6 @@
          <div class="trainershowinforow">Name: <%=@trainer.first_name=%> <%=@trainer.last_name=%></div>
          <div class="trainershowinforow">Email: <%=@trainer.user.email=%> </div>
          <div class="trainershowinforow">Session: <%=@expertise.name%> </div>
-         <div class="trainershowinforow">Age: <%=@trainer.age=%></div>
          <div class="trainershowinforow">Gender:  <%=@trainer.gender=%> </div>
          <div class="trainershowinforow">Address: <%=@trainer.address=%></div>
          <div class="trainershowinforow">Price per hour: <%=@trainer.hourly_rate=%></div>
@@ -52,6 +61,13 @@
 </script>
 
 <style>
+.calendar
+{
+
+ margin-top:20px;
+ margin-left:20px;
+
+}
   .trainershowfirstrow{
      height: 69%;
      width: 100%;
