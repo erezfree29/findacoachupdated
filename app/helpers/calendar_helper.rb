@@ -1,7 +1,6 @@
 module CalendarHelper
   def calendar(date = Date.today, &block)
-    Calendar.create
+    # Calendar.new(self, date, block).table
   end
 end
-
 
