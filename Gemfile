@@ -19,6 +19,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'calendar_helper'
 gem 'jquery-rails'
 gem 'gmaps-autocomplete-rails'
+gem 'activestorage'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
