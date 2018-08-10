@@ -1,58 +1,58 @@
-document.getElementById("fullpricebox").innerText =  document.getElementById("fullpricebox").dataset.actualprice + " ILS"
-document.getElementById('booking_hours')[document.getElementById('booking_hours').selectedIndex]
+// document.getElementById("fullpricebox").innerText =  document.getElementById("fullpricebox").dataset.actualprice + " ILS"
+// document.getElementById('booking_hours')[document.getElementById('booking_hours').selectedIndex]
 
 
-  document.getElementById('booking_hours').addEventListener("change", function(e) {update(e);});
+//   document.getElementById('booking_hours').addEventListener("change", function(e) {update(e);});
 
-function update(e){
- let option = document.getElementById('booking_hours')[document.getElementById('booking_hours').selectedIndex].value
- let fullprice = document.getElementById("fullpricebox")
-  let actualprice = fullprice.dataset.actualprice
- fullprice.innerText = parseInt(option) * parseInt(actualprice) + "  ILS"
-}
+// function update(e){
+//  let option = document.getElementById('booking_hours')[document.getElementById('booking_hours').selectedIndex].value
+//  let fullprice = document.getElementById("fullpricebox")
+//   let actualprice = fullprice.dataset.actualprice
+//  fullprice.innerText = parseInt(option) * parseInt(actualprice) + "  ILS"
+// }
 
-window.onload = function(){
-    var d = new Date();
-    var month_name = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-    var month = d.getMonth();   //0-11
-    var year = d.getFullYear(); //2014
-    var first_date = month_name[month] + " " + 1 + " " + year;
-    //September 1 2014
-    var tmp = new Date(first_date).toDateString();
-    //Mon Sep 01 2014 ...
-    var first_day = tmp.substring(0, 3);    //Mon
-    var day_name = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    var day_no = day_name.indexOf(first_day);   //1
-    var days = new Date(year, month+1, 0).getDate();    //30
-    //Tue Sep 30 2014 ...
-    var calendar = get_calendar(day_no, days);
-    document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
-    document.getElementById("calendar-dates").appendChild(calendar);
-}
+// window.onload = function(){
+//     var d = new Date();
+//     var month_name = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+//     var month = d.getMonth();   //0-11
+//     var year = d.getFullYear(); //2014
+//     var first_date = month_name[month] + " " + 1 + " " + year;
+//     //September 1 2014
+//     var tmp = new Date(first_date).toDateString();
+//     //Mon Sep 01 2014 ...
+//     var first_day = tmp.substring(0, 3);    //Mon
+//     var day_name = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+//     var day_no = day_name.indexOf(first_day);   //1
+//     var days = new Date(year, month+1, 0).getDate();    //30
+//     //Tue Sep 30 2014 ...
+//     var calendar = get_calendar(day_no, days);
+//     document.getElementById("calendar-month-year").innerHTML = month_name[month]+" "+year;
+//     document.getElementById("calendar-dates").appendChild(calendar);
+// }
 
-function get_calendar(day_no, days){
-    var table = document.createElement('table');
-    var tr = document.createElement('tr');
+// function get_calendar(day_no, days){
+//     var table = document.createElement('table');
+//     var tr = document.createElement('tr');
 
-    //row for the day letters
-    for(var c=0; c<=6; c++){
-        var td = document.createElement('td');
-        td.innerHTML = "SMTWTFS"[c];
-        tr.appendChild(td);
-    }
-    table.appendChild(tr);
+//     //row for the day letters
+//     for(var c=0; c<=6; c++){
+//         var td = document.createElement('td');
+//         td.innerHTML = "SMTWTFS"[c];
+//         tr.appendChild(td);
+//     }
+//     table.appendChild(tr);
 
-    //create 2nd row
-    tr = document.createElement('tr');
-    var c;
-    for(c=0; c<=6; c++){
-        if(c == day_no){
-            break;
-        }
-        var td = document.createElement('td');
-        td.innerHTML = "";
-        tr.appendChild(td);
-    }
+//     //create 2nd row
+//     tr = document.createElement('tr');
+//     var c;
+//     for(c=0; c<=6; c++){
+//         if(c == day_no){
+//             break;
+//         }
+//         var td = document.createElement('td');
+//         td.innerHTML = "";
+//         tr.appendChild(td);
+//     }
 
     var count = 1;
     for(; c<=6; c++){

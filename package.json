@@ -1,9 +1,35 @@
 {
   "dependencies": {
     "@rails/webpacker": "^3.5.5",
-    "webpack-dev-server": "2.11.2"
+    "ejsx": "^1.0.0-b2",
+    "react": "^16.4.2",
+    "webpack": "^4.16.5",
+    "webpack-dev-server": "^2.11.2"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
     "webpack-config": "^7.5.0"
-  }
+  },
+  "name": "docker-django-webapp-linux",
+  "description": "<<<<<<< HEAD Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team. ======= # findatrainerjune26 >>>>>>> b68b337476c9f5b3f30f0ab2d29e8aaae44e0728",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erezfree29/coachnew.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erezfree29/coachnew/issues"
+  },
+  "homepage": "https://github.com/erezfree29/coachnew#readme",
+  "keywords": []
 }
