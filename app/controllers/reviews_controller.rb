@@ -1,11 +1,16 @@
 class ReviewsController < ApplicationController
   def create
 
+
     @review = Review.new(review_params)
+    @review.score = params[:data_value]
+
 
   end
 
   def new
+    @trainer = Trainer.find(params[:trainer_id])
+    @booking= Booking.find(params[:booking_id])
     @review = Review.new()
 
   end
