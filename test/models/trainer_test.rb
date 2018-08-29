@@ -1,7 +1,13 @@
 require 'test_helper'
 
 class TrainerTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "can not save without a name" do
+     trainer = Trainer.new()
+   
+     assert_not trainer.save
+     
+
+   end
+
+
 end

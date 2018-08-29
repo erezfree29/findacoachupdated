@@ -12,7 +12,7 @@
 
 <%if user_signed_in?%>
   <%if @trainer.user_id == current_user.id%>
-        <%= link_to "Delete this service", trainer_path(@trainer),
+        <%= link_to "Delete this service", trainer_path(@trainer.id),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
    <%end%>

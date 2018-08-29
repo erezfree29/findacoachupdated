@@ -29,6 +29,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker', '>= 4.x'
 gem 'faker'
+gem  'shoulda'
+gem "rspec"
 gem "google-cloud-storage", "~> 1.8", require: false
 
 group :development do

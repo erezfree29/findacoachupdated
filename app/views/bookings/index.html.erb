@@ -36,6 +36,7 @@
          <hr>
          <div>Give <%=@bookings_trainers[counter].first_name%> your Review</div>
          <hr>
+         <div class="write_review"><%= link_to "give a review",new_trainer_booking_review_path(@bookings_trainers[counter],booking)%></div>
          <div class="starbox">
           <div class="star" data-star="1"><i class="fa fa-star"></i></div>
           <div class="star" data-star="2"><i class="fa fa-star"></i></div>

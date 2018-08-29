@@ -163,7 +163,7 @@ def update
 
 end
 
-def destroy
+def delete
 
   @trainer = Trainer.find(params[:id])
   if (user_signed_in?)
