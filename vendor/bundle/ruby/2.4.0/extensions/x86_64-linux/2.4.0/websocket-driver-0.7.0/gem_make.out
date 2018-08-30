@@ -1,0 +1,15 @@
+current directory: /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+/home/erez/.rvm/rubies/ruby-2.4.4/bin/ruby -r ./siteconf20180830-21382-3xdbsp.rb extconf.rb
+creating Makefile
+
+current directory: /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20180830-21382-1m6hj9v
