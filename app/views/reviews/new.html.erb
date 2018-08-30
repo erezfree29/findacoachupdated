@@ -10,16 +10,32 @@
           <div class="star" data-star="3"><i class="fa fa-star"></i></div>
           <div class="star" data-star="4"><i class="fa fa-star"></i></div>
           <div class="star" data-star="5"><i class="fa fa-star"></i></div>
-          <div class ="score" data-star="" ></div>
+
 
 
 
        <div class="input_form">
     <%= simple_form_for [@trainer, @booking, @review] do |f| %>
+
+
     <p>title</p>
     <div><%= f.input :title,:label => false%></div>
     <p>write down your review</p>
     <div><%= f.input :content,:label => false%></div>
+
+
+    <div id="score">
+    <%= f.input :score,:label => false,:input_html => { :value => '2' },as: :hidden%>
+    </div>
+
+    <div class ="score" data-star="" ></div>
+
+
+
+
+
+
+
     <%= f.button :submit,'submit', class: "btn btn-primary booking_btn" %>
     <% end %>
   </div>
@@ -46,22 +62,28 @@
 
 
         <script>
-          score = document.querySelector('.score')
+
+    let score = document.querySelector('.score')
+    let rating = document.querySelector('#score')
  document.querySelectorAll('.starbox').forEach(function(starbox){
    Array.from(starbox.children).forEach(function(star){
      star.addEventListener('click', function(){
        if(star.dataset.star == "1"){
          Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
-           score.innerHTML = "not good at all "
+           score.innerHTML = "not good"
+           star.style.color = "#ffd530";
+           rating.innerHTML="1";
+
 
          })
-         star.style.color = "#ffd530";
+
        }
        else if(star.dataset.star == "2"){
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "not very good"
+           rating.innerHTML="2";
          })
           star.style.color = "#ffd530";
           star.parentNode.children[0].style.color = "#ffd530";
@@ -70,6 +92,7 @@
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "ok"
+           rating.innerHTML="3";
          })
           star.style.color = "#ffd530";
           star.parentNode.children[0].style.color = "#ffd530";
@@ -79,6 +102,7 @@
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "good"
+           rating.innerHTML="4";
          })
           star.style.color = "#ffd530";
           star.parentNode.children[0].style.color = "#ffd530";
@@ -89,6 +113,7 @@
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "very good"
+           rating.innerHTML="5";
          })
           star.style.color = "#ffd530";
           star.parentNode.children[0].style.color = "#ffd530";
@@ -100,12 +125,5 @@
    });
 
  });
-
-$.ajax({
-        url : "/customurl",
-        type : "post",
-        data : { data_value: JSON.stringify(star.dataset.star)}
-    });
-
 
 </script>
