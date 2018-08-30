@@ -25,21 +25,15 @@
 
 
     <div id="score">
-    <%= f.input :score,:label => false,:input_html => { :value => '2' },as: :hidden%>
+    <%= f.input :score,:label => false,:input_html => { :value => '2' }, id: "scorefield" ,name: "scoreinput", type: "text" %>
     </div>
 
     <div class ="score" data-star="" ></div>
 
 
-
-
-
-
-
     <%= f.button :submit,'submit', class: "btn btn-primary booking_btn" %>
     <% end %>
   </div>
-
 
        <style>
 
@@ -63,6 +57,8 @@
 
         <script>
 
+
+
     let score = document.querySelector('.score')
     let rating = document.querySelector('#score')
  document.querySelectorAll('.starbox').forEach(function(starbox){
@@ -74,7 +70,6 @@
            score.innerHTML = "not good"
            star.style.color = "#ffd530";
            rating.innerHTML="1";
-
 
          })
 
