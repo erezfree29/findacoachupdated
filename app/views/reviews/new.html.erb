@@ -14,17 +14,15 @@
 
 
 
-<div class="input_form">
-
-     <%= simple_form_for [@trainer, @booking,@review] do |f| %>
-     <p>title</p>
-    <div><%=f.input :title,:label => false%></div>
-    <p>write your description</p>
+       <div class="input_form">
+    <%= simple_form_for [@trainer, @booking, @review] do |f| %>
+    <p>title</p>
+    <div><%= f.input :title,:label => false%></div>
+    <p>write down your review</p>
     <div><%= f.input :content,:label => false%></div>
     <%= f.button :submit,'submit', class: "btn btn-primary booking_btn" %>
     <% end %>
-
-</div>
+  </div>
 
 
        <style>
@@ -104,7 +102,7 @@
  });
 
 $.ajax({
-
+        url : "/customurl",
         type : "post",
         data : { data_value: JSON.stringify(star.dataset.star)}
     });
