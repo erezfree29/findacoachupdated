@@ -22,6 +22,7 @@ gem 'gmaps-autocomplete-rails'
 gem 'activestorage'
 
 
+
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'font-awesome-sass', '~> 5.0.9'
@@ -31,6 +32,7 @@ gem 'uglifier'
 gem 'webpacker', '>= 4.x'
 gem 'faker'
 gem  'shoulda'
+gem 'json'
 gem "rspec"
 gem "google-cloud-storage", "~> 1.8", require: false
 
