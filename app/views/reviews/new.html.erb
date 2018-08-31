@@ -24,11 +24,15 @@
     <div><%= f.input :content,:label => false%></div>
 
 
+
+    <div id="rate" name="7"><%= f.input :score, :collection => %w[1 2 3 4 5],:selected => 3, id: "inscore"%></div>
+    <%#= f.input :score,:label => false,:input_html => { :value => '2' }, id: "scorefield" ,name: "scoreinput", type: "text" %>
     <div id="score">
-    <%= f.input :score,:label => false,:input_html => { :value => '2' }, id: "scorefield" ,name: "scoreinput", type: "text" %>
     </div>
 
     <div class ="score" data-star="" ></div>
+    <div class ="good" data-star="" >888888</div>
+
 
 
     <%= f.button :submit,'submit', class: "btn btn-primary booking_btn" %>
@@ -55,16 +59,24 @@
 
 
 
-        <script>
+      <script>
 
 
 
     let score = document.querySelector('.score')
+
     let rating = document.querySelector('#score')
+
+
+
+
+
  document.querySelectorAll('.starbox').forEach(function(starbox){
    Array.from(starbox.children).forEach(function(star){
-     star.addEventListener('click', function(){
-       if(star.dataset.star == "1"){
+
+
+     // star.addEventListener('click', function(){
+       if(rating.innerHTML == "1"){
          Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "not good"
@@ -74,7 +86,7 @@
          })
 
        }
-       else if(star.dataset.star == "2"){
+       else if(rating.innerHTML == "2"){
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "not very good"
@@ -83,7 +95,7 @@
           star.style.color = "#ffd530";
           star.parentNode.children[0].style.color = "#ffd530";
        }
-       else if(star.dataset.star == "3"){
+       else if(rating.innerHTML == "3"){
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "ok"
@@ -93,7 +105,7 @@
           star.parentNode.children[0].style.color = "#ffd530";
           star.parentNode.children[1].style.color = "#ffd530";
        }
-       else if(star.dataset.star == "4"){
+       else if(rating.innerHTML == "4"){
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "good"
@@ -104,7 +116,7 @@
           star.parentNode.children[1].style.color = "#ffd530";
           star.parentNode.children[2].style.color = "#ffd530";
        }
-       else if(star.dataset.star == "5"){
+       else if(rating.i == "5"){
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
            score.innerHTML = "very good"
@@ -119,6 +131,23 @@
      });
    });
 
- });
+ // });
+
+
+
+    window.onload = function(){
+
+    let good = document.querySelector('.good');
+    let rate = document.querySelector('#rate');
+    let inscore = document.querySelector('#inscore');
+    let dropdown = document.querySelector('#review_score')
+    alert(dropdown.value);
+
+
+
+    }
+
+
+
 
 </script>
