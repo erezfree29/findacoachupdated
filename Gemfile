@@ -1,5 +1,6 @@
 
 source 'https://rubygems.org'
+source "https://download:d794e66f1516f745d67d335292af95b39d74c04f82e6f478302484ee66cf7c7b@www.phusionpassenger.com/enterprise_gems"
 ruby '2.4.4'
 
 gem 'bootsnap', require: false
@@ -7,7 +8,6 @@ gem 'devise'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
-gem 'puma'
 gem 'rails', '5.2.0'
 gem 'redis'
 gem 'cloudinary'
@@ -20,6 +20,9 @@ gem 'calendar_helper'
 gem 'jquery-rails'
 gem 'gmaps-autocomplete-rails'
 gem 'activestorage'
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+gem "passenger-enterprise-server"
+
 
 
 

@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://download:d794e66f1516f745d67d335292af95b39d74c04f82e6f478302484ee66cf7c7b@www.phusionpassenger.com/enterprise_gems/
   specs:
     actioncable (5.2.0)
       actionpack (= 5.2.0)
@@ -184,6 +185,12 @@ GEM
     open4 (1.3.4)
     orm_adapter (0.5.0)
     os (1.0.0)
+    passenger (5.3.4)
+      rack
+      rake (>= 0.8.1)
+    passenger-enterprise-server (5.3.4)
+      rack
+      rake (>= 0.8.1)
     pg (0.21.0)
     pry (0.11.3)
       coderay (~> 1.1.0)
@@ -194,7 +201,6 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     public_suffix (3.0.3)
-    puma (3.12.0)
     pundit (2.0.0)
       activesupport (>= 3.0.0)
     rack (2.0.5)
@@ -346,10 +352,11 @@ DEPENDENCIES
   jquery-rails
   json
   listen (~> 3.0.5)
+  passenger (>= 5.0.25)
+  passenger-enterprise-server
   pg (~> 0.21)
   pry-byebug
   pry-rails
-  puma
   pundit
   rails (= 5.2.0)
   redis
