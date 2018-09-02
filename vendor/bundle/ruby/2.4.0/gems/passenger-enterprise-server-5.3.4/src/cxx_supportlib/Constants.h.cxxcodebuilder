@@ -1,0 +1,30 @@
+# encoding: utf-8
+#  Phusion Passenger - https://www.phusionpassenger.com/
+#  Copyright (c) 2010-2017 Phusion Holding B.V.
+#
+#  "Passenger", "Phusion Passenger" and "Union Station" are registered
+#  trademarks of Phusion Holding B.V.
+#
+#  See LICENSE file for license information.
+
+# This file uses the cxxcodebuilder API. Learn more at:
+# https://github.com/phusion/cxxcodebuilder
+
+comment copyright_header_for(__FILE__), 1
+
+guard_macros '_PASSENGER_CONSTANTS_H_' do
+  comment %q{
+    Constants.h is automatically generated from Constants.h.cxxcodebuilder by the build system.
+    All constants are derived from src/ruby_supportlib/phusion_passenger/constants.rb.
+
+    To force regenerating this file:
+      rm -f src/cxx_supportlib/Constants.h
+      rake src/cxx_supportlib/Constants.h
+  }
+
+  separator
+
+  PhusionPassenger::SharedConstants.constants.sort.each do |constant_name|
+    define("#{constant_name} #{PhusionPassenger::SharedConstants.const_get(constant_name).inspect}")
+  end
+end

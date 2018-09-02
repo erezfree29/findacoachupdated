@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+#  Phusion Passenger - https://www.phusionpassenger.com/
+#  Copyright (c) 2010-2017 Phusion Holding B.V.
+#
+#  "Passenger", "Phusion Passenger" and "Union Station" are registered
+#  trademarks of Phusion Holding B.V.
+#
+#  See LICENSE file for license information.
+
+## Magic comment: begin bootstrap ##
+source_root = File.expand_path("..", File.dirname(__FILE__))
+$LOAD_PATH.unshift("#{source_root}/src/ruby_supportlib")
+begin
+  require 'rubygems'
+rescue LoadError
+end
+require 'phusion_passenger'
+## Magic comment: end bootstrap ##
+
+PhusionPassenger.locate_directories
+PhusionPassenger.require_passenger_lib 'standalone/main'
+
+STDOUT.sync = STDERR.sync = true
+
+# Fixes https://github.com/phusion/passenger-ruby-heroku-demo/issues/11
+STDOUT.binmode
+STDERR.binmode
+
+PhusionPassenger::Standalone.run!(ARGV)

@@ -1,0 +1,430 @@
+#!/usr/bin/env ruby
+#  Phusion Passenger - https://www.phusionpassenger.com/
+#  Copyright (c) 2013-2017 Phusion Holding B.V.
+#
+#  "Passenger", "Phusion Passenger" and "Union Station" are registered
+#  trademarks of Phusion Holding B.V.
+#
+#  See LICENSE file for license information.
+
+## Magic comment: begin bootstrap ##
+source_root = File.expand_path("..", File.dirname(__FILE__))
+$LOAD_PATH.unshift("#{source_root}/src/ruby_supportlib")
+begin
+  require 'rubygems'
+rescue LoadError
+end
+require 'phusion_passenger'
+## Magic comment: end bootstrap ##
+
+require 'optparse'
+require 'socket'
+require 'logger'
+PhusionPassenger.locate_directories
+PhusionPassenger.require_passenger_lib 'constants'
+PhusionPassenger.require_passenger_lib 'message_channel'
+PhusionPassenger.require_passenger_lib 'message_client'
+PhusionPassenger.require_passenger_lib 'platform_info/ruby'
+PhusionPassenger.require_passenger_lib 'utils/json'
+
+
+module PhusionPassenger
+
+class FlyingPassenger
+  class Error < StandardError
+  end
+
+  class RubyUnsupported < Error
+  end
+
+  class SpawnError < Error
+  end
+
+  class OptionError < Error
+  end
+
+  class Exit < StandardError
+    attr_reader :code
+
+    def initialize(code)
+      @code = code
+    end
+  end
+
+  attr_reader :logger
+
+  def initialize(argv)
+    check_ruby_compatibility
+    @argv = argv.dup
+  end
+
+  def start
+    parse_options
+    initialize_logger
+    ensure_agent_installed
+    maybe_daemonize
+    maybe_write_pidfile
+    spawn
+    socket_filename = @watchdog_options[:controller_addresses][0]
+    @logger.info("Flying Passenger up and listening on #{socket_filename}!")
+    return nil
+  rescue Exit => e
+    return e.code
+  rescue
+    maybe_cleanup_pidfile
+    raise
+  end
+
+  def wait
+    return wait_for_exit
+  ensure
+    maybe_cleanup_pidfile
+    @logger.info("Flying Passenger exited")
+  end
+
+private
+  def check_ruby_compatibility
+    if !Process.respond_to?(:spawn)
+      if Process.euid == 0
+        sudo = "sudo "
+        rvmsudo = "#{PlatformInfo.ruby_sudo_command} "
+      end
+      raise RubyUnsupported, "The Flying Passenger program must be run on Ruby 1.9. " +
+        "It's currently being run on Ruby #{RUBY_VERSION} (#{PlatformInfo.ruby_command}). " +
+        "Please restart it using Ruby 1.9, like this:\n\n" +
+        "  #{sudo}ruby1.9 #{PhusionPassenger.bin_dir}/flying-passenger\n\n" +
+        "If you installed Ruby 1.9 with RVM then you can use rvm-exec to invoke Ruby 1.9, like this:\n\n" +
+        "  #{rvmsudo}rvm-exec ruby-1.9.3 #{PhusionPassenger.bin_dir}/flying-passenger"
+    end
+  end
+
+  def parse_options
+    @watchdog_options = {
+      :log_level => DEFAULT_LOG_LEVEL,
+      :max_pool_size => DEFAULT_MAX_POOL_SIZE,
+      :pool_idle_time => DEFAULT_POOL_IDLE_TIME
+    }
+    @options = {}
+    parser = OptionParser.new do |opts|
+      nl = "\n#{' ' * 37}"
+      opts.banner = "Usage: flying-passenger [options]"
+      opts.separator ""
+
+      opts.separator "Options:"
+      opts.on("--socket-file FILENAME", String, "The socket to listen on") do |val|
+        @watchdog_options[:controller_addresses] = ["unix:#{val}"]
+      end
+      opts.on("--daemonize", "Daemonize into background") do
+        @options[:daemonize] = true
+      end
+      opts.on("--pid-file FILENAME", String, "Write to the given PID file") do |val|
+        @options[:pidfile] = val
+      end
+      opts.on("--log-file FILENAME", String, "The log file to use") do |val|
+        @options[:log_file] = val
+        @watchdog_options[:log_target] = val
+      end
+      opts.on("--log-level LEVEL", Integer, "The log level (default: #{@watchdog_options[:log_level]})") do |val|
+        @watchdog_options[:log_level] = val
+      end
+      opts.on("--max-pool-size NUMBER", Integer, "Max total number of processes (default: #{@watchdog_options[:max_pool_size]})") do |val|
+        @watchdog_options[:max_pool_size] = val
+      end
+      opts.on("--pool-idle-time SECONDS", Integer, "Max process idle time (default: #{@watchdog_options[:pool_idle_time]})") do |val|
+        @watchdog_options[:pool_idle_time] = val
+      end
+      opts.on("--instance-registry-dir PATH", String, "Use the given instance registry directory") do |val|
+        @watchdog_options[:instance_registry_dir] = val
+      end
+      opts.on("--data-buffer-dir PATH", String, "Use the given data buffer directory") do |val|
+        @watchdog_options[:controller_file_buffered_channel_buffer_dir] = val
+      end
+      opts.on("--fd-log-file PATH", String, "The file descriptor log file to use") do |val|
+        @watchdog_options[:file_descriptor_log_target] = val
+      end
+      opts.on("--ctl NAME=VALUE", String, "Directly set internal config option") do |val|
+        if val !~ /=.+/
+          abort "*** ERROR: invalid --ctl format: #{val}"
+        end
+        key, val = val.split("=", 2)
+        @watchdog_options[key] = autocast_json_compatible_value(val)
+      end
+      opts.on("--help", "Show this help message") do
+        @options[:help] = true
+      end
+    end
+    begin
+      parser.parse!
+    rescue OptionParser::ParseError => e
+      STDERR.puts e
+      STDERR.puts
+      STDERR.puts "Please see '--help' for valid options."
+      exit 1
+    end
+
+    if @options[:help]
+      puts parser
+      exit 0
+    end
+
+    if !@watchdog_options[:controller_addresses]
+      STDERR.puts "You didn't specify a socket filename. Please set --socket-file."
+      exit 1
+    end
+    if @options[:daemonize] && !PlatformInfo.ruby_supports_fork?
+      raise Error, "Unable to daemonize using the current Ruby interpreter " +
+        "(#{PlatformInfo.ruby_command}) because it does not support forking."
+    end
+    if @options[:daemonize] && !@options[:log_file]
+      raise Error, "If you set --daemonize then you must also set --log-file."
+    end
+  end
+
+  def initialize_logger
+    if @options[:log_file]
+      file = File.open(@options[:log_file], "a")
+      @logger = Logger.new(file)
+      STDOUT.reopen(file)
+      STDERR.reopen(file)
+      STDOUT.sync = STDERR.sync = file.sync = true
+    else
+      @logger = Logger.new(STDERR)
+    end
+    case @watchdog_options[:log_level]
+    when LVL_ERROR
+      @logger.level = Logger::ERROR
+    when LVL_WARN
+      @logger.level = Logger::WARN
+    when LVL_NOTICE, LVL_INFO
+      @logger.level = Logger::INFO
+    else
+      if @watchdog_options[:log_level] <= LVL_CRIT
+        @logger.level = Logger::FATAL
+      else
+        @logger.level = Logger::DEBUG
+      end
+    end
+    @logger.info("Welcome to Flying Passenger #{PhusionPassenger::VERSION_STRING}")
+  end
+
+  def ensure_agent_installed
+    @agent_exe = PhusionPassenger.find_support_binary(AGENT_EXE)
+    if !@agent_exe
+      args = ["--brief", "--no-force-tip"]
+      if @options[:dont_compile_runtime]
+        args << "--no-compile"
+      end
+      PhusionPassenger.require_passenger_lib 'config/install_agent_command'
+      PhusionPassenger::Config::InstallAgentCommand.new(args).run
+      puts
+      puts "--------------------------"
+      puts
+      @agent_exe = PhusionPassenger.find_support_binary(AGENT_EXE)
+    end
+  end
+
+  def create_arguments
+    args = {
+      "server_software" => "Flying Passenger #{PhusionPassenger::VERSION_STRING}",
+      "passenger_root"  => PhusionPassenger.install_spec,
+      "default_ruby" => PlatformInfo.ruby_command,
+      "setsid" => true,
+      "controller_secure_headers_password" => "-",
+      "multi_app" => true
+    }
+    @watchdog_options.each_pair do |name, val|
+      args[name.to_s] = val
+    end
+    args
+  end
+
+  def serialize_json(data)
+    PhusionPassenger::Utils::JSON.generate(data)
+  end
+
+  def spawn
+    ENV['PASSENGER_USE_FEEDBACK_FD'] = '1'
+    args = [@agent_exe, "watchdog"]
+
+    @logger.info("Starting #{AGENT_EXE}...")
+    a, b = UNIXSocket.pair
+    channel = MessageChannel.new(a)
+    args << {
+      :in  => ['/dev/null', 'r'],
+      :out => :out,
+      :err => :err,
+      3    => b,
+      :close_others => true
+    }
+
+    begin
+      pid = Process.spawn(*args)
+    rescue SystemCallError => e
+      raise SpawnError, e.message
+    end
+    b.close
+    @logger.info("#{AGENT_EXE} started on PID #{pid}")
+
+    @logger.debug { "Sending arguments to #{AGENT_EXE}: " + create_arguments.inspect }
+    channel.write_scalar(serialize_json(create_arguments))
+    result = channel.read
+    result_name, *result_args = result
+    @logger.debug { "#{AGENT_EXE} response: " + result.inspect }
+
+    case result_name
+    when "Agents information"
+      @logger.info("#{AGENT_EXE} initialized properly")
+      channel.read_scalar # Ignore result
+    when "Watchdog startup error"
+      raise SpawnError, "Unable to start the Phusion Passenger agent " +
+        "because it encountered the following error during startup: " +
+        result_args[0]
+    else
+      a.close
+      raise SpawnError, "The Phusion Passenger agent sent an unknown feedback message: " +
+        result.inspect
+    end
+
+    @pid  = pid
+    @pipe = a
+    @info = Hash[*result_args]
+  rescue
+    a.close if a && !a.closed?
+    b.close if b && !b.closed?
+    raise
+  end
+
+  def maybe_daemonize
+    if @options[:daemonize]
+      @logger.info("Daemonization requested...")
+      pid = fork
+      if pid
+        # Parent
+        exit!(0)
+      else
+        # Child
+        trap "HUP", "IGNORE"
+        STDIN.reopen("/dev/null", "r")
+        STDOUT.reopen(@options[:log_file], "a")
+        STDERR.reopen(@options[:log_file], "a")
+        STDOUT.sync = true
+        STDERR.sync = true
+        Process.setsid
+        @logger.info("Daemonized into background: PID #{$$}")
+      end
+    end
+  end
+
+  def maybe_write_pidfile
+    if @options[:pidfile]
+      @logger.info("Creating PID file: #{@options[:pidfile]}")
+      if File.exist?(@options[:pidfile])
+        raise Error, "PID file already exists! Exiting!"
+      else
+        File.open(@options[:pidfile], "w") do |f|
+          f.puts $$
+        end
+      end
+    end
+  end
+
+  def maybe_cleanup_pidfile
+    if @options[:pidfile] && File.exist?(@options[:pidfile])
+      @logger.info("Deleting PID file: #{@options[:pidfile]}")
+      File.unlink(@options[:pidfile])
+    end
+  end
+
+  def async_waitpid(pid)
+    a, b = IO.pipe
+    thread = Thread.new do
+      Thread.current.abort_on_exception = true
+      begin
+        Process.waitpid(pid)
+        Thread.current[:result] = $?
+      ensure
+        b.close
+      end
+    end
+    return [a, thread]
+  end
+
+  def send_shutdown_signal
+    @logger.info("Performing clean shutdown")
+    begin
+      @pipe.write_nonblock('c')
+      @pipe.close
+    rescue Errno::EAGAIN, Errno::EPIPE, Errno::ECONNRESET
+      # Ignore error, we don't care.
+    end
+
+    @sent_shutdown_signal = true
+  end
+
+  def wait_for_exit
+    exit_signaller, waitpid_thread = async_waitpid(@pid)
+
+    begin
+      select([exit_signaller])
+    rescue SignalException => e
+      @logger.info("Received signal #{e.signo}")
+      if e.signo == Signal.list["INT"] || e.signo == Signal.list["TERM"]
+        send_shutdown_signal if !@sent_shutdown_signal
+      else
+        Process.kill(e.signo, @pid) rescue nil
+      end
+      retry
+    end
+
+    exit_signaller.close
+    waitpid_thread.join
+    result = waitpid_thread[:result]
+    return result ? (result.exitstatus || 1) : 1
+  ensure
+    @pipe.close if !@pipe.closed?
+    @pipe = nil
+    @pid = nil
+  end
+
+  def exit(code = 0)
+    raise Exit.new(code)
+  end
+
+  def autocast_json_compatible_value(str)
+    if str =~ /\A-?[0-9]+\Z/
+      # Integer
+      str.to_i
+    elsif str =~ /\A-?[0-9]+(\.[0-9]+)?([eE][+\-]?[0-9]+)?\Z/
+      # Float
+      str.to_f
+    elsif str =~ /\A(true|false|on|off|yes|no)\Z/
+      # Boolean
+      !!(str =~ /\A(true|on|yes)\Z/)
+    elsif str =~ /\A[\{\["]/
+      # JSON data
+      begin
+        PhusionPassenger::Utils::JSON.parse(str)
+      rescue RuntimeError
+        str
+      end
+    else
+      # String
+      str
+    end
+  end
+end
+
+end # module PhusionPassenger
+
+begin
+  flyer = PhusionPassenger::FlyingPassenger.new(ARGV)
+  exit_code = flyer.start
+  exit(exit_code) if exit_code
+  exit(flyer.wait)
+rescue PhusionPassenger::FlyingPassenger::Error => e
+  if flyer && flyer.logger
+    flyer.logger.fatal(e.message)
+  else
+    abort(e.message)
+  end
+end
