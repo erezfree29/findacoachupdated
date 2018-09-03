@@ -1,5 +1,5 @@
 current directory: /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/json-2.1.0/ext/json
-/home/erez/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20180831-8212-b162fi.rb extconf.rb
+/home/erez/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20180902-18261-7hmwtp.rb extconf.rb
 creating Makefile
 
 current directory: /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/json-2.1.0/ext/json

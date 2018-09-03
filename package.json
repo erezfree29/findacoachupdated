@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "@rails/webpacker": "4.0.0-pre.2",
+    "@rails/webpacker": "^3.5.5",
     "ejsx": "^1.0.0-b2",
     "gmaps": "^0.4.24",
     "react": "^16.4.2",
     "webpack": "^4.16.5",
-    "webpack-dev-server": "^2.11.2"
+    "webpack-dev-server": "^3.1.7"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",

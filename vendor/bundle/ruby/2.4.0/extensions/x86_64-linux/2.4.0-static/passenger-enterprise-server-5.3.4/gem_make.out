@@ -1,5 +1,5 @@
 current directory: /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/passenger-enterprise-server-5.3.4/src/helper-scripts/download_binaries
-/home/erez/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20180901-13816-1shljl2.rb extconf.rb
+/home/erez/.rbenv/versions/2.4.4/bin/ruby -r ./siteconf20180902-18261-t56w8s.rb extconf.rb
 Attempting to download https://oss-binaries.phusionpassenger.com/binaries/enterprise-NQLVwRlu10n13/by_release/5.3.4/rubyext-ruby-2.4.4-x86_64-linux.tar.gz into /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/passenger-enterprise-server-5.3.4/download_cache
 Attempting to download https://oss-binaries.phusionpassenger.com/binaries/enterprise-NQLVwRlu10n13/by_release/5.3.4/nginx-1.14.0-x86_64-linux.tar.gz into /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/passenger-enterprise-server-5.3.4/download_cache
 Attempting to download https://oss-binaries.phusionpassenger.com/binaries/enterprise-NQLVwRlu10n13/by_release/5.3.4/agent-x86_64-linux.tar.gz into /home/erez/Downloads/findacoach/coachnew/vendor/bundle/ruby/2.4.0/gems/passenger-enterprise-server-5.3.4/download_cache
