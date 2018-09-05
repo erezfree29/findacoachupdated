@@ -1,9 +1,10 @@
 
 <%require 'nokogiri'%>
 <%page = Nokogiri::HTML(open("/home/erez/Downloads/findacoach/coachnew/app/views/reviews/new.html.erb"))%>
-<p>please give your review</p>
 
-<h2>rate the service</h2>
+<div id="review_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/erezfriemagor/image/upload/v1536153466/pexels-photo-1056556_1.jpg');">
+<div id="container">
+<div id="rate_ser">rate the service</div>
 <div class="starbox">
           <div class="star" data-star="1"><i class="fa fa-star"></i></div>
           <div class="star" data-star="2"><i class="fa fa-star"></i></div>
@@ -11,17 +12,17 @@
           <div class="star" data-star="4"><i class="fa fa-star"></i></div>
           <div class="star" data-star="5"><i class="fa fa-star"></i></div>
 
+</div>
 
 
-
-       <div class="input_form">
+       <div id="input_form_review">
     <%= simple_form_for [@trainer, @booking, @review] do |f| %>
 
 
-    <p>title</p>
-    <div><%= f.input :title,:label => false%></div>
-    <p>write down your review</p>
-    <div><%= f.input :content,:label => false%></div>
+    <p class="til">title</p>
+    <div id="title"><%= f.input :title,:label => false%></div>
+    <p class="til">write down your review</p>
+    <div id="content"><%= f.input :content,:label => false,:as => :text,:input_html => {:maxlength => 255, :size => 255} %></div>
 
 
 
@@ -37,17 +38,75 @@
     <%= f.button :submit,'submit', class: "btn btn-primary booking_btn" %>
     <% end %>
   </div>
+</div>
+</div>
+
 
        <style>
 
     .starbox{
      width: 15vw;
      display: flex;
+     margin-left:10px;
    }
 
   .star{
      cursor: pointer;
    }
+
+
+   #content
+
+   {
+
+    width: 25vw;
+
+
+   }
+
+   #title
+   {
+
+    width: 10vw;
+    color:white;
+   }
+
+   #input_form_review
+
+   {
+
+    margin-left:10px;
+
+   }
+
+   #container
+   {
+
+     margin-left:10px;
+
+   }
+   #review_ban
+  {
+
+    height: 50vw;
+    margin-top:5px;
+
+  }
+
+  #rate_ser
+  {
+
+    font-size:45px;
+    color: white;
+  }
+
+  .til
+  {
+
+    color:white;
+  }
+
+
 
 
 

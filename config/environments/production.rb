@@ -35,6 +35,7 @@ Rails.application.configure do
 
   config.public_file_server.enabled = true
 
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.

@@ -12,9 +12,7 @@
 
 <%if user_signed_in?%>
   <%if @trainer.user_id == current_user.id%>
-        <%= link_to "Delete this service", trainer_path(@trainer.id),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
+    <%= button_to 'cancel service',@trainer , method: :delete, :onclick => "return confirm('Are you sure you want to delete this service?')" %>
    <%end%>
    <%end%>
 
@@ -26,6 +24,10 @@
 
 
 
+
+   <%#= link_to "Delete this service", trainer_path(@trainer.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
 
     </div>
          <div class="trainershowcircle" style="background-image: url(<%=@trainer.photo%>)"></div>

@@ -1,4 +1,6 @@
 
+<%require 'date'%>
+
 <div class="banner_booking" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/erezfriemagor/image/upload/v1535731378/kidcoach.jpg');">
 
   <div style="display: flex; justify-content: center"><h1 style="border:none; color: white; font-size: 70px; margin-top:50px;">My Bookings</h1></div>
@@ -34,9 +36,13 @@
 
          <%#end  %>
          <hr>
-         <div>Give <%=@bookings_trainers[counter].first_name%> your Review</div>
+
          <hr>
+
+         <% if Date.today > booking.date %>
+         <div>Give <%=@bookings_trainers[counter].first_name%> your Review</div>
          <div class="write_review"><%= link_to "give a review",new_trainer_booking_review_path(@bookings_trainers[counter],booking)%></div>
+         <%end%>
 
          <%counter += 1%>
          <%booking_number += 1%>
