@@ -6,7 +6,18 @@ class ReviewsController < ApplicationController
     @review.booking_id = @booking.id
     @review.save
 
+    if @review.save
+
+      redirect_to trainer_review_path(@trainer,@review)
+
+
+    else
+
+     render :new
+
   end
+
+end
 
   def new
     @trainer = Trainer.find(params[:trainer_id])
@@ -32,3 +43,4 @@ class ReviewsController < ApplicationController
 
 
 end
+

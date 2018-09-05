@@ -163,15 +163,11 @@ def update
 
 end
 
-def delete
-
+def destroy
   @trainer = Trainer.find(params[:id])
-  if (user_signed_in?)
-  if @trainer.user_id == current_user.id
-   @trainer.destroy
-   redirect_to trainers_path
-  end
- end
+  @trainer.destroy
+
+
 end
 
 
