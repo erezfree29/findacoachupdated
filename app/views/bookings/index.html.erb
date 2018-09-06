@@ -31,18 +31,16 @@
          <div>on the agenda: <%= @trainers_expertises[counter].name %></div>
          <div>duration: <%=booking.hours%> hours</div>
          <div>booking price: <%=booking.total_price%></div>
-         <%#if DateTime.now>booking.time_of_booking %>
-         <!--<div class="write_review"><\%= link_to "give a review",new_trainer_booking_review_path(@bookings_trainers[counter],booking)%></div> -->
-
-         <%#end  %>
          <hr>
 
          <hr>
 
-         <% if Date.today > booking.date %>
+         <%# if Date.today > booking.date %>
+         <%# if Date.now > booking.time%>
          <div>Give <%=@bookings_trainers[counter].first_name%> your Review</div>
          <div class="write_review"><%= link_to "give a review",new_trainer_booking_review_path(@bookings_trainers[counter],booking)%></div>
-         <%end%>
+         <%#end%>
+         <%#end %>
 
          <%counter += 1%>
          <%booking_number += 1%>

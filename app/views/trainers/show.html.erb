@@ -51,6 +51,13 @@
      </div>
    </div>
  </div>
+
+ <%= link_to "see revies",trainer_review_path(@trainer),class: "btn btn-primary btn-lg btn-block", id: 'animatiombtn'%>
+
+
+<!-- trainer_review GET    /trainers/:trainer_id/reviews/:id(.:format)  -->
+
+
 <script>
   document.getElementById("animatiombtn").addEventListener("mouseover",function(){
     document.getElementById("animationcarc").style.opacity = 1;
