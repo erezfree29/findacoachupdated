@@ -6,7 +6,7 @@ test:
     service: Disk
     root: <%= Rails.root.join("storage") %>
 
-    amazon
+    amazon:
     service: S3
     access_key_id: <%= ENV['BUCKETEER_AWS_AKIAIWZLHIXSO5QZWTYA'] %>
     secret_access_key: <%= ENV['BUCKETEER_AWS_5I/NU0jzZJG+fvCwgnNWh2yd4qLyhjCrtoiqrWaz'] %>
