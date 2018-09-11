@@ -2,19 +2,9 @@ test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
 
-local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
-
-  # google:
-  # service: GCS
-  # credentials: <%= Rails.root.join("path/to/keyfile.json") %>
-  # project: "My project"
-  # bucket: "erez"
-
-
-
-
+  local:
+    service: Disk
+    root: <%= Rails.root.join("storage") %>
 
   amazon
   service: S3
@@ -23,3 +13,16 @@ local:
   region: <%= ENV['BUCKETEER_AWS_global'] %>
   bucket: <%= ENV['BUCKETEER_ffyourptrainer'] %>
 
+
+
+
+
+
+
+
+
+  # google:
+  # service: GCS
+  # credentials: <%= Rails.root.join("path/to/keyfile.json") %>
+  # project: "My project"
+  # bucket: "erez"
