@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@rails/webpacker": "^3.5.5",
+    "@rails/webpacker": "4.0.0-pre.2",
     "ejsx": "^1.0.0-b2",
     "gmaps": "^0.4.24",
     "react": "^16.4.2",
