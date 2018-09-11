@@ -7,11 +7,11 @@ test:
     root: <%= Rails.root.join("storage") %>
 
     amazon:
-    service: S3
-    access_key_id: <%= ENV['BUCKETEER_AWS_AKIAIWZLHIXSO5QZWTYA'] %>
-    secret_access_key: <%= ENV['BUCKETEER_AWS_5I/NU0jzZJG+fvCwgnNWh2yd4qLyhjCrtoiqrWaz'] %>
-    region: <%= ENV['BUCKETEER_AWS_global'] %>
-    bucket: <%= ENV['BUCKETEER_ffyourptrainer'] %>
+     service: S3
+     access_key_id: <%= ENV['BUCKETEER_AWS_AKIAIWZLHIXSO5QZWTYA'] %>
+     secret_access_key: <%= ENV['BUCKETEER_AWS_5I/NU0jzZJG+fvCwgnNWh2yd4qLyhjCrtoiqrWaz'] %>
+     region: <%= ENV['BUCKETEER_AWS_global'] %>
+     bucket: <%= ENV['BUCKETEER_ffyourptrainer'] %>
 
 
 
@@ -26,3 +26,4 @@ test:
   # credentials: <%= Rails.root.join("path/to/keyfile.json") %>
   # project: "My project"
   # bucket: "erez"
+
