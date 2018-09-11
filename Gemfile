@@ -20,7 +20,6 @@ gem 'calendar_helper'
 gem 'jquery-rails'
 gem 'gmaps-autocomplete-rails'
 gem 'activestorage'
-gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 
 
 
