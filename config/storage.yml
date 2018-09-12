@@ -12,7 +12,7 @@ test:
          access_key_id: <%= ENV['AKIAJ43TEBCM64SKNVMQ'] %>
          secret_access_key: <%= ENV['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']%>
          region: <%= ENV['eu'] %>
-         bucket: <%= ENV['ffyourptrainer'] %>
+         bucket: <%= ENV['findacoach'] %>
 
 
 
