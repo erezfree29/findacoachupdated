@@ -9,8 +9,8 @@ test:
 
     amazon:
          service: S3
-         access_key_id: <%= ENV['AKIAIWZLHIXSO5QZWTYA'] %>
-         secret_access_key: <%= ENV['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']%>
+         access_key_id: <%= ENV['AKIAJ43TEBCM64SKNVMQ'] %>
+         secret_access_key: <%= ENV['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']%>
          region: <%= ENV['eu'] %>
          bucket: <%= ENV['ffyourptrainer'] %>
 
