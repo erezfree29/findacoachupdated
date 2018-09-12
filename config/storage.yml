@@ -7,13 +7,11 @@ test:
     root: <%= Rails.root.join("storage") %>
 
 
-    amazon:
-         service: S3
-         access_key_id: <%= ENV['AKIAJ43TEBCM64SKNVMQ'] %>
-         secret_access_key: <%= ENV['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']%>
-         region: <%= ENV['eu'] %>
-         bucket: <%= ENV['findacoach'] %>
-
+    azure:
+     service: AzureStorage
+     storage_account_name: "findacoach"
+     storage_access_key: "9aCofN64TPzN3f30pjZqXBmFMSM4xob36eTEDA+spDsLFdyR3DW79ORx3qyuV1qlmyhnmF/n/i0CKYsRJ3yeEA=="
+     container: "erez"
 
 
 

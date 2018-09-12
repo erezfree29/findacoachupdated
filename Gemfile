@@ -20,6 +20,7 @@ gem 'calendar_helper'
 gem 'jquery-rails'
 gem 'gmaps-autocomplete-rails'
 gem 'activestorage'
+gem "azure-storage", require: false
 
 
 
