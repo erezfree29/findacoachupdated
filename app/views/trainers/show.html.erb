@@ -49,10 +49,11 @@
        <%= link_to "book now",new_trainer_booking_path(@trainer),class: "btn btn-primary btn-lg btn-block", id: 'animatiombtn'%>
         </div>
      </div>
+     <%= link_to "see reviews",trainer_review_path(@trainer),class: "btn btn-primary btn-lg btn-block see", id: 'animatiombtn'%>
    </div>
  </div>
 
- <%= link_to "see revies",trainer_review_path(@trainer),class: "btn btn-primary btn-lg btn-block", id: 'animatiombtn'%>
+
 
 
 <!-- trainer_review GET    /trainers/:trainer_id/reviews/:id(.:format)  -->
@@ -70,6 +71,13 @@
 </script>
 
 <style>
+.see
+
+{
+
+  margin-top:-150px;
+
+}
 .calendar
 {
 

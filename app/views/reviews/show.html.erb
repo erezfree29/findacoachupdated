@@ -1,8 +1,92 @@
-<h1>Reviews#show</h1>
-<p>Find me in app/views/reviews/show.html.erb</p>
+
+  <div id="ban">
+  <center><h1 id="rev-h">what others had to say</h1></center>
+  <center><h2 id="rev-h2">ranking and reviews of</h2></center>
+  <center><h2 id="rev-h3"><%=@trainer.first_name%> <%=@trainer.last_name%></h2></center>
+    <%@trainer_reviews.each do |review| %>
+    <div class="row">
+      <div class="col-xs-12 col-lg-2" style="margin-bottom: 20px;">
+       <div class="card1 rev-card">
+
+
+        <div id="rev-con" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/erezfriemagor/image/upload/v1536153466/pexels-photo-1056556_1.jpg');">
+
+
+        <p>date</p>
+        <%=review.booking.date%>
+        <p>rating</p>
+        <%=review.score%>
+        <p>title</p>
+        <%=review.title%>
+        <p>what they had to say</p>
+        <%=review.content%>
+      </div>
+
+      </div>
 
 
 
-<%@trainer_reviews.each do |review| %>
-  <%=review.title%>
-  <%end %>
+
+    </div>
+  </div>
+  <% end %>
+
+</div>
+
+
+
+
+
+<style>
+#ban
+{
+background-color: #396b86;
+}
+#rev-h
+{
+  border:none;
+  color:blue;
+  font-size:40px;
+  text-decoration:underline;
+}
+#rev-h2
+{
+  border:none;
+  color:blue;
+  font-size:28px;
+  text-decoration:underline;
+}
+#rev-h3
+{
+  border:none;
+  font-size:25px;
+  color:yellow;
+}
+.container-rev
+{
+  margin-top:80px;
+  height:100vh;
+  background-color:white;
+}
+.rev
+{
+ height:100vw;
+}
+.rev-card
+{
+ font-size:20px;
+ width:100vw;
+ height:40vh;
+ border:none;
+}
+</style>
+
+
+
+
+
+
+
+
+
+

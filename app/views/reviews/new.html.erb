@@ -1,7 +1,4 @@
 
-<%require 'nokogiri'%>
-<%page = Nokogiri::HTML(open("/home/erez/Downloads/findacoach/coachnew/app/views/reviews/new.html.erb"))%>
-
 <div id="review_ban" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/erezfriemagor/image/upload/v1536153466/pexels-photo-1056556_1.jpg');">
 <div id="container">
 <div id="rate_ser">rate the service</div>
@@ -11,10 +8,7 @@
           <div class="star" data-star="3"><i class="fa fa-star"></i></div>
           <div class="star" data-star="4"><i class="fa fa-star"></i></div>
           <div class="star" data-star="5"><i class="fa fa-star"></i></div>
-
 </div>
-
-
        <div id="input_form_review">
     <%= simple_form_for [@trainer, @booking, @review] do |f| %>
 
@@ -22,7 +16,7 @@
     <p class="til">title</p>
     <div id="title"><%= f.input :title,:label => false%></div>
     <p class="til">write down your review</p>
-    <div id="content"><%= f.input :content,:label => false,:as => :text,:input_html => {:maxlength => 255, :size => 255} %></div>
+    <div id="content"><%= f.input :content,:label => false,:as => :text,:input_html => {:maxlength => 500, :size => 255} %></div>
 
 
 
@@ -43,73 +37,45 @@
 
 
        <style>
-
     .starbox{
      width: 15vw;
      display: flex;
      margin-left:10px;
    }
-
   .star{
      cursor: pointer;
    }
-
-
    #content
-
    {
-
     width: 25vw;
-
-
    }
-
    #title
    {
-
     width: 10vw;
     color:white;
    }
-
    #input_form_review
-
    {
-
     margin-left:10px;
-
    }
-
    #container
    {
-
      margin-left:10px;
-
    }
    #review_ban
   {
-
     height: 50vw;
     margin-top:5px;
-
   }
-
   #rate_ser
   {
-
     font-size:45px;
     color: white;
   }
-
   .til
   {
-
     color:white;
   }
-
-
-
-
-
     </style>
 
 
@@ -118,36 +84,19 @@
 
 
       <script>
-
-
-
     let score = document.querySelector('.score')
-
     let rating = document.querySelector('#score')
-
-
-
-
-
  document.querySelectorAll('.starbox').forEach(function(starbox){
    Array.from(starbox.children).forEach(function(star){
-
-
      star.addEventListener('click', function(){
-
       let dropdown = document.querySelector('#review_score');
        if(star.dataset.star == "1"){
          Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
-
            star.style.color = "#ffd530";
           dropdown.value = 1
-
-
          })
-
        }
-
        else if(star.dataset.star == "2"){
           Array.from(star.parentNode.children).forEach(function(starrr){
            starrr.style.color = "black"
@@ -188,24 +137,50 @@
        }
      });
    });
-
  });
-
-
-
     window.onload = function(){
-
     let good = document.querySelector('.good');
     let rate = document.querySelector('#rate');
     let inscore = document.querySelector('#inscore');
     // let dropdown = document.querySelector('#review_score');
     // alert(dropdown.value);
-
-
-
     }
-
-
-
-
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
