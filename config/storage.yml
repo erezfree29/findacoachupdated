@@ -7,12 +7,11 @@ test:
     root: <%= Rails.root.join("storage") %>
 
 
-    azure:
-     service: AzureStorage
-     storage_account_name: "findacoach"
-     storage_access_key: "9aCofN64TPzN3f30pjZqXBmFMSM4xob36eTEDA+spDsLFdyR3DW79ORx3qyuV1qlmyhnmF/n/i0CKYsRJ3yeEA=="
-     container: "erez"
-
+    service: S3
+  access_key_id: AKIAI22LWYGBELHB3IEA
+  secret_access_key: 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
+  region: us-west-1
+  bucket: coacherez
 
 
 
