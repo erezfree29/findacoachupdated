@@ -23,10 +23,10 @@
          <%end%>
       <div class="card4">
         <div>booking number <%=booking_number%></div>
-       <div>booking date: <%=booking.date%></div>
-       <div>booking time: <%=booking.time.hour=%>:<%=booking.time.min=%></div>
-       <div>booking address: <%=@bookings_trainers[counter].address%></div>
-       <div>trainer's name: <%=@bookings_trainers[counter].first_name%>
+        <div>booking date: <%=booking.date%></div>
+        <div>booking time: <%=booking.time.hour=%>:<%=booking.time.min=%></div>
+        <div>booking address: <%=@bookings_trainers[counter].address%></div>
+        <div>trainer's name: <%=@bookings_trainers[counter].first_name%>
          <%=@bookings_trainers[counter].last_name%></div>
          <div>on the agenda: <%= @trainers_expertises[counter].name %></div>
          <div>duration: <%=booking.hours%> hours</div>
