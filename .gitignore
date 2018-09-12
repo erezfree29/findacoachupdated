@@ -8,6 +8,7 @@ tmp/*
 .DS_Store
 public/assets
 vendor/bundle
+config/master.key
 public/packs
 public/packs-test
 node_modules
