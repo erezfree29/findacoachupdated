@@ -6,19 +6,12 @@ local:
   service: Disk
   root: <%= Rails.root.join("storage") %>
 
-service: S3
-   access_key_id: AKIAI3Y5G3MO6IPLJB2A
-   secret_access_key: 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
-   region: us-west-1
-   bucket: coacherez
-
-
-
-
-
-
-
-
+amazon:
+  service: S3
+  access_key_id: <%= ENV['BUCKETEER_AWS_AKIAIWZLHIXSO5QZWTYA'] %>
+  secret_access_key: <%= ENV['BUCKETEER_AWS_5I/NU0jzZJG+fvCwgnNWh2yd4qLyhjCrtoiqrWaz'] %>
+  region: <%= ENV['BUCKETEER_AWS_global'] %>
+  bucket: <%= ENV['BUCKETEER_ffyourptrainer'] %>
 
 
 
