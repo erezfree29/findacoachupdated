@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!
   def create
     @trainer = Trainer.find(params[:trainer_id])
     @booking= Booking.find(params[:booking_id])
