@@ -11,7 +11,7 @@ class TrainersController < ApplicationController
 
        else
 
-           @trainers = Trainer.all
+            @trainers = Trainer.where.not(latitude: nil, longitude: nil)
 
       end
 
