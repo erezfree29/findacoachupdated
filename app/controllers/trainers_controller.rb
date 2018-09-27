@@ -4,49 +4,28 @@ class TrainersController < ApplicationController
 
   def index
 
-   if params[:query].present?
+      if params[:query].present?
 
-      params[:query] += " uk"
-      @trainers = Trainer.all.near(params[:query],100)
+          params[:query] += " uk"
+          @trainers = Trainer.all.near(params[:query],100)
 
-        @markers = @trainers.map do |trainer|
-           {
-           lat: trainer.latitude,
-           lng: trainer.longitude#,
+       else
 
-# # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-           }
+           @trainers = Trainer.where.not(latitude: nil, longitude: nil)
 
-       end
+      end
 
-
-
-  else
-
-    @trainers = Trainer.all
-
-
-@trainers = Trainer.where.not(latitude: nil,longitude: nil)
-
-@markers = @trainers.map do |trainer|
- {
-lat: trainer.latitude,
-lng: trainer.longitude#,
-# # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-}
-end
-
-end
-
-
-
-
-end
-
+      @markers = @trainers.map do |trainer|
+      {
+        lat: trainer.latitude,
+        lng: trainer.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
+  end
  def show
   @trainer = Trainer.find(params[:id])
   @expertise = Expertise.find(@trainer.expertise_id)
-
 end
 
 def new
@@ -181,10 +160,54 @@ def trainer_params
     :last_name,:gender)
 
  end
-
-
 end
 
 
 
 
+ #
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  if params[:query].present?
+
+#       params[:query] += "uk"
+#    end
+#       @trainers = Trainer.all.near(params[:query],100)
+
+#         @markers = @trainers.map do |trainer|
+#            {
+#            lat: trainer.latitude,
+#            lng: trainer.longitude#,
+
+# # # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+#            }
+
+#        end
+
+
+
+#   else
+
+#     @trainers = Trainer.all
+
+
+# @trainers = Trainer.where.not(latitude: nil,longitude: nil)
+
+# @markers = @trainers.map do |trainer|
+#  {
+# lat: trainer.latitude,
+# lng: trainer.longitude#,
+# # # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+# }
