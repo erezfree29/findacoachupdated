@@ -3,7 +3,7 @@ class TrainersController < ApplicationController
    skip_before_action :authenticate_user!
 
   def index
-
+        @trainers = Trainer.all.near(params[:query],100)
       if params[:query].present?
 
           params[:query] += " uk"
@@ -19,8 +19,9 @@ class TrainersController < ApplicationController
       {
         lat: trainer.latitude,
         lng: trainer.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+
       }
+
     end
   end
  def show

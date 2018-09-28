@@ -14,12 +14,13 @@ class ReviewsController < ApplicationController
 
     else
 
-    if @review.id == nil
+    if @review.id != nil
 
       flash.now[:alert] = 'you already gave a review'
 
+    end
 
-     elsif @review.score == nil
+     if @review.score == nil
 
         flash.now[:alert] = 'please enter a ranking'
     end
